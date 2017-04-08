@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2015",
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "inlineSourceMap": true,
+        "sourceRoot": "lib"
+    },
+    "include": [
+        "strong-soap.d.ts",
+        "lib/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
