@@ -1,0 +1,43 @@
+// This file is generated from WSDL.
+
+// [Import]
+import * as base from "./base";
+
+// [SimpleType]
+{{#simpleTypes}}
+export type {{name}} = {{& type}};
+{{/simpleTypes}}
+
+// [ComplexType]
+{{#complexTypes}}
+// {{name}}
+{{#hasAttribute}}
+export interface {{name}}Attribute{{#baseType}} extends {{.}}Attribute{{/baseType}} {
+    {{#attributes}}
+    {{name}}{{^required}}?{{/required}}: {{& type}}{{#isMultiple}} | {{& type}}[]{{/isMultiple}};
+    {{/attributes}}
+}
+{{/hasAttribute}}
+{{#subtypes}}
+{{#hasAttribute}}
+export interface {{name}}Attribute{{#baseType}} extends {{.}}Attribute{{/baseType}} {
+    {{#attributes}}
+    {{name}}{{^required}}?{{/required}}: {{& type}}{{#isMultiple}} | {{& type}}[]{{/isMultiple}};
+    {{/attributes}}
+}
+{{/hasAttribute}}
+export interface {{name}}{{#baseType}} extends {{.}}{{/baseType}} {
+    {{#hasAttribute}}$attributes: {{name}}Attribute{{/hasAttribute}}
+    {{#parameters}}
+    {{name}}{{^required}}?{{/required}}: {{type}}{{#isMultiple}} | {{& type}}[]{{/isMultiple}};
+    {{/parameters}}
+}
+{{/subtypes}}
+export interface {{name}}{{#baseType}} extends {{.}}{{/baseType}} {
+    {{#hasAttribute}}$attributes: {{name}}Attribute{{/hasAttribute}}
+    {{#parameters}}
+    {{name}}{{^required}}?{{/required}}: {{& type}}{{#isMultiple}} | {{& type}}[]{{/isMultiple}};
+    {{/parameters}}
+}
+
+{{/complexTypes}}

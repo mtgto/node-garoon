@@ -1,15 +1,31 @@
 {
-  "name": "node-garoon",
-  "version": "0.1.0",
+  "name": "garoon",
+  "version": "0.0.1",
   "description": "node library to access Garoon SOAP API.",
   "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc --project .",
+    "purepublish": "build",
+    "test": "ava"
+  },
+  "bin": {
+    "type_generator": "./lib/cli/type_generator.js",
+    "rpc_generator": "./lib/cli/rpc_generator.js",
+    "method_generator": "./lib/cli/method_generator.js"
+  },
   "repository": "https://github.com/mtgto/node-garoon.git",
   "author": "mtgto <hogerappa@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "cookie": "^0.3.1",
     "strong-soap": "^1.2.3"
   },
   "devDependencies": {
-    "@types/node": "^7.0.12"
+    "@types/cookie": "^0.3.0",
+    "@types/mustache": "^0.8.29",
+    "@types/node": "^7.0.12",
+    "ava": "^0.19.1",
+    "mustache": "^2.3.0",
+    "typescript": "^2.2.2"
   }
 }

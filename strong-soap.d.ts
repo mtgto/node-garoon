@@ -64,7 +64,7 @@ declare module 'strong-soap' {
 
 		class Base extends events.EventEmitter {
 			constructor(wsdl: WSDL, options?: Option);
-			addSoapHeader(value: Object | string, qname: QName): number;
+			addSoapHeader(value: Object | string, qname?: QName): number;
 			changeSoapHeader(index: number, value: Object | string, qname: QName): void;
 			getSoapHeaders(): SOAPElement[];
 			clearSoapHeaders(): void;
@@ -82,13 +82,15 @@ declare module 'strong-soap' {
 			constructor(server: any, path: string, services: any, wsdl: WSDL, options?: ServerOption);
 		}
 
+		type SoapMethod = (args: any, callback: (err: any, result: any) => void, options?: any, extraHeaders?: any) => void;
+
 		export class Client extends Base {
 			constructor(wsdl: WSDL, endpoint: string, options?: Option);
 			setEndpoint(endpoint: string): void;
 			describe(): {[serviceName: string]: {[portName: string]: {[operationName: string]: any}}};
 			setSecurity(security: security.Security): void;
 			setSOAPAction(soapAction: string): void;
-			[method: string]: Function;
+			//[method: string]: SoapMethod;
 		}
 
 		export interface Option {
@@ -98,7 +100,7 @@ declare module 'strong-soap' {
 			envelopeKey?: string;
 			escapeXML?: boolean;
 			forceSoap12Headers?: boolean;
-			httpClient?: HttpClient;
+			httpClient?: {request(rurl: string, data: any | string, callback: (err: any, res: any, body: any | string) => void, exheaders?: { [key: string]: any }, exoptions?: { [key: string]: any }): any};
 			ignoreBaseNameSpaces?: boolean,
 			ignoredNamespaces?: string[] | { namespaces: string[], override: boolean };
 			overrideRootElement?: { namespace: string, xmlnsAttributes?: string[] };

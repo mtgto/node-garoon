@@ -1,0 +1,34 @@
+// This file is generated from WSDL.
+import {soap} from "strong-soap";
+import {RPC} from "./rpc";
+
+import * as address from "./types/address";
+import * as admin from "./types/admin";
+import * as base from "./types/base";
+import * as bulletin from "./types/bulletin";
+import * as cabinet from "./types/cabinet";
+import * as cbwebsrv from "./types/cbwebsrv";
+import * as mail from "./types/mail";
+import * as message from "./types/message";
+import * as notification from "./types/notification";
+import * as report from "./types/report";
+import * as schedule from "./types/schedule";
+import * as star from "./types/star";
+import * as util_api from "./types/util_api";
+import * as workflow from "./types/workflow";
+
+export class GaroonClient {
+    protected client: Promise<soap.Client & RPC>;
+
+    protected callMethod = <I, O>(methodName: string, input: I, method: soap.SoapMethod): Promise<O> => {
+        throw Error("Not implemented.");
+    }
+{{#methods}}
+
+    {{method}} = (input: {{}}{{inputType}}): Promise<{{outputType}}> => {
+        return this.client.then(client => {
+            return this.callMethod<{{inputType}}, {{outputType}}>("{{method}}", input, client.{{service}}.{{port}}.{{method}});
+        });
+    }
+{{/methods}}
+}

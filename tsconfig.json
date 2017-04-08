@@ -2,14 +2,19 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es2015",
+        "strictNullChecks": true,
         "noImplicitAny": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
         "sourceMap": false,
         "inlineSourceMap": true,
-        "sourceRoot": "lib"
+        "sourceRoot": "lib",
+        "declaration": true
     },
     "include": [
         "strong-soap.d.ts",
-        "lib/**/*.ts"
+        "lib/**/*.ts",
+        "test/**/*.ts"
     ],
     "exclude": [
         "node_modules"
