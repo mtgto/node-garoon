@@ -1,6 +1,8 @@
 Node-Garoon
 ====
 
+[![npm](https://img.shields.io/npm/v/garoon.svg)](https://www.npmjs.com/package/garoon)
+
 node library to access Cybozu Garoon SOAP API.
 
 ## Features
@@ -15,13 +17,34 @@ node library to access Cybozu Garoon SOAP API.
 via npm:
 
 ```sh
-$ npm install garoon
+$ npm install --save garoon
+```
+
+For typescript project:
+
+```sh
+$ npm install --save garoon
+$ npm install --save-dev @types/node
 ```
 
 ## Example
 
+### JavaScript
+
 ```javascript
 const GaroonClient = require("garoon").Client;
+const client = new GaroonClient({url: "http://example.com/grn.cgi?WSDL"});
+// Use WSSecurity (Send username/password for each RPC method)
+client.authenticate("username", "password");
+
+client.UtilGetLoginUserId({}).then(response => {
+    console.log("user id is " + response.user_id);
+});
+```
+
+### TypeScript
+```typescript
+import {Client as GaroonClient} from "garoon";
 const client = new GaroonClient({url: "http://example.com/grn.cgi?WSDL"});
 // Use WSSecurity (Send username/password for each RPC method)
 client.authenticate("username", "password");
