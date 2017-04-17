@@ -25,8 +25,11 @@
     "@types/cookie": "^0.3.0",
     "@types/mustache": "^0.8.29",
     "@types/node": "^7.0.12",
+    "@types/request": "^0.0.42",
+    "@types/xmldom": "^0.1.29",
     "ava": "^0.19.1",
     "mustache": "^2.3.0",
-    "typescript": "^2.2.2"
+    "typescript": "^2.2.2",
+    "xmldom": "^0.1.27"
   }
 }
