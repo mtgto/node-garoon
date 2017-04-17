@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "node library to access Garoon SOAP API.",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc --project .",
     "purepublish": "build",
