@@ -1,7 +1,14 @@
 Node-Garoon
 ====
 
-node library to access Garoon SOAP API.
+node library to access Cybozu Garoon SOAP API.
+
+## Features
+
+- All garoon's remote procedure calls (RPC) are defined by `TypeScript`.
+    - You can check inputs and outputs by type definitions.
+- TypeScript 2.2 / ES2015
+    - All RPCs uses `Promise` for server response.
 
 ## Installation
 
@@ -40,6 +47,12 @@ Then, run all tests
 
 ```sh
 $ yarn test
+```
+
+Or run specified tests
+
+```sh
+$ yarn test test/client.test.js
 ```
 
 ## License
