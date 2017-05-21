@@ -36,10 +36,10 @@ export interface WorkflowAvailabilityUserType {
 export interface WorkflowGetRequestTypeAttribute {
     request_form_id: base.IDType;
     filter?: WorkflowGetManageRequestFilter;
-    start_request_date?: Date;
-    end_request_date?: Date;
-    start_approval_date?: Date;
-    end_approval_date?: Date;
+    start_request_date?: string;
+    end_request_date?: string;
+    start_approval_date?: string;
+    end_approval_date?: string;
     applicant?: base.IDType;
     last_approval?: base.IDType;
     start_to_get_information_from?: base.IDType;
@@ -84,8 +84,8 @@ export interface WorkflowGetUnprocessedApplicationsByIdResponseType {
 
 // WorkflowGetSentApplicationVersionsRequestType
 export interface WorkflowGetSentApplicationVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
 }
 export interface WorkflowGetSentApplicationVersionsRequestType {
     $attributes: WorkflowGetSentApplicationVersionsRequestTypeAttribute
@@ -112,8 +112,8 @@ export interface WorkflowGetSentApplicationsByIdResponseType {
 
 // WorkflowGetReceivedApplicationVersionsRequestType
 export interface WorkflowGetReceivedApplicationVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
 }
 export interface WorkflowGetReceivedApplicationVersionsRequestType {
     $attributes: WorkflowGetReceivedApplicationVersionsRequestTypeAttribute
@@ -152,8 +152,8 @@ export interface WorkflowGetApprovalDelegatorsResponseType {
 // WorkflowGetProxyApprovalsByDelegatorIdRequestType
 export interface WorkflowGetProxyApprovalsByDelegatorIdRequestTypeAttribute {
     delegator_id: base.IDType;
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
 }
 export interface WorkflowGetProxyApprovalsByDelegatorIdRequestType {
     $attributes: WorkflowGetProxyApprovalsByDelegatorIdRequestTypeAttribute
@@ -167,8 +167,8 @@ export interface WorkflowGetProxyApprovalsByDelegatorIdResponseType {
 
 // WorkflowGetPendingApprovalsRequestType
 export interface WorkflowGetPendingApprovalsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
 }
 export interface WorkflowGetPendingApprovalsRequestType {
     $attributes: WorkflowGetPendingApprovalsRequestTypeAttribute
@@ -407,7 +407,7 @@ export interface ApplicationTypeAttribute {
     status: StatusType;
     name?: string;
     number?: base.NonBlankStringType;
-    date: Date;
+    date: string;
     processing_step: base.IDType;
     urgent?: boolean;
 }
@@ -449,7 +449,7 @@ export interface ApplicationTypeStepsStep {
 export interface ApplicationTypeStepsStepProcessorAttribute {
     id?: base.IDType;
     processor_name: string;
-    date?: Date;
+    date?: string;
     comment?: string;
     result?: base.NonBlankStringType;
 }
@@ -568,7 +568,7 @@ export interface RequestManageFormTypeManageRequestFormManageItemDetailAttribute
     status: StatusType;
     applicant: base.IDType;
     last_approver: ApproverType;
-    request_date: Date;
+    request_date: string;
 }
 export interface RequestManageFormTypeManageRequestFormManageItemDetail {
     $attributes: RequestManageFormTypeManageRequestFormManageItemDetailAttribute

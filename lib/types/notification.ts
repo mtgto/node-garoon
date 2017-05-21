@@ -37,8 +37,8 @@ export interface NotificationItemVersionResultType {
 
 // NotificationGetNotificationVersionsRequestType
 export interface NotificationGetNotificationVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
     module_id?: base.IDType;
 }
 export interface NotificationGetNotificationVersionsRequestType {
@@ -66,8 +66,8 @@ export interface NotificationGetNotificationsByIdResponseType {
 
 // NotificationGetNotificationHistoryVersionsRequestType
 export interface NotificationGetNotificationHistoryVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
     module_id?: base.IDType;
 }
 export interface NotificationGetNotificationHistoryVersionsRequestType {
@@ -145,8 +145,8 @@ export interface NotificationTypeAttribute {
     item: base.NonBlankStringType;
     status: StatusType;
     is_history: boolean;
-    read_datetime?: Date;
-    receive_datetime?: Date;
+    read_datetime?: string;
+    receive_datetime?: string;
     subject?: string;
     subject_url?: string;
     subject_icon?: string;

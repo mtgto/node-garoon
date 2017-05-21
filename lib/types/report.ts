@@ -44,8 +44,8 @@ export interface ReportAddFollowsResponseType {
 
 // ReportGetReportVersionsRequestType
 export interface ReportGetReportVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
     target?: SearchTargetType;
 }
 export interface ReportGetReportVersionsRequestType {

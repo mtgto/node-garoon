@@ -15,10 +15,10 @@ export type FacilityReserveCustomizeItemTypeType = "string" | "multiple_string" 
 // [ComplexType]
 // ScheduleGetEventVersionsRequestType
 export interface ScheduleGetEventVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
-    start_for_daily?: Date;
-    end_for_daily?: Date;
+    start: string;
+    end?: string;
+    start_for_daily?: string;
+    end_for_daily?: string;
 }
 export interface ScheduleGetEventVersionsRequestType {
     $attributes: ScheduleGetEventVersionsRequestTypeAttribute
@@ -33,10 +33,10 @@ export interface ScheduleGetEventVersionsResponseType {
 
 // ScheduleGetEventsRequestType
 export interface ScheduleGetEventsRequestTypeAttribute {
-    start: Date;
-    end: Date;
-    start_for_daily?: Date;
-    end_for_daily?: Date;
+    start: string;
+    end: string;
+    start_for_daily?: string;
+    end_for_daily?: string;
 }
 export interface ScheduleGetEventsRequestType {
     $attributes: ScheduleGetEventsRequestTypeAttribute
@@ -62,10 +62,10 @@ export interface ScheduleGetEventsByIdResponseType {
 
 // ScheduleGetEventsByTargetRequestType
 export interface ScheduleGetEventsByTargetRequestTypeAttribute {
-    start: Date;
-    end: Date;
-    start_for_daily?: Date;
-    end_for_daily?: Date;
+    start: string;
+    end: string;
+    start_for_daily?: string;
+    end_for_daily?: string;
 }
 export interface ScheduleGetEventsByTargetRequestTypeUserAttribute {
     id: base.IDType;
@@ -127,7 +127,7 @@ export interface ScheduleModifyEventsResponseType {
 // ScheduleModifyRepeatEventsOperationType
 export interface ScheduleModifyRepeatEventsOperationTypeAttribute {
     type: ScheduleRepeatModifyType;
-    date?: Date;
+    date?: string;
 }
 export interface ScheduleModifyRepeatEventsOperationType {
     $attributes: ScheduleModifyRepeatEventsOperationTypeAttribute
@@ -165,7 +165,7 @@ export interface ScheduleRemoveEventsRequestType {
 export interface ScheduleRemoveEventsFromRepeatEventOperationTypeAttribute {
     event_id: base.IDType;
     type: ScheduleRepeatModifyType;
-    date?: Date;
+    date?: string;
 }
 export interface ScheduleRemoveEventsFromRepeatEventOperationType {
     $attributes: ScheduleRemoveEventsFromRepeatEventOperationTypeAttribute
@@ -187,10 +187,10 @@ export interface ScheduleRemoveEventsFromRepeatEventResponseType {
 // ScheduleSearchEventsRequestType
 export interface ScheduleSearchEventsRequestTypeAttribute {
     text: string;
-    start?: Date;
-    end?: Date;
-    start_for_daily?: Date;
-    end_for_daily?: Date;
+    start?: string;
+    end?: string;
+    start_for_daily?: string;
+    end_for_daily?: string;
     title_search: boolean;
     customer_search: boolean;
     memo_search: boolean;
@@ -209,8 +209,8 @@ export interface ScheduleSearchEventsResponseType {
 
 // ScheduleSearchFreeTimesCandidateType
 export interface ScheduleSearchFreeTimesCandidateTypeAttribute {
-    start: Date;
-    end: Date;
+    start: string;
+    end: string;
 }
 export interface ScheduleSearchFreeTimesCandidateType {
     $attributes: ScheduleSearchFreeTimesCandidateTypeAttribute
@@ -218,8 +218,8 @@ export interface ScheduleSearchFreeTimesCandidateType {
 
 // ScheduleFreeTimeType
 export interface ScheduleFreeTimeTypeAttribute {
-    start: Date;
-    end: Date;
+    start: string;
+    end: string;
     facility_id?: base.IDType;
 }
 export interface ScheduleFreeTimeType {
@@ -228,7 +228,7 @@ export interface ScheduleFreeTimeType {
 
 // ScheduleSearchFreeTimesRequestType
 export interface ScheduleSearchFreeTimesRequestTypeAttribute {
-    search_time: Date;
+    search_time: string;
     search_condition: ScheduleSearchConditionType;
 }
 export interface ScheduleSearchFreeTimesRequestType {
@@ -268,7 +268,7 @@ export interface ScheduleAddFollowsResponseType {
 // ScheduleFollowToRepeatEventContentType
 export interface ScheduleFollowToRepeatEventContentTypeAttribute {
     event_id: base.IDType;
-    date: Date;
+    date: string;
     content: string;
 }
 export interface ScheduleFollowToRepeatEventContentType {
@@ -305,8 +305,8 @@ export interface ScheduleRemoveFollowsRequestType {
 // ScheduleCandidateItemType
 export interface ScheduleCandidateItemTypeAttribute {
     event_id: base.IDType;
-    start: Date;
-    end: Date;
+    start: string;
+    end: string;
     facility_id?: base.IDType;
 }
 export interface ScheduleCandidateItemType {
@@ -356,7 +356,7 @@ export interface ScheduleParticipateEventsResponseType {
 export interface ScheduleParticipateEventsToRepeatEventOperationTypeAttribute {
     event_id: base.IDType;
     type: ScheduleRepeatModifyType;
-    date?: Date;
+    date?: string;
 }
 export interface ScheduleParticipateEventsToRepeatEventOperationType {
     $attributes: ScheduleParticipateEventsToRepeatEventOperationTypeAttribute
@@ -758,10 +758,10 @@ export interface EventTypeRepeatInfo {
 }
 export interface EventTypeRepeatInfoConditionAttribute {
     type: RepeatEventType;
-    start_date: Date;
-    end_date?: Date;
-    start_time?: Date;
-    end_time?: Date;
+    start_date: string;
+    end_date?: string;
+    start_time?: string;
+    end_time?: string;
     day?: number;
     week?: number;
 }
@@ -773,8 +773,8 @@ export interface EventTypeRepeatInfoExclusiveDatetimes {
     exclusive_datetime?: EventTypeRepeatInfoExclusiveDatetimesExclusiveDatetime | EventTypeRepeatInfoExclusiveDatetimesExclusiveDatetime[];
 }
 export interface EventTypeRepeatInfoExclusiveDatetimesExclusiveDatetimeAttribute {
-    start: Date;
-    end: Date;
+    start: string;
+    end: string;
 }
 export interface EventTypeRepeatInfoExclusiveDatetimesExclusiveDatetime {
     $attributes: EventTypeRepeatInfoExclusiveDatetimesExclusiveDatetimeAttribute
@@ -850,8 +850,8 @@ export interface MemberType {
 
 // EventDateType
 export interface EventDateTypeAttribute {
-    start: Date;
-    end: Date;
+    start: string;
+    end: string;
 }
 export interface EventDateType {
     $attributes: EventDateTypeAttribute
@@ -859,8 +859,8 @@ export interface EventDateType {
 
 // EventDateTimeType
 export interface EventDateTimeTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
     facility_id?: base.IDType;
 }
 export interface EventDateTimeType {

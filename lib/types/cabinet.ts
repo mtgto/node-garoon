@@ -127,11 +127,11 @@ export interface FolderType {
     creator_id: string;
     creator_login_name: string;
     creator_display_name: string;
-    create_time: Date;
+    create_time: string;
     modifier_id: string;
     modifier_login_name: string;
     modifier_display_name: string;
-    modify_time: Date;
+    modify_time: string;
     folders?: FoldersType;
 }
 
@@ -167,7 +167,7 @@ export interface SimpleFileType {
     creator_id: base.IDType;
     creator_login_name: string;
     creator_display_name: string;
-    create_time: Date;
+    create_time: string;
     modifier_id?: base.IDType;
     modifier_login_name?: string;
     modifier_display_name?: string;
@@ -190,11 +190,11 @@ export interface SimpleFileInformationType {
     creator_id: base.IDType;
     creator_login_name: string;
     creator_display_name: string;
-    create_time: Date;
+    create_time: string;
     modifier_id?: base.IDType;
     modifier_login_name?: string;
     modifier_display_name?: string;
-    modify_time?: Date;
+    modify_time?: string;
 }
 
 // FileType
@@ -228,6 +228,6 @@ export interface HistoryType {
     modifier_id: base.IDType;
     modifier_login_name: string;
     modifier_display_name: string;
-    modify_time: Date;
+    modify_time: string;
 }
 

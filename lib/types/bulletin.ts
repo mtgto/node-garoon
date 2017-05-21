@@ -31,8 +31,8 @@ export interface BulletinGetCategoriesResponseType {
 
 // BulletinGetTopicVersionsRequestType
 export interface BulletinGetTopicVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
 }
 export interface BulletinGetTopicVersionsRequestType {
     $attributes: BulletinGetTopicVersionsRequestTypeAttribute
@@ -48,8 +48,8 @@ export interface BulletinGetTopicVersionsResponseType {
 
 // BulletinGetDraftTopicVersionsRequestType
 export interface BulletinGetDraftTopicVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
 }
 export interface BulletinGetDraftTopicVersionsRequestType {
     $attributes: BulletinGetDraftTopicVersionsRequestTypeAttribute
@@ -197,8 +197,8 @@ export interface BulletinRemoveTopicsRequestType {
 export interface BulletinSearchTopicsRequestTypeAttribute {
     text: string;
     sensitive?: boolean;
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
     category_id: base.IDType;
     search_sub_categories: boolean;
     title_search: boolean;
@@ -288,11 +288,11 @@ export interface CategoryType {
     creator_id: string;
     creator_login_name: string;
     creator_display_name: string;
-    create_time: Date;
+    create_time: string;
     modifier_id: string;
     modifier_login_name: string;
     modifier_display_name: string;
-    modify_time: Date;
+    modify_time: string;
     categories?: CategoriesType;
 }
 
@@ -328,8 +328,8 @@ export interface TopicTypeAttribute {
     version: base.VersionType;
     subject: string;
     is_draft?: boolean;
-    start_datetime?: Date;
-    end_datetime?: Date;
+    start_datetime?: string;
+    end_datetime?: string;
     start_is_datetime?: boolean;
     end_is_datetime?: boolean;
     can_follow: boolean;

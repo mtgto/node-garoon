@@ -29,7 +29,7 @@ export interface CBWebSrvGetWeatherLocationsResponseType {
 
 // CBWebSrvWeatherDataType
 export interface CBWebSrvWeatherDataTypeAttribute {
-    date: Date;
+    date: string;
     location_code: base.IDType;
     weather: CBWebSrvWeatherType;
     min_temperature: number;
@@ -42,8 +42,8 @@ export interface CBWebSrvWeatherDataType {
 
 // CBWebSrvGetWeathersByLocationRequestType
 export interface CBWebSrvGetWeathersByLocationRequestTypeAttribute {
-    start: Date;
-    end: Date;
+    start: string;
+    end: string;
     location_code: base.IDType;
 }
 export interface CBWebSrvGetWeathersByLocationRequestType {
@@ -58,8 +58,8 @@ export interface CBWebSrvGetWeathersByLocationResponseType {
 
 // CBWebSrvGetWeathersRequestType
 export interface CBWebSrvGetWeathersRequestTypeAttribute {
-    start: Date;
-    end: Date;
+    start: string;
+    end: string;
 }
 export interface CBWebSrvGetWeathersRequestType {
     $attributes: CBWebSrvGetWeathersRequestTypeAttribute

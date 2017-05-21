@@ -43,7 +43,7 @@ export interface StarGetStarVersionsResponseType {
 
 // StarRemoveStarsRequestType
 export interface StarRemoveStarsRequestTypeStarItemAttribute extends StarIDTypeAttribute {
-    date?: Date;
+    date?: string;
     is_draft?: boolean;
 }
 export interface StarRemoveStarsRequestTypeStarItem extends StarIDType {
@@ -57,7 +57,7 @@ export interface StarRemoveStarsRequestType {
 
 // StarAddStarsRequestType
 export interface StarAddStarsRequestTypeStarItemAttribute extends StarIDTypeAttribute {
-    date?: Date;
+    date?: string;
     is_draft?: boolean;
 }
 export interface StarAddStarsRequestTypeStarItem extends StarIDType {

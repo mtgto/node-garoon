@@ -52,8 +52,8 @@ export interface MessageGetFoldersByIdResponseType {
 
 // MessageGetThreadVersionsRequestType
 export interface MessageGetThreadVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
 }
 export interface MessageGetThreadVersionsRequestType {
     $attributes: MessageGetThreadVersionsRequestTypeAttribute
@@ -162,8 +162,8 @@ export interface MessageConfirmThreadsResponseType {
 // MessageSearchThreadsRequestType
 export interface MessageSearchThreadsRequestTypeAttribute {
     text: string;
-    start?: Date;
-    end?: Date;
+    start?: string;
+    end?: string;
     folder_id?: base.IDType;
     search_sub_folders?: boolean;
     title_search: boolean;
@@ -301,7 +301,7 @@ export interface ThreadTypeAttribute {
     version: base.VersionType;
     subject: string;
     confirm: boolean;
-    snapshot?: Date;
+    snapshot?: string;
     is_draft?: boolean;
 }
 export interface ThreadTypeAddresseeAttribute {

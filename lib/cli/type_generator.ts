@@ -67,6 +67,9 @@ const normalizeType = (type: string): string => {
     switch (type) {
         case "string":
         case "anyURI":
+        case "date":
+        case "dateTime":
+        case "time":
             return "string";
         case "positiveInteger":
         case "unsignedLong":
@@ -77,10 +80,6 @@ const normalizeType = (type: string): string => {
         case "duration":
         case "unsignedShort":
             return "number";
-        case "date":
-        case "dateTime":
-        case "time":
-            return "Date";
         case "base64Binary":
             return "Buffer";
         default:

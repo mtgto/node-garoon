@@ -164,7 +164,7 @@ export interface BaseGetFrequentOrganizationsResponseType {
 
 // BaseCalendarEventType
 export interface BaseCalendarEventTypeAttribute {
-    date: Date;
+    date: string;
     content: string;
     type: BaseCalendarEventTypeType;
 }
@@ -309,8 +309,8 @@ export interface UserTypeAttribute {
     url?: string;
     email?: string;
     phone?: string;
-    birth_date?: Date;
-    join_date?: Date;
+    birth_date?: string;
+    join_date?: string;
     employee_number?: string;
     extension_number?: string;
     employment_pattern?: string;
@@ -458,7 +458,7 @@ export interface TextType {
 export interface ChangeLogTypeAttribute {
     user_id?: IDType;
     name: NonBlankStringType;
-    date: Date;
+    date: string;
 }
 export interface ChangeLogType {
     $attributes: ChangeLogTypeAttribute

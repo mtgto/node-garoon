@@ -39,8 +39,8 @@ export interface MailGetAccountsByIdResponseType {
 
 // MailGetMailVersionsRequestType
 export interface MailGetMailVersionsRequestTypeAttribute {
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
 }
 export interface MailGetMailVersionsRequestType {
     $attributes: MailGetMailVersionsRequestTypeAttribute
@@ -172,8 +172,8 @@ export interface MailRemoveMailsRequestType {
 // MailSearchMailsRequestType
 export interface MailSearchMailsRequestTypeAttribute {
     text: string;
-    start?: Date;
-    end?: Date;
+    start?: string;
+    end?: string;
     search_all_accounts: boolean;
     account_id?: base.IDType;
     folder_id?: base.IDType;
@@ -383,7 +383,7 @@ export interface MailSystemProfileTypeAutoReceiveAttribute {
 }
 export interface MailSystemProfileTypeAutoReceive {
     $attributes: MailSystemProfileTypeAutoReceiveAttribute
-    receive_time?: Date | Date[];
+    receive_time?: string | string[];
 }
 export interface MailSystemProfileType {
     $attributes: MailSystemProfileTypeAttribute
@@ -713,8 +713,8 @@ export interface MailTypeAttribute {
     subject: string;
     body: string;
     html_body?: string;
-    date?: Date;
-    read?: Date;
+    date?: string;
+    read?: string;
     size?: number;
     is_sent?: boolean;
     is_draft?: boolean;
@@ -796,7 +796,7 @@ export interface SystemProfileTypeAutoReceiveAttribute {
 }
 export interface SystemProfileTypeAutoReceive {
     $attributes: SystemProfileTypeAutoReceiveAttribute
-    receive_time?: Date | Date[];
+    receive_time?: string | string[];
 }
 export interface SystemProfileType {
     $attributes: SystemProfileTypeAttribute
