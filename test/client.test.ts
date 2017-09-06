@@ -16,7 +16,9 @@ test("ログインセッションでログインユーザーID取得", t => {
         if (response.cookie) {
             const cookies = cookie.parse(response.cookie);
             for (const headerName of Object.keys(cookies)) {
-                client.setSession(headerName, cookies[headerName]);
+                if (headerName === "CBSESSID" || headerName === "JSESSIONID") {
+                    client.setSession(headerName, cookies[headerName]);
+                }
             }
         }
         return client.UtilGetLoginUserId({});

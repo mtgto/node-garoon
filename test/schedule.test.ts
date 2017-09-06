@@ -9,7 +9,7 @@ test("スケジュールを検索する", t => {
     client.authenticate(testAuth.username, testAuth.password);
     return client.ScheduleSearchEvents({
         attributes: {
-            text: "MTG",
+            text: "会議",
             title_search: true,
             customer_search: false,
             memo_search: false,

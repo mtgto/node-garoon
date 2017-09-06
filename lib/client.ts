@@ -15,6 +15,7 @@ export class Client extends GaroonClient {
         this.client = new Promise<soap.Client & RPC>(
             (resolve, reject) => {
                 const clientOption: soap.Option = {
+                    attributesKey: "attributes",
                     httpClient: { request: (rurl, data, callback, exheaders, exoptions) => {
                         return this.httpClient.request(rurl, data, (err, res, body) => {
                             if (err) {
