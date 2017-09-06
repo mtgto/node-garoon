@@ -8,7 +8,7 @@ const client = new Client({url: testAuth.url} as Option);
 test("スケジュールを検索する", t => {
     client.authenticate(testAuth.username, testAuth.password);
     return client.ScheduleSearchEvents({
-        $attributes: {
+        attributes: {
             text: "MTG",
             title_search: true,
             customer_search: false,
