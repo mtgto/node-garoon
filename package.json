@@ -1,6 +1,6 @@
 {
   "name": "garoon",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "node library to access Garoon SOAP API.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
