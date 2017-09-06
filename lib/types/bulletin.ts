@@ -35,7 +35,7 @@ export interface BulletinGetTopicVersionsRequestTypeAttribute {
     end?: string;
 }
 export interface BulletinGetTopicVersionsRequestType {
-    $attributes: BulletinGetTopicVersionsRequestTypeAttribute
+    attributes: BulletinGetTopicVersionsRequestTypeAttribute
     topic_item?: base.ItemVersionType | base.ItemVersionType[];
     category_id?: base.IDType | base.IDType[];
 }
@@ -52,7 +52,7 @@ export interface BulletinGetDraftTopicVersionsRequestTypeAttribute {
     end?: string;
 }
 export interface BulletinGetDraftTopicVersionsRequestType {
-    $attributes: BulletinGetDraftTopicVersionsRequestTypeAttribute
+    attributes: BulletinGetDraftTopicVersionsRequestTypeAttribute
     topic_item?: base.ItemVersionType | base.ItemVersionType[];
 }
 
@@ -80,7 +80,7 @@ export interface BulletinGetTopicByIdsRequestTypeTopicsAttribute {
     is_draft: boolean;
 }
 export interface BulletinGetTopicByIdsRequestTypeTopics {
-    $attributes: BulletinGetTopicByIdsRequestTypeTopicsAttribute
+    attributes: BulletinGetTopicByIdsRequestTypeTopicsAttribute
 }
 export interface BulletinGetTopicByIdsRequestType {
     
@@ -98,7 +98,7 @@ export interface BulletinFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface BulletinFileDownloadRequestType {
-    $attributes: BulletinFileDownloadRequestTypeAttribute
+    attributes: BulletinFileDownloadRequestTypeAttribute
 }
 
 // BulletinFileDownloadResponseType
@@ -115,11 +115,11 @@ export interface BulletinCreateTopicTypeFileAttribute {
     id: base.IDType;
 }
 export interface BulletinCreateTopicTypeFile {
-    $attributes: BulletinCreateTopicTypeFileAttribute
+    attributes: BulletinCreateTopicTypeFileAttribute
     content: Buffer;
 }
 export interface BulletinCreateTopicType {
-    $attributes: BulletinCreateTopicTypeAttribute
+    attributes: BulletinCreateTopicTypeAttribute
     topic: TopicType;
     file?: BulletinCreateTopicTypeFile | BulletinCreateTopicTypeFile[];
     remove_file_id?: base.IDType | base.IDType[];
@@ -130,7 +130,7 @@ export interface BulletinModifyTopicTypeFileAttribute {
     id: base.IDType;
 }
 export interface BulletinModifyTopicTypeFile {
-    $attributes: BulletinModifyTopicTypeFileAttribute
+    attributes: BulletinModifyTopicTypeFileAttribute
     content: Buffer;
 }
 export interface BulletinModifyTopicType {
@@ -185,7 +185,7 @@ export interface BulletinRemoveTopicsRequestTypeTopicsAttribute {
     is_draft: boolean;
 }
 export interface BulletinRemoveTopicsRequestTypeTopics {
-    $attributes: BulletinRemoveTopicsRequestTypeTopicsAttribute
+    attributes: BulletinRemoveTopicsRequestTypeTopicsAttribute
 }
 export interface BulletinRemoveTopicsRequestType {
     
@@ -207,7 +207,7 @@ export interface BulletinSearchTopicsRequestTypeAttribute {
     follow_search: boolean;
 }
 export interface BulletinSearchTopicsRequestType {
-    $attributes: BulletinSearchTopicsRequestTypeAttribute
+    attributes: BulletinSearchTopicsRequestTypeAttribute
 }
 
 // BulletinSearchTopicsResponseType
@@ -223,7 +223,7 @@ export interface BulletinGetFollowsRequestTypeAttribute {
     limit: number;
 }
 export interface BulletinGetFollowsRequestType {
-    $attributes: BulletinGetFollowsRequestTypeAttribute
+    attributes: BulletinGetFollowsRequestTypeAttribute
 }
 
 // BulletinGetFollowsResponseType
@@ -240,11 +240,11 @@ export interface BulletinAddFollowTypeFileAttribute {
     id: base.IDType;
 }
 export interface BulletinAddFollowTypeFile {
-    $attributes: BulletinAddFollowTypeFileAttribute
+    attributes: BulletinAddFollowTypeFileAttribute
     content: Buffer;
 }
 export interface BulletinAddFollowType {
-    $attributes: BulletinAddFollowTypeAttribute
+    attributes: BulletinAddFollowTypeAttribute
     follow: FollowType;
     file?: BulletinAddFollowTypeFile | BulletinAddFollowTypeFile[];
 }
@@ -282,7 +282,7 @@ export interface CategoryTypeAttribute {
     list_index: number;
 }
 export interface CategoryType {
-    $attributes: CategoryTypeAttribute
+    attributes: CategoryTypeAttribute
     name: string;
     description: string;
     creator_id: string;
@@ -302,7 +302,7 @@ export interface CategoriesTypeAttribute {
     parent_code: string;
 }
 export interface CategoriesType {
-    $attributes: CategoriesTypeAttribute
+    attributes: CategoriesTypeAttribute
     category?: CategoryType | CategoryType[];
 }
 
@@ -314,10 +314,10 @@ export interface TopicsListTopicAttribute {
     id: base.IDType;
 }
 export interface TopicsListTopic {
-    $attributes: TopicsListTopicAttribute
+    attributes: TopicsListTopicAttribute
 }
 export interface TopicsList {
-    $attributes: TopicsListAttribute
+    attributes: TopicsListAttribute
     topic?: TopicsListTopic | TopicsListTopic[];
 }
 
@@ -343,7 +343,7 @@ export interface TopicTypeContentAttribute {
     html_body?: string;
 }
 export interface TopicTypeContent {
-    $attributes: TopicTypeContentAttribute
+    attributes: TopicTypeContentAttribute
     file?: TopicTypeContentFile | TopicTypeContentFile[];
 }
 export interface TopicTypeContentFileAttribute {
@@ -353,17 +353,17 @@ export interface TopicTypeContentFileAttribute {
     mime_type?: string;
 }
 export interface TopicTypeContentFile {
-    $attributes: TopicTypeContentFileAttribute
+    attributes: TopicTypeContentFileAttribute
 }
 export interface TopicTypeFollowAttribute {
     id: base.IDType;
     number: base.NonBlankStringType;
 }
 export interface TopicTypeFollow {
-    $attributes: TopicTypeFollowAttribute
+    attributes: TopicTypeFollowAttribute
 }
 export interface TopicType {
-    $attributes: TopicTypeAttribute
+    attributes: TopicTypeAttribute
     content: TopicTypeContent;
     follow?: TopicTypeFollow | TopicTypeFollow[];
     creator?: base.ChangeLogType;
@@ -379,10 +379,10 @@ export interface FollowsListFollowAttribute {
     number: base.NonBlankStringType;
 }
 export interface FollowsListFollow {
-    $attributes: FollowsListFollowAttribute
+    attributes: FollowsListFollowAttribute
 }
 export interface FollowsList {
-    $attributes: FollowsListAttribute
+    attributes: FollowsListAttribute
     follow?: FollowsListFollow | FollowsListFollow[];
 }
 
@@ -400,10 +400,10 @@ export interface FollowTypeFileAttribute {
     mime_type?: string;
 }
 export interface FollowTypeFile {
-    $attributes: FollowTypeFileAttribute
+    attributes: FollowTypeFileAttribute
 }
 export interface FollowType {
-    $attributes: FollowTypeAttribute
+    attributes: FollowTypeAttribute
     file?: FollowTypeFile | FollowTypeFile[];
     creator?: base.ChangeLogType;
 }

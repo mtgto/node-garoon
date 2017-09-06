@@ -418,7 +418,7 @@ export interface UserInfoTypeAttribute {
     base?: base.IDType;
 }
 export interface UserInfoType {
-    $attributes: UserInfoTypeAttribute
+    attributes: UserInfoTypeAttribute
     image?: base.FileType;
     organization?: number | number[];
 }

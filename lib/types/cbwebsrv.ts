@@ -13,7 +13,7 @@ export interface CBWebSrvWeatherLocationTypeAttribute {
     name: base.NonBlankStringType;
 }
 export interface CBWebSrvWeatherLocationType {
-    $attributes: CBWebSrvWeatherLocationTypeAttribute
+    attributes: CBWebSrvWeatherLocationTypeAttribute
 }
 
 // CBWebSrvGetWeatherLocationsRequestType
@@ -37,7 +37,7 @@ export interface CBWebSrvWeatherDataTypeAttribute {
     rainfall_probability: number;
 }
 export interface CBWebSrvWeatherDataType {
-    $attributes: CBWebSrvWeatherDataTypeAttribute
+    attributes: CBWebSrvWeatherDataTypeAttribute
 }
 
 // CBWebSrvGetWeathersByLocationRequestType
@@ -47,7 +47,7 @@ export interface CBWebSrvGetWeathersByLocationRequestTypeAttribute {
     location_code: base.IDType;
 }
 export interface CBWebSrvGetWeathersByLocationRequestType {
-    $attributes: CBWebSrvGetWeathersByLocationRequestTypeAttribute
+    attributes: CBWebSrvGetWeathersByLocationRequestTypeAttribute
 }
 
 // CBWebSrvGetWeathersByLocationResponseType
@@ -62,7 +62,7 @@ export interface CBWebSrvGetWeathersRequestTypeAttribute {
     end: string;
 }
 export interface CBWebSrvGetWeathersRequestType {
-    $attributes: CBWebSrvGetWeathersRequestTypeAttribute
+    attributes: CBWebSrvGetWeathersRequestTypeAttribute
 }
 
 // CBWebSrvGetWeathersResponseType

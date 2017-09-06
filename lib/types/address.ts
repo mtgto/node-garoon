@@ -36,7 +36,7 @@ export interface AddressGetSharedCardVersionsRequestTypeAttribute {
     book_id: base.IDType;
 }
 export interface AddressGetSharedCardVersionsRequestType {
-    $attributes: AddressGetSharedCardVersionsRequestTypeAttribute
+    attributes: AddressGetSharedCardVersionsRequestTypeAttribute
     card_item?: base.ItemVersionType | base.ItemVersionType[];
 }
 
@@ -51,7 +51,7 @@ export interface AddressGetSharedCardsByIdRequestTypeAttribute {
     book_id: base.IDType;
 }
 export interface AddressGetSharedCardsByIdRequestType {
-    $attributes: AddressGetSharedCardsByIdRequestTypeAttribute
+    attributes: AddressGetSharedCardsByIdRequestTypeAttribute
     card_id: base.IDType | base.IDType[];
 }
 
@@ -114,7 +114,7 @@ export interface AddressCardContainsFileTypeFileAttribute {
     id: base.IDType;
 }
 export interface AddressCardContainsFileTypeFile {
-    $attributes: AddressCardContainsFileTypeFileAttribute
+    attributes: AddressCardContainsFileTypeFileAttribute
     content: Buffer;
 }
 export interface AddressCardContainsFileType {
@@ -166,7 +166,7 @@ export interface AddressRemoveSharedCardsRequestTypeAttribute {
     book_id: base.IDType;
 }
 export interface AddressRemoveSharedCardsRequestType {
-    $attributes: AddressRemoveSharedCardsRequestTypeAttribute
+    attributes: AddressRemoveSharedCardsRequestTypeAttribute
     request_token?: string;
     card_id: base.IDType | base.IDType[];
 }
@@ -183,7 +183,7 @@ export interface AddressSearchCardsRequestTypeAttribute {
     text: string;
 }
 export interface AddressSearchCardsRequestType {
-    $attributes: AddressSearchCardsRequestTypeAttribute
+    attributes: AddressSearchCardsRequestTypeAttribute
 }
 
 // AddressSearchCardsResponseType
@@ -198,7 +198,7 @@ export interface AddressCopyItemTypeAttribute {
     card_id: base.IDType;
 }
 export interface AddressCopyItemType {
-    $attributes: AddressCopyItemTypeAttribute
+    attributes: AddressCopyItemTypeAttribute
 }
 
 // AddressCopyPersonalCardsToOtherBookRequestType
@@ -301,7 +301,7 @@ export interface AddressGetProfilesResponseTypeAttribute {
     use_shared_book: boolean;
 }
 export interface AddressGetProfilesResponseType {
-    $attributes: AddressGetProfilesResponseTypeAttribute
+    attributes: AddressGetProfilesResponseTypeAttribute
 }
 
 // AddressSetProfilesRequestType
@@ -309,7 +309,7 @@ export interface AddressSetProfilesRequestTypeAttribute {
     attendee_menu: string;
 }
 export interface AddressSetProfilesRequestType {
-    $attributes: AddressSetProfilesRequestTypeAttribute
+    attributes: AddressSetProfilesRequestTypeAttribute
     request_token?: string;
 }
 
@@ -318,7 +318,7 @@ export interface AddressSetProfilesResponseTypeAttribute {
     attendee_menu: string;
 }
 export interface AddressSetProfilesResponseType {
-    $attributes: AddressSetProfilesResponseTypeAttribute
+    attributes: AddressSetProfilesResponseTypeAttribute
 }
 
 // AddressGetReadAllowBooksRequestType
@@ -348,7 +348,7 @@ export interface AddressFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface AddressFileDownloadRequestType {
-    $attributes: AddressFileDownloadRequestTypeAttribute
+    attributes: AddressFileDownloadRequestTypeAttribute
 }
 
 // AddressFileDownloadResponseType
@@ -374,7 +374,7 @@ export interface BookTypeCardsCardAttribute {
     id: base.IDType;
 }
 export interface BookTypeCardsCard {
-    $attributes: BookTypeCardsCardAttribute
+    attributes: BookTypeCardsCardAttribute
 }
 export interface BookTypeAcl {
     
@@ -385,10 +385,10 @@ export interface BookTypePrivilegeAttribute {
     target_type: string;
 }
 export interface BookTypePrivilege {
-    $attributes: BookTypePrivilegeAttribute
+    attributes: BookTypePrivilegeAttribute
 }
 export interface BookType {
-    $attributes: BookTypeAttribute
+    attributes: BookTypeAttribute
     form?: FormConfigType;
     cards?: BookTypeCards;
     acl?: BookTypeAcl | BookTypeAcl[];
@@ -411,7 +411,7 @@ export interface FormConfigTypeCustom {
     menu?: MenuFieldConfigType;
 }
 export interface FormConfigType {
-    $attributes: FormConfigTypeAttribute
+    attributes: FormConfigTypeAttribute
     subject?: FieldConfigType;
     personal_name?: NameFieldConfigType;
     personal_reading?: NameFieldConfigType;
@@ -445,7 +445,7 @@ export interface FieldConfigTypeAttribute {
     sso_id?: string;
 }
 export interface FieldConfigType {
-    $attributes: FieldConfigTypeAttribute
+    attributes: FieldConfigTypeAttribute
 }
 
 // NameFieldConfigType
@@ -453,7 +453,7 @@ export interface NameFieldConfigTypeAttribute extends FieldConfigTypeAttribute {
     number_of_parts: number;
 }
 export interface NameFieldConfigType extends FieldConfigType {
-    $attributes: NameFieldConfigTypeAttribute
+    attributes: NameFieldConfigTypeAttribute
 }
 
 // StringFieldConfigType
@@ -471,7 +471,7 @@ export interface UrlFieldConfigTypeAttribute extends FieldConfigTypeAttribute {
     image: boolean;
 }
 export interface UrlFieldConfigType extends FieldConfigType {
-    $attributes: UrlFieldConfigTypeAttribute
+    attributes: UrlFieldConfigTypeAttribute
 }
 
 // FileFieldConfigType
@@ -515,46 +515,46 @@ export interface CardTypeCustomStringAttribute {
     field_code: base.NonBlankStringType;
 }
 export interface CardTypeCustomString {
-    $attributes: CardTypeCustomStringAttribute
+    attributes: CardTypeCustomStringAttribute
 }
 export interface CardTypeCustomTextAttribute {
     field_code: base.NonBlankStringType;
 }
 export interface CardTypeCustomText {
-    $attributes: CardTypeCustomTextAttribute
+    attributes: CardTypeCustomTextAttribute
 }
 export interface CardTypeCustomUrlAttribute {
     field_code: base.NonBlankStringType;
 }
 export interface CardTypeCustomUrl {
-    $attributes: CardTypeCustomUrlAttribute
+    attributes: CardTypeCustomUrlAttribute
 }
 export interface CardTypeCustomFileAttribute extends FileFieldValueTypeAttribute {
     field_code: base.NonBlankStringType;
 }
 export interface CardTypeCustomFile extends FileFieldValueType {
-    $attributes: CardTypeCustomFileAttribute
+    attributes: CardTypeCustomFileAttribute
 }
 export interface CardTypeCustomEmailAttribute {
     field_code: base.NonBlankStringType;
 }
 export interface CardTypeCustomEmail {
-    $attributes: CardTypeCustomEmailAttribute
+    attributes: CardTypeCustomEmailAttribute
 }
 export interface CardTypeCustomIpphoneAttribute {
     field_code: base.NonBlankStringType;
 }
 export interface CardTypeCustomIpphone {
-    $attributes: CardTypeCustomIpphoneAttribute
+    attributes: CardTypeCustomIpphoneAttribute
 }
 export interface CardTypeCustomMenuAttribute {
     field_code: base.NonBlankStringType;
 }
 export interface CardTypeCustomMenu {
-    $attributes: CardTypeCustomMenuAttribute
+    attributes: CardTypeCustomMenuAttribute
 }
 export interface CardType {
-    $attributes: CardTypeAttribute
+    attributes: CardTypeAttribute
     creator: base.ChangeLogType;
     modifier?: base.ChangeLogType;
     subject?: string;
@@ -615,7 +615,7 @@ export interface FileFieldValueTypeAttribute {
     size?: number;
 }
 export interface FileFieldValueType {
-    $attributes: FileFieldValueTypeAttribute
+    attributes: FileFieldValueTypeAttribute
 }
 
 // EMailFieldValueType
@@ -639,7 +639,7 @@ export interface BookUsePermissionTypeAclAttribute {
     target_type: TargetType;
 }
 export interface BookUsePermissionTypeAcl {
-    $attributes: BookUsePermissionTypeAclAttribute
+    attributes: BookUsePermissionTypeAclAttribute
 }
 export interface BookUsePermissionType {
     
@@ -657,17 +657,17 @@ export interface MyAddressGroupTypeUserAttribute {
     key: base.IDType;
 }
 export interface MyAddressGroupTypeUser {
-    $attributes: MyAddressGroupTypeUserAttribute
+    attributes: MyAddressGroupTypeUserAttribute
 }
 export interface MyAddressGroupTypeCardAttribute {
     key: base.IDType;
     type: "private" | "shared";
 }
 export interface MyAddressGroupTypeCard {
-    $attributes: MyAddressGroupTypeCardAttribute
+    attributes: MyAddressGroupTypeCardAttribute
 }
 export interface MyAddressGroupType {
-    $attributes: MyAddressGroupTypeAttribute
+    attributes: MyAddressGroupTypeAttribute
     user?: MyAddressGroupTypeUser | MyAddressGroupTypeUser[];
     card?: MyAddressGroupTypeCard | MyAddressGroupTypeCard[];
 }

@@ -22,7 +22,7 @@ export interface CabinetGetFileInfoRequestTypeAttribute {
     hid: base.IDType;
 }
 export interface CabinetGetFileInfoRequestType {
-    $attributes: CabinetGetFileInfoRequestTypeAttribute
+    attributes: CabinetGetFileInfoRequestTypeAttribute
 }
 
 // CabinetGetFileInfoResponseType
@@ -36,7 +36,7 @@ export interface CabinetFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface CabinetFileDownloadRequestType {
-    $attributes: CabinetFileDownloadRequestTypeAttribute
+    attributes: CabinetFileDownloadRequestTypeAttribute
 }
 
 // CabinetFileDownloadResponseType
@@ -54,7 +54,7 @@ export interface CabinetAddFileRequestTypeAttribute {
     description?: string;
 }
 export interface CabinetAddFileRequestType {
-    $attributes: CabinetAddFileRequestTypeAttribute
+    attributes: CabinetAddFileRequestTypeAttribute
     request_token?: string;
     content: Buffer;
 }
@@ -72,7 +72,7 @@ export interface CabinetUpdateFileRequestTypeAttribute {
     comment?: string;
 }
 export interface CabinetUpdateFileRequestType {
-    $attributes: CabinetUpdateFileRequestTypeAttribute
+    attributes: CabinetUpdateFileRequestTypeAttribute
     request_token?: string;
     content: Buffer;
 }
@@ -91,7 +91,7 @@ export interface CabinetUpdateFileInformationRequestTypeAttribute {
     description?: string;
 }
 export interface CabinetUpdateFileInformationRequestType {
-    $attributes: CabinetUpdateFileInformationRequestTypeAttribute
+    attributes: CabinetUpdateFileInformationRequestTypeAttribute
     request_token?: string;
 }
 
@@ -121,7 +121,7 @@ export interface FolderTypeAttribute {
     list_index: number;
 }
 export interface FolderType {
-    $attributes: FolderTypeAttribute
+    attributes: FolderTypeAttribute
     title: string;
     description: string;
     creator_id: string;
@@ -141,7 +141,7 @@ export interface FoldersTypeAttribute {
     parent_code: string;
 }
 export interface FoldersType {
-    $attributes: FoldersTypeAttribute
+    attributes: FoldersTypeAttribute
     folder?: FolderType | FolderType[];
 }
 
@@ -157,7 +157,7 @@ export interface SimpleFileTypeAttribute {
     folder_id: base.IDType;
 }
 export interface SimpleFileType {
-    $attributes: SimpleFileTypeAttribute
+    attributes: SimpleFileTypeAttribute
     title: string;
     max_version: number;
     name: string;
@@ -180,7 +180,7 @@ export interface SimpleFileInformationTypeAttribute {
     folder_id: base.IDType;
 }
 export interface SimpleFileInformationType {
-    $attributes: SimpleFileInformationTypeAttribute
+    attributes: SimpleFileInformationTypeAttribute
     title: string;
     max_version: number;
     name: string;
@@ -213,7 +213,7 @@ export interface FilesTypeAttribute {
     parent_code: string;
 }
 export interface FilesType {
-    $attributes: FilesTypeAttribute
+    attributes: FilesTypeAttribute
     file?: FileType | FileType[];
 }
 

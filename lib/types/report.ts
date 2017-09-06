@@ -19,11 +19,11 @@ export interface ReportAddFollowTypeFileAttribute {
     id: base.IDType;
 }
 export interface ReportAddFollowTypeFile {
-    $attributes: ReportAddFollowTypeFileAttribute
+    attributes: ReportAddFollowTypeFileAttribute
     content: Buffer;
 }
 export interface ReportAddFollowType {
-    $attributes: ReportAddFollowTypeAttribute
+    attributes: ReportAddFollowTypeAttribute
     request_token?: string;
     follow: FollowType;
     file?: ReportAddFollowTypeFile | ReportAddFollowTypeFile[];
@@ -49,7 +49,7 @@ export interface ReportGetReportVersionsRequestTypeAttribute {
     target?: SearchTargetType;
 }
 export interface ReportGetReportVersionsRequestType {
-    $attributes: ReportGetReportVersionsRequestTypeAttribute
+    attributes: ReportGetReportVersionsRequestTypeAttribute
     report_item?: base.ItemVersionType | base.ItemVersionType[];
 }
 
@@ -78,7 +78,7 @@ export interface ReportGetFollowsRequestTypeAttribute {
     offset: number;
 }
 export interface ReportGetFollowsRequestType {
-    $attributes: ReportGetFollowsRequestTypeAttribute
+    attributes: ReportGetFollowsRequestTypeAttribute
 }
 
 // ReportGetFollowsResponseType
@@ -107,7 +107,7 @@ export interface ReportSearchReportsRequestTypeAttribute {
     keyword: string;
 }
 export interface ReportSearchReportsRequestType {
-    $attributes: ReportSearchReportsRequestTypeAttribute
+    attributes: ReportSearchReportsRequestTypeAttribute
 }
 
 // ReportSearchReportsResponseType
@@ -121,7 +121,7 @@ export interface ReportFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface ReportFileDownloadRequestType {
-    $attributes: ReportFileDownloadRequestTypeAttribute
+    attributes: ReportFileDownloadRequestTypeAttribute
 }
 
 // ReportFileDownloadResponseType
@@ -155,7 +155,7 @@ export interface ReportTypeMaintainers {
     user?: UserType | UserType[];
 }
 export interface ReportType {
-    $attributes: ReportTypeAttribute
+    attributes: ReportTypeAttribute
     items: ReportTypeItems;
     members?: ReportTypeMembers;
     notifyusers?: ReportTypeNotifyusers;
@@ -170,7 +170,7 @@ export interface UserTypeAttribute {
     name: string;
 }
 export interface UserType {
-    $attributes: UserTypeAttribute
+    attributes: UserTypeAttribute
 }
 
 // ItemType
@@ -181,7 +181,7 @@ export interface ItemTypeAttribute {
     back?: string;
 }
 export interface ItemType {
-    $attributes: ItemTypeAttribute
+    attributes: ItemTypeAttribute
 }
 
 // FilesItemType
@@ -196,10 +196,10 @@ export interface FilesItemTypeFileAttribute {
     mime_type?: string;
 }
 export interface FilesItemTypeFile {
-    $attributes: FilesItemTypeFileAttribute
+    attributes: FilesItemTypeFileAttribute
 }
 export interface FilesItemType {
-    $attributes: FilesItemTypeAttribute
+    attributes: FilesItemTypeAttribute
     file?: FilesItemTypeFile | FilesItemTypeFile[];
 }
 
@@ -217,10 +217,10 @@ export interface FollowTypeFileAttribute {
     mime_type?: string;
 }
 export interface FollowTypeFile {
-    $attributes: FollowTypeFileAttribute
+    attributes: FollowTypeFileAttribute
 }
 export interface FollowType {
-    $attributes: FollowTypeAttribute
+    attributes: FollowTypeAttribute
     file?: FollowTypeFile | FollowTypeFile[];
     creator?: base.ChangeLogType;
 }

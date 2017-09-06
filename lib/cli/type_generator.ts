@@ -227,9 +227,6 @@ const processAttribute = (namespaceURL: string, attribute: any): Parameter => {
 }
 
 const processSequence = (namespaceURL: string, sequence: any, name: string): {parameters: Parameter[], subtypes: ComplexType[]} => {
-    if (true || name === "AddressGetPersonalCardVersionsRequestType") {
-        console.log("");
-    }
     let parameters: Parameter[] = [];
     let subtypes: ComplexType[] = [];
     for (const child of sequence.children) {

@@ -14,7 +14,7 @@ export interface StarIDTypeAttribute {
     item: base.NonBlankStringType;
 }
 export interface StarIDType {
-    $attributes: StarIDTypeAttribute
+    attributes: StarIDTypeAttribute
 }
 
 // StarGetStarsByIdRequestType
@@ -47,7 +47,7 @@ export interface StarRemoveStarsRequestTypeStarItemAttribute extends StarIDTypeA
     is_draft?: boolean;
 }
 export interface StarRemoveStarsRequestTypeStarItem extends StarIDType {
-    $attributes: StarRemoveStarsRequestTypeStarItemAttribute
+    attributes: StarRemoveStarsRequestTypeStarItemAttribute
 }
 export interface StarRemoveStarsRequestType {
     
@@ -61,7 +61,7 @@ export interface StarAddStarsRequestTypeStarItemAttribute extends StarIDTypeAttr
     is_draft?: boolean;
 }
 export interface StarAddStarsRequestTypeStarItem extends StarIDType {
-    $attributes: StarAddStarsRequestTypeStarItemAttribute
+    attributes: StarAddStarsRequestTypeStarItemAttribute
 }
 export interface StarAddStarsRequestType {
     
@@ -85,7 +85,7 @@ export interface StarGetProfilesResponseTypeAttribute {
     star_num_allow: number;
 }
 export interface StarGetProfilesResponseType {
-    $attributes: StarGetProfilesResponseTypeAttribute
+    attributes: StarGetProfilesResponseTypeAttribute
 }
 
 // StarDataType
@@ -97,6 +97,6 @@ export interface StarDataTypeAttribute {
     version: base.VersionType;
 }
 export interface StarDataType {
-    $attributes: StarDataTypeAttribute
+    attributes: StarDataTypeAttribute
 }
 

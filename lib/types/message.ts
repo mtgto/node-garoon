@@ -27,7 +27,7 @@ export interface MessageRemoveThreadTypeAttribute {
     thread_id: base.IDType;
 }
 export interface MessageRemoveThreadType {
-    $attributes: MessageRemoveThreadTypeAttribute
+    attributes: MessageRemoveThreadTypeAttribute
 }
 
 // MessageFolderType
@@ -35,7 +35,7 @@ export interface MessageFolderTypeAttribute extends FolderTypeAttribute {
     folder_type: MessageFolderTypeType;
 }
 export interface MessageFolderType extends FolderType {
-    $attributes: MessageFolderTypeAttribute
+    attributes: MessageFolderTypeAttribute
 }
 
 // MessageGetFoldersByIdRequestType
@@ -56,7 +56,7 @@ export interface MessageGetThreadVersionsRequestTypeAttribute {
     end?: string;
 }
 export interface MessageGetThreadVersionsRequestType {
-    $attributes: MessageGetThreadVersionsRequestTypeAttribute
+    attributes: MessageGetThreadVersionsRequestTypeAttribute
     thread_item?: base.ItemVersionType | base.ItemVersionType[];
     folder_id?: base.IDType | base.IDType[];
 }
@@ -87,11 +87,11 @@ export interface MessageCreateThreadTypeFileAttribute {
     id: base.IDType;
 }
 export interface MessageCreateThreadTypeFile {
-    $attributes: MessageCreateThreadTypeFileAttribute
+    attributes: MessageCreateThreadTypeFileAttribute
     content: Buffer;
 }
 export interface MessageCreateThreadType {
-    $attributes: MessageCreateThreadTypeAttribute
+    attributes: MessageCreateThreadTypeAttribute
     thread: ThreadType;
     file?: MessageCreateThreadTypeFile | MessageCreateThreadTypeFile[];
     remove_file_id?: base.IDType | base.IDType[];
@@ -141,7 +141,7 @@ export interface MessageRemoveThreadsRequestTypeAttribute {
     delete_all_inbox?: boolean;
 }
 export interface MessageRemoveThreadsRequestType {
-    $attributes: MessageRemoveThreadsRequestTypeAttribute
+    attributes: MessageRemoveThreadsRequestTypeAttribute
     request_token?: string;
     param: MessageRemoveThreadType | MessageRemoveThreadType[];
 }
@@ -173,7 +173,7 @@ export interface MessageSearchThreadsRequestTypeAttribute {
     follow_search: boolean;
 }
 export interface MessageSearchThreadsRequestType {
-    $attributes: MessageSearchThreadsRequestTypeAttribute
+    attributes: MessageSearchThreadsRequestTypeAttribute
 }
 
 // MessageSearchThreadsResponseType
@@ -189,7 +189,7 @@ export interface MessageGetFollowsRequestTypeAttribute {
     limit: number;
 }
 export interface MessageGetFollowsRequestType {
-    $attributes: MessageGetFollowsRequestTypeAttribute
+    attributes: MessageGetFollowsRequestTypeAttribute
 }
 
 // MessageGetFollowsResponseType
@@ -206,11 +206,11 @@ export interface MessageAddFollowTypeFileAttribute {
     id: base.IDType;
 }
 export interface MessageAddFollowTypeFile {
-    $attributes: MessageAddFollowTypeFileAttribute
+    attributes: MessageAddFollowTypeFileAttribute
     content: Buffer;
 }
 export interface MessageAddFollowType {
-    $attributes: MessageAddFollowTypeAttribute
+    attributes: MessageAddFollowTypeAttribute
     follow: FollowType;
     file?: MessageAddFollowTypeFile | MessageAddFollowTypeFile[];
 }
@@ -241,7 +241,7 @@ export interface MessagePersonalProfileTypeAttribute {
     trash_duration?: number;
 }
 export interface MessagePersonalProfileType {
-    $attributes: MessagePersonalProfileTypeAttribute
+    attributes: MessagePersonalProfileTypeAttribute
 }
 
 // MessageSystemProfileType
@@ -250,7 +250,7 @@ export interface MessageSystemProfileTypeAttribute {
     confirm_action?: MessageConfirmActionType;
 }
 export interface MessageSystemProfileType {
-    $attributes: MessageSystemProfileTypeAttribute
+    attributes: MessageSystemProfileTypeAttribute
 }
 
 // MessageGetProfilesRequestType
@@ -258,7 +258,7 @@ export interface MessageGetProfilesRequestTypeAttribute {
     include_system_profile?: boolean;
 }
 export interface MessageGetProfilesRequestType {
-    $attributes: MessageGetProfilesRequestTypeAttribute
+    attributes: MessageGetProfilesRequestTypeAttribute
 }
 
 // MessageGetProfilesResponseType
@@ -286,7 +286,7 @@ export interface MessageFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface MessageFileDownloadRequestType {
-    $attributes: MessageFileDownloadRequestTypeAttribute
+    attributes: MessageFileDownloadRequestTypeAttribute
 }
 
 // MessageFileDownloadResponseType
@@ -311,14 +311,14 @@ export interface ThreadTypeAddresseeAttribute {
     confirmed?: boolean;
 }
 export interface ThreadTypeAddressee {
-    $attributes: ThreadTypeAddresseeAttribute
+    attributes: ThreadTypeAddresseeAttribute
 }
 export interface ThreadTypeContentAttribute {
     body: string;
     html_body?: string;
 }
 export interface ThreadTypeContent {
-    $attributes: ThreadTypeContentAttribute
+    attributes: ThreadTypeContentAttribute
     file?: ThreadTypeContentFile | ThreadTypeContentFile[];
 }
 export interface ThreadTypeContentFileAttribute {
@@ -328,23 +328,23 @@ export interface ThreadTypeContentFileAttribute {
     mime_type?: string;
 }
 export interface ThreadTypeContentFile {
-    $attributes: ThreadTypeContentFileAttribute
+    attributes: ThreadTypeContentFileAttribute
 }
 export interface ThreadTypeFollowAttribute {
     id: base.IDType;
     number: base.NonBlankStringType;
 }
 export interface ThreadTypeFollow {
-    $attributes: ThreadTypeFollowAttribute
+    attributes: ThreadTypeFollowAttribute
 }
 export interface ThreadTypeFolderAttribute {
     id: base.IDType;
 }
 export interface ThreadTypeFolder {
-    $attributes: ThreadTypeFolderAttribute
+    attributes: ThreadTypeFolderAttribute
 }
 export interface ThreadType {
-    $attributes: ThreadTypeAttribute
+    attributes: ThreadTypeAttribute
     addressee?: ThreadTypeAddressee | ThreadTypeAddressee[];
     content: ThreadTypeContent;
     follow?: ThreadTypeFollow | ThreadTypeFollow[];
@@ -366,16 +366,16 @@ export interface FolderTypeFolderAttribute {
     id: base.IDType;
 }
 export interface FolderTypeFolder {
-    $attributes: FolderTypeFolderAttribute
+    attributes: FolderTypeFolderAttribute
 }
 export interface FolderTypeThreadAttribute {
     id: base.IDType;
 }
 export interface FolderTypeThread {
-    $attributes: FolderTypeThreadAttribute
+    attributes: FolderTypeThreadAttribute
 }
 export interface FolderType {
-    $attributes: FolderTypeAttribute
+    attributes: FolderTypeAttribute
     folder?: FolderTypeFolder | FolderTypeFolder[];
     thread?: FolderTypeThread | FolderTypeThread[];
 }
@@ -394,10 +394,10 @@ export interface FollowTypeFileAttribute {
     mime_type?: string;
 }
 export interface FollowTypeFile {
-    $attributes: FollowTypeFileAttribute
+    attributes: FollowTypeFileAttribute
 }
 export interface FollowType {
-    $attributes: FollowTypeAttribute
+    attributes: FollowTypeAttribute
     file?: FollowTypeFile | FollowTypeFile[];
     creator?: base.ChangeLogType;
 }

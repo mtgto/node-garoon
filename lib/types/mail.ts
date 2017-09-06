@@ -43,7 +43,7 @@ export interface MailGetMailVersionsRequestTypeAttribute {
     end?: string;
 }
 export interface MailGetMailVersionsRequestType {
-    $attributes: MailGetMailVersionsRequestTypeAttribute
+    attributes: MailGetMailVersionsRequestTypeAttribute
     mail_item?: base.ItemVersionType | base.ItemVersionType[];
     folder_id?: base.IDType | base.IDType[];
 }
@@ -81,11 +81,11 @@ export interface MailSendMailTypeFileAttribute {
     id: base.IDType;
 }
 export interface MailSendMailTypeFile {
-    $attributes: MailSendMailTypeFileAttribute
+    attributes: MailSendMailTypeFileAttribute
     content: Buffer;
 }
 export interface MailSendMailType {
-    $attributes: MailSendMailTypeAttribute
+    attributes: MailSendMailTypeAttribute
     mail: MailType;
     file?: MailSendMailTypeFile | MailSendMailTypeFile[];
     remove_file_id?: base.IDType | base.IDType[];
@@ -109,7 +109,7 @@ export interface MailReplyMailsRequestTypeAttribute {
     reply_all: boolean;
 }
 export interface MailReplyMailsRequestType {
-    $attributes: MailReplyMailsRequestTypeAttribute
+    attributes: MailReplyMailsRequestTypeAttribute
     request_token?: string;
     reply_mail: MailSendMailType | MailSendMailType[];
 }
@@ -125,7 +125,7 @@ export interface MailForwardMailTypeAttribute extends MailSendMailTypeAttribute 
     mail_id: base.IDType;
 }
 export interface MailForwardMailType extends MailSendMailType {
-    $attributes: MailForwardMailTypeAttribute
+    attributes: MailForwardMailTypeAttribute
 }
 
 // MailForwardMailsRequestType
@@ -146,7 +146,7 @@ export interface MailDraftMailTypeAttribute extends MailSendMailTypeAttribute {
     operation?: MailDraftOperationType;
 }
 export interface MailDraftMailType extends MailSendMailType {
-    $attributes: MailDraftMailTypeAttribute
+    attributes: MailDraftMailTypeAttribute
 }
 
 // MailSaveDraftMailsRequestType
@@ -186,7 +186,7 @@ export interface MailSearchMailsRequestTypeAttribute {
     bcc_search: boolean;
 }
 export interface MailSearchMailsRequestType {
-    $attributes: MailSearchMailsRequestTypeAttribute
+    attributes: MailSearchMailsRequestTypeAttribute
 }
 
 // MailSearchMailsResponseType
@@ -202,7 +202,7 @@ export interface MailOpenDispositionNotificationOperationTypeAttribute {
     type: MailDispositionNotificationType;
 }
 export interface MailOpenDispositionNotificationOperationType {
-    $attributes: MailOpenDispositionNotificationOperationTypeAttribute
+    attributes: MailOpenDispositionNotificationOperationTypeAttribute
 }
 
 // MailOpenDispositionNotificationsRequestType
@@ -224,7 +224,7 @@ export interface MailModifyFolderOperationTypeAttribute {
     parent_folder_id?: base.IDType;
 }
 export interface MailModifyFolderOperationType {
-    $attributes: MailModifyFolderOperationTypeAttribute
+    attributes: MailModifyFolderOperationTypeAttribute
     folder: FolderType;
 }
 
@@ -267,7 +267,7 @@ export interface MailMoveMailsOperationTypeAttribute {
     mail_id: base.IDType;
 }
 export interface MailMoveMailsOperationType {
-    $attributes: MailMoveMailsOperationTypeAttribute
+    attributes: MailMoveMailsOperationTypeAttribute
 }
 
 // MailMoveMailsToOtherFolderRequestType
@@ -290,7 +290,7 @@ export interface MailSignatureTypeAttribute {
     content: string;
 }
 export interface MailSignatureType {
-    $attributes: MailSignatureTypeAttribute
+    attributes: MailSignatureTypeAttribute
 }
 
 // MailGetSignaturesRequestType
@@ -298,7 +298,7 @@ export interface MailGetSignaturesRequestTypeAttribute {
     account_id: base.IDType;
 }
 export interface MailGetSignaturesRequestType {
-    $attributes: MailGetSignaturesRequestTypeAttribute
+    attributes: MailGetSignaturesRequestTypeAttribute
 }
 
 // MailGetSignaturesResponseType
@@ -312,7 +312,7 @@ export interface MailGetFiltersRequestTypeAttribute {
     account_id: base.IDType;
 }
 export interface MailGetFiltersRequestType {
-    $attributes: MailGetFiltersRequestTypeAttribute
+    attributes: MailGetFiltersRequestTypeAttribute
 }
 
 // MailGetFiltersResponseType
@@ -339,10 +339,10 @@ export interface MailPersonalProfileTypeFromNameAttribute {
     name: base.NonBlankStringType;
 }
 export interface MailPersonalProfileTypeFromName {
-    $attributes: MailPersonalProfileTypeFromNameAttribute
+    attributes: MailPersonalProfileTypeFromNameAttribute
 }
 export interface MailPersonalProfileType {
-    $attributes: MailPersonalProfileTypeAttribute
+    attributes: MailPersonalProfileTypeAttribute
     from_name?: MailPersonalProfileTypeFromName | MailPersonalProfileTypeFromName[];
 }
 
@@ -353,7 +353,7 @@ export interface MailSizeLimitsTypeAttribute {
     send_kb?: number;
 }
 export interface MailSizeLimitsType {
-    $attributes: MailSizeLimitsTypeAttribute
+    attributes: MailSizeLimitsTypeAttribute
 }
 
 // UserAuthoritiesType
@@ -370,7 +370,7 @@ export interface UserAuthoritiesTypeAttribute {
     allow_history: boolean;
 }
 export interface UserAuthoritiesType {
-    $attributes: UserAuthoritiesTypeAttribute
+    attributes: UserAuthoritiesTypeAttribute
 }
 
 // MailSystemProfileType
@@ -382,11 +382,11 @@ export interface MailSystemProfileTypeAutoReceiveAttribute {
     interval?: number;
 }
 export interface MailSystemProfileTypeAutoReceive {
-    $attributes: MailSystemProfileTypeAutoReceiveAttribute
+    attributes: MailSystemProfileTypeAutoReceiveAttribute
     receive_time?: string | string[];
 }
 export interface MailSystemProfileType {
-    $attributes: MailSystemProfileTypeAttribute
+    attributes: MailSystemProfileTypeAttribute
     auto_receive?: MailSystemProfileTypeAutoReceive;
     limit: MailSizeLimitsType;
     authority: UserAuthoritiesType;
@@ -397,7 +397,7 @@ export interface MailGetProfilesRequestTypeAttribute {
     include_system_profile?: boolean;
 }
 export interface MailGetProfilesRequestType {
-    $attributes: MailGetProfilesRequestTypeAttribute
+    attributes: MailGetProfilesRequestTypeAttribute
 }
 
 // MailGetProfilesResponseType
@@ -425,7 +425,7 @@ export interface MailSourceDownloadRequestTypeAttribute {
     mail_id: base.IDType;
 }
 export interface MailSourceDownloadRequestType {
-    $attributes: MailSourceDownloadRequestTypeAttribute
+    attributes: MailSourceDownloadRequestTypeAttribute
 }
 
 // MailSourceDownloadResponseType
@@ -440,7 +440,7 @@ export interface MailFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface MailFileDownloadRequestType {
-    $attributes: MailFileDownloadRequestTypeAttribute
+    attributes: MailFileDownloadRequestTypeAttribute
 }
 
 // MailFileDownloadResponseType
@@ -468,7 +468,7 @@ export interface MailCreateUserAccountResponseTypeAttribute {
     acc_id: base.IDType;
 }
 export interface MailCreateUserAccountResponseType {
-    $attributes: MailCreateUserAccountResponseTypeAttribute
+    attributes: MailCreateUserAccountResponseTypeAttribute
     user_accounts?: MailUserAccountType | MailUserAccountType[];
 }
 
@@ -484,7 +484,7 @@ export interface MailEditUserAccountResponseTypeAttribute {
     acc_id: base.IDType;
 }
 export interface MailEditUserAccountResponseType {
-    $attributes: MailEditUserAccountResponseTypeAttribute
+    attributes: MailEditUserAccountResponseTypeAttribute
     edit_user_accounts?: MailUserAccountType | MailUserAccountType[];
 }
 
@@ -505,7 +505,7 @@ export interface NewArrivingEmailTypeAttribute {
     deleted?: string;
 }
 export interface NewArrivingEmailType {
-    $attributes: NewArrivingEmailTypeAttribute
+    attributes: NewArrivingEmailTypeAttribute
 }
 
 // MailGetNewArrivingEmailRequestType
@@ -558,7 +558,7 @@ export interface ServerTypeAttribute {
     name: base.NonBlankStringType;
 }
 export interface ServerType {
-    $attributes: ServerTypeAttribute
+    attributes: ServerTypeAttribute
     smtp: SmtpServerType;
     pop?: PopServerType;
     imap?: ImapServerType;
@@ -573,10 +573,10 @@ export interface SmtpServerTypePopBeforeSmtpAttribute {
     wait_seconds?: number;
 }
 export interface SmtpServerTypePopBeforeSmtp {
-    $attributes: SmtpServerTypePopBeforeSmtpAttribute
+    attributes: SmtpServerTypePopBeforeSmtpAttribute
 }
 export interface SmtpServerType extends MailServerType {
-    $attributes: SmtpServerTypeAttribute
+    attributes: SmtpServerTypeAttribute
     pop_before_smtp?: SmtpServerTypePopBeforeSmtp;
 }
 
@@ -585,7 +585,7 @@ export interface PopServerTypeAttribute extends MailServerTypeAttribute {
     apop?: boolean;
 }
 export interface PopServerType extends MailServerType {
-    $attributes: PopServerTypeAttribute
+    attributes: PopServerTypeAttribute
 }
 
 // ImapServerType
@@ -602,7 +602,7 @@ export interface MailServerTypeAttribute {
     sasl_mechanism?: SaslMechanismType;
 }
 export interface MailServerType {
-    $attributes: MailServerTypeAttribute
+    attributes: MailServerTypeAttribute
 }
 
 // AccountType
@@ -623,10 +623,10 @@ export interface AccountTypeSignaturesSignatureAttribute {
     name: base.NonBlankStringType;
 }
 export interface AccountTypeSignaturesSignature {
-    $attributes: AccountTypeSignaturesSignatureAttribute
+    attributes: AccountTypeSignaturesSignatureAttribute
 }
 export interface AccountType {
-    $attributes: AccountTypeAttribute
+    attributes: AccountTypeAttribute
     mailbox?: MailboxType | MailboxType[];
     signatures?: AccountTypeSignatures;
 }
@@ -656,10 +656,10 @@ export interface BuiltInFolderTypeMailAttribute {
     id: base.IDType;
 }
 export interface BuiltInFolderTypeMail {
-    $attributes: BuiltInFolderTypeMailAttribute
+    attributes: BuiltInFolderTypeMailAttribute
 }
 export interface BuiltInFolderType {
-    $attributes: BuiltInFolderTypeAttribute
+    attributes: BuiltInFolderTypeAttribute
     mail?: BuiltInFolderTypeMail | BuiltInFolderTypeMail[];
 }
 
@@ -669,7 +669,7 @@ export interface FolderTypeAttribute extends BuiltInFolderTypeAttribute {
     order?: number;
 }
 export interface FolderType extends BuiltInFolderType {
-    $attributes: FolderTypeAttribute
+    attributes: FolderTypeAttribute
     folder?: FolderType | FolderType[];
 }
 
@@ -681,7 +681,7 @@ export interface FilterTypeAttribute {
     status: string;
 }
 export interface FilterType {
-    $attributes: FilterTypeAttribute
+    attributes: FilterTypeAttribute
     expr?: FilterExprType;
     size?: FilterSizeType;
 }
@@ -693,7 +693,7 @@ export interface FilterExprTypeAttribute {
     method: FilterExprOperatorType;
 }
 export interface FilterExprType {
-    $attributes: FilterExprTypeAttribute
+    attributes: FilterExprTypeAttribute
 }
 
 // FilterSizeType
@@ -703,7 +703,7 @@ export interface FilterSizeTypeAttribute {
     method: FilterSizeOperatorType;
 }
 export interface FilterSizeType {
-    $attributes: FilterSizeTypeAttribute
+    attributes: FilterSizeTypeAttribute
 }
 
 // MailType
@@ -727,17 +727,17 @@ export interface MailTypeFileAttribute {
     mime_type?: string;
 }
 export interface MailTypeFile {
-    $attributes: MailTypeFileAttribute
+    attributes: MailTypeFileAttribute
 }
 export interface MailTypeSourceAttribute {
     id: base.IDType;
     size?: number;
 }
 export interface MailTypeSource {
-    $attributes: MailTypeSourceAttribute
+    attributes: MailTypeSourceAttribute
 }
 export interface MailType {
-    $attributes: MailTypeAttribute
+    attributes: MailTypeAttribute
     file?: MailTypeFile | MailTypeFile[];
     source?: MailTypeSource;
     from?: MailAddressType;
@@ -755,7 +755,7 @@ export interface MailAddressTypeAttribute {
     address: string;
 }
 export interface MailAddressType {
-    $attributes: MailAddressTypeAttribute
+    attributes: MailAddressTypeAttribute
 }
 
 // UserProfileType
@@ -779,10 +779,10 @@ export interface UserProfileTypeFromNameAttribute {
     name: base.NonBlankStringType;
 }
 export interface UserProfileTypeFromName {
-    $attributes: UserProfileTypeFromNameAttribute
+    attributes: UserProfileTypeFromNameAttribute
 }
 export interface UserProfileType {
-    $attributes: UserProfileTypeAttribute
+    attributes: UserProfileTypeAttribute
     from_name?: UserProfileTypeFromName | UserProfileTypeFromName[];
 }
 
@@ -795,11 +795,11 @@ export interface SystemProfileTypeAutoReceiveAttribute {
     interval?: number;
 }
 export interface SystemProfileTypeAutoReceive {
-    $attributes: SystemProfileTypeAutoReceiveAttribute
+    attributes: SystemProfileTypeAutoReceiveAttribute
     receive_time?: string | string[];
 }
 export interface SystemProfileType {
-    $attributes: SystemProfileTypeAttribute
+    attributes: SystemProfileTypeAttribute
     auto_receive?: SystemProfileTypeAutoReceive;
     size_limits?: SizeLimitsType;
     user_authorities?: UserAuthoritiesType;
@@ -812,7 +812,7 @@ export interface SizeLimitsTypeAttribute {
     send_kb?: number;
 }
 export interface SizeLimitsType {
-    $attributes: SizeLimitsTypeAttribute
+    attributes: SizeLimitsTypeAttribute
 }
 
 // UserAuthoritiesType
@@ -829,7 +829,7 @@ export interface UserAuthoritiesTypeAttribute {
     history?: boolean;
 }
 export interface UserAuthoritiesType {
-    $attributes: UserAuthoritiesTypeAttribute
+    attributes: UserAuthoritiesTypeAttribute
 }
 
 // DeleteUserAccount
@@ -838,7 +838,7 @@ export interface DeleteUserAccountAttribute {
     delete_all_email?: boolean;
 }
 export interface DeleteUserAccount {
-    $attributes: DeleteUserAccountAttribute
+    attributes: DeleteUserAccountAttribute
 }
 
 // Account_Info
@@ -849,7 +849,7 @@ export interface Account_InfoAttribute {
     user_account_name?: string;
 }
 export interface Account_Info {
-    $attributes: Account_InfoAttribute
+    attributes: Account_InfoAttribute
 }
 
 // MailSetting
@@ -862,7 +862,7 @@ export interface MailSettingAttribute {
     deactivate_user_account?: boolean;
 }
 export interface MailSetting {
-    $attributes: MailSettingAttribute
+    attributes: MailSettingAttribute
 }
 
 // MailServerInfoType
@@ -882,7 +882,7 @@ export interface MailServerInfoTypeOutgoingAttribute {
     timeout?: number;
 }
 export interface MailServerInfoTypeOutgoing {
-    $attributes: MailServerInfoTypeOutgoingAttribute
+    attributes: MailServerInfoTypeOutgoingAttribute
 }
 export interface MailServerInfoTypeIncomingAttribute {
     receive_protocol: "POP3" | "IMAP4";
@@ -893,10 +893,10 @@ export interface MailServerInfoTypeIncomingAttribute {
     timeout?: number;
 }
 export interface MailServerInfoTypeIncoming {
-    $attributes: MailServerInfoTypeIncomingAttribute
+    attributes: MailServerInfoTypeIncomingAttribute
 }
 export interface MailServerInfoType {
-    $attributes: MailServerInfoTypeAttribute
+    attributes: MailServerInfoTypeAttribute
     outgoing: MailServerInfoTypeOutgoing;
     incoming: MailServerInfoTypeIncoming;
 }

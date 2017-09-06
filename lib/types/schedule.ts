@@ -21,7 +21,7 @@ export interface ScheduleGetEventVersionsRequestTypeAttribute {
     end_for_daily?: string;
 }
 export interface ScheduleGetEventVersionsRequestType {
-    $attributes: ScheduleGetEventVersionsRequestTypeAttribute
+    attributes: ScheduleGetEventVersionsRequestTypeAttribute
     event_item?: base.ItemVersionType | base.ItemVersionType[];
 }
 
@@ -39,7 +39,7 @@ export interface ScheduleGetEventsRequestTypeAttribute {
     end_for_daily?: string;
 }
 export interface ScheduleGetEventsRequestType {
-    $attributes: ScheduleGetEventsRequestTypeAttribute
+    attributes: ScheduleGetEventsRequestTypeAttribute
 }
 
 // ScheduleGetEventsResponseType
@@ -71,22 +71,22 @@ export interface ScheduleGetEventsByTargetRequestTypeUserAttribute {
     id: base.IDType;
 }
 export interface ScheduleGetEventsByTargetRequestTypeUser {
-    $attributes: ScheduleGetEventsByTargetRequestTypeUserAttribute
+    attributes: ScheduleGetEventsByTargetRequestTypeUserAttribute
 }
 export interface ScheduleGetEventsByTargetRequestTypeGroupAttribute {
     id: base.IDType;
 }
 export interface ScheduleGetEventsByTargetRequestTypeGroup {
-    $attributes: ScheduleGetEventsByTargetRequestTypeGroupAttribute
+    attributes: ScheduleGetEventsByTargetRequestTypeGroupAttribute
 }
 export interface ScheduleGetEventsByTargetRequestTypeFacilityAttribute {
     id: base.IDType;
 }
 export interface ScheduleGetEventsByTargetRequestTypeFacility {
-    $attributes: ScheduleGetEventsByTargetRequestTypeFacilityAttribute
+    attributes: ScheduleGetEventsByTargetRequestTypeFacilityAttribute
 }
 export interface ScheduleGetEventsByTargetRequestType {
-    $attributes: ScheduleGetEventsByTargetRequestTypeAttribute
+    attributes: ScheduleGetEventsByTargetRequestTypeAttribute
     user?: ScheduleGetEventsByTargetRequestTypeUser;
     group?: ScheduleGetEventsByTargetRequestTypeGroup;
     facility?: ScheduleGetEventsByTargetRequestTypeFacility;
@@ -130,7 +130,7 @@ export interface ScheduleModifyRepeatEventsOperationTypeAttribute {
     date?: string;
 }
 export interface ScheduleModifyRepeatEventsOperationType {
-    $attributes: ScheduleModifyRepeatEventsOperationTypeAttribute
+    attributes: ScheduleModifyRepeatEventsOperationTypeAttribute
     schedule_event: EventType;
 }
 
@@ -168,7 +168,7 @@ export interface ScheduleRemoveEventsFromRepeatEventOperationTypeAttribute {
     date?: string;
 }
 export interface ScheduleRemoveEventsFromRepeatEventOperationType {
-    $attributes: ScheduleRemoveEventsFromRepeatEventOperationTypeAttribute
+    attributes: ScheduleRemoveEventsFromRepeatEventOperationTypeAttribute
 }
 
 // ScheduleRemoveEventsFromRepeatEventRequestType
@@ -198,7 +198,7 @@ export interface ScheduleSearchEventsRequestTypeAttribute {
     all_repeat_events: boolean;
 }
 export interface ScheduleSearchEventsRequestType {
-    $attributes: ScheduleSearchEventsRequestTypeAttribute
+    attributes: ScheduleSearchEventsRequestTypeAttribute
 }
 
 // ScheduleSearchEventsResponseType
@@ -213,7 +213,7 @@ export interface ScheduleSearchFreeTimesCandidateTypeAttribute {
     end: string;
 }
 export interface ScheduleSearchFreeTimesCandidateType {
-    $attributes: ScheduleSearchFreeTimesCandidateTypeAttribute
+    attributes: ScheduleSearchFreeTimesCandidateTypeAttribute
 }
 
 // ScheduleFreeTimeType
@@ -223,7 +223,7 @@ export interface ScheduleFreeTimeTypeAttribute {
     facility_id?: base.IDType;
 }
 export interface ScheduleFreeTimeType {
-    $attributes: ScheduleFreeTimeTypeAttribute
+    attributes: ScheduleFreeTimeTypeAttribute
 }
 
 // ScheduleSearchFreeTimesRequestType
@@ -232,7 +232,7 @@ export interface ScheduleSearchFreeTimesRequestTypeAttribute {
     search_condition: ScheduleSearchConditionType;
 }
 export interface ScheduleSearchFreeTimesRequestType {
-    $attributes: ScheduleSearchFreeTimesRequestTypeAttribute
+    attributes: ScheduleSearchFreeTimesRequestTypeAttribute
     candidate: ScheduleSearchFreeTimesCandidateType | ScheduleSearchFreeTimesCandidateType[];
     member: MemberType | MemberType[];
 }
@@ -249,7 +249,7 @@ export interface ScheduleFollowContentTypeAttribute {
     content: string;
 }
 export interface ScheduleFollowContentType {
-    $attributes: ScheduleFollowContentTypeAttribute
+    attributes: ScheduleFollowContentTypeAttribute
 }
 
 // ScheduleAddFollowsRequestType
@@ -272,7 +272,7 @@ export interface ScheduleFollowToRepeatEventContentTypeAttribute {
     content: string;
 }
 export interface ScheduleFollowToRepeatEventContentType {
-    $attributes: ScheduleFollowToRepeatEventContentTypeAttribute
+    attributes: ScheduleFollowToRepeatEventContentTypeAttribute
 }
 
 // ScheduleAddFollowsToRepeatEventResultType
@@ -310,7 +310,7 @@ export interface ScheduleCandidateItemTypeAttribute {
     facility_id?: base.IDType;
 }
 export interface ScheduleCandidateItemType {
-    $attributes: ScheduleCandidateItemTypeAttribute
+    attributes: ScheduleCandidateItemTypeAttribute
 }
 
 // ScheduleDetermineTemporaryEventsRequestType
@@ -359,7 +359,7 @@ export interface ScheduleParticipateEventsToRepeatEventOperationTypeAttribute {
     date?: string;
 }
 export interface ScheduleParticipateEventsToRepeatEventOperationType {
-    $attributes: ScheduleParticipateEventsToRepeatEventOperationTypeAttribute
+    attributes: ScheduleParticipateEventsToRepeatEventOperationTypeAttribute
 }
 
 // ScheduleParticipateEventsToRepeatEventRequestType
@@ -413,7 +413,7 @@ export interface SchedulePersonalProfileTypeAttribute {
     notify_mail_address?: base.NonBlankStringType;
 }
 export interface SchedulePersonalProfileType {
-    $attributes: SchedulePersonalProfileTypeAttribute
+    attributes: SchedulePersonalProfileTypeAttribute
 }
 
 // ScheduleSystemProfileType
@@ -430,7 +430,7 @@ export interface ScheduleSystemProfileTypeAttribute {
     allow_attendance_check?: boolean;
 }
 export interface ScheduleSystemProfileType {
-    $attributes: ScheduleSystemProfileTypeAttribute
+    attributes: ScheduleSystemProfileTypeAttribute
 }
 
 // ScheduleGetProfilesRequestType
@@ -438,7 +438,7 @@ export interface ScheduleGetProfilesRequestTypeAttribute {
     include_system_profile?: boolean;
 }
 export interface ScheduleGetProfilesRequestType {
-    $attributes: ScheduleGetProfilesRequestTypeAttribute
+    attributes: ScheduleGetProfilesRequestTypeAttribute
 }
 
 // ScheduleGetProfilesResponseType
@@ -536,7 +536,7 @@ export interface ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupAttribute
     parent_facility_group?: base.IDType;
 }
 export interface ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroup {
-    $attributes: ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupAttribute
+    attributes: ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupAttribute
     facility_group?: ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacilityGroup | ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacilityGroup[];
     facility?: ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacility | ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacility[];
 }
@@ -544,13 +544,13 @@ export interface ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacilityG
     id: base.IDType;
 }
 export interface ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacilityGroup {
-    $attributes: ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacilityGroupAttribute
+    attributes: ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacilityGroupAttribute
 }
 export interface ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacilityAttribute {
     id: base.IDType;
 }
 export interface ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacility {
-    $attributes: ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacilityAttribute
+    attributes: ScheduleGetFacilityGroupsByIdResponseTypeFacilityGroupFacilityAttribute
 }
 export interface ScheduleGetFacilityGroupsByIdResponseType {
     
@@ -694,7 +694,7 @@ export interface ScheduleFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface ScheduleFileDownloadRequestType {
-    $attributes: ScheduleFileDownloadRequestTypeAttribute
+    attributes: ScheduleFileDownloadRequestTypeAttribute
 }
 
 // ScheduleFileDownloadResponseType
@@ -732,7 +732,7 @@ export interface EventTypeObserversObserverAttribute {
     order?: number;
 }
 export interface EventTypeObserversObserver {
-    $attributes: EventTypeObserversObserverAttribute
+    attributes: EventTypeObserversObserverAttribute
 }
 export interface EventTypeCustomerAttribute {
     name?: string;
@@ -749,7 +749,7 @@ export interface EventTypeCustomerAttribute {
     url?: string;
 }
 export interface EventTypeCustomer {
-    $attributes: EventTypeCustomerAttribute
+    attributes: EventTypeCustomerAttribute
 }
 export interface EventTypeRepeatInfo {
     
@@ -766,7 +766,7 @@ export interface EventTypeRepeatInfoConditionAttribute {
     week?: number;
 }
 export interface EventTypeRepeatInfoCondition {
-    $attributes: EventTypeRepeatInfoConditionAttribute
+    attributes: EventTypeRepeatInfoConditionAttribute
 }
 export interface EventTypeRepeatInfoExclusiveDatetimes {
     
@@ -777,7 +777,7 @@ export interface EventTypeRepeatInfoExclusiveDatetimesExclusiveDatetimeAttribute
     end: string;
 }
 export interface EventTypeRepeatInfoExclusiveDatetimesExclusiveDatetime {
-    $attributes: EventTypeRepeatInfoExclusiveDatetimesExclusiveDatetimeAttribute
+    attributes: EventTypeRepeatInfoExclusiveDatetimesExclusiveDatetimeAttribute
 }
 export interface EventTypeWhen {
     
@@ -794,7 +794,7 @@ export interface EventTypeFollowsFollowAttribute {
     text?: string;
 }
 export interface EventTypeFollowsFollow {
-    $attributes: EventTypeFollowsFollowAttribute
+    attributes: EventTypeFollowsFollowAttribute
     creator: base.ChangeLogType;
 }
 export interface EventTypeFileAttribute {
@@ -804,11 +804,11 @@ export interface EventTypeFileAttribute {
     mime_type?: string;
 }
 export interface EventTypeFile {
-    $attributes: EventTypeFileAttribute
+    attributes: EventTypeFileAttribute
     content?: Buffer;
 }
 export interface EventType {
-    $attributes: EventTypeAttribute
+    attributes: EventTypeAttribute
     members?: EventTypeMembers;
     observers?: EventTypeObservers;
     customer?: EventTypeCustomer;
@@ -825,21 +825,21 @@ export interface MemberTypeUserAttribute {
     order?: number;
 }
 export interface MemberTypeUser {
-    $attributes: MemberTypeUserAttribute
+    attributes: MemberTypeUserAttribute
 }
 export interface MemberTypeOrganizationAttribute {
     id: base.IDType;
     order?: number;
 }
 export interface MemberTypeOrganization {
-    $attributes: MemberTypeOrganizationAttribute
+    attributes: MemberTypeOrganizationAttribute
 }
 export interface MemberTypeFacilityAttribute {
     id: base.IDType;
     order?: number;
 }
 export interface MemberTypeFacility {
-    $attributes: MemberTypeFacilityAttribute
+    attributes: MemberTypeFacilityAttribute
 }
 export interface MemberType {
     
@@ -854,7 +854,7 @@ export interface EventDateTypeAttribute {
     end: string;
 }
 export interface EventDateType {
-    $attributes: EventDateTypeAttribute
+    attributes: EventDateTypeAttribute
 }
 
 // EventDateTimeType
@@ -864,7 +864,7 @@ export interface EventDateTimeTypeAttribute {
     facility_id?: base.IDType;
 }
 export interface EventDateTimeType {
-    $attributes: EventDateTimeTypeAttribute
+    attributes: EventDateTimeTypeAttribute
 }
 
 // SystemProfileType
@@ -879,7 +879,7 @@ export interface SystemProfileTypeAttribute {
     show_holiday: boolean;
 }
 export interface SystemProfileType {
-    $attributes: SystemProfileTypeAttribute
+    attributes: SystemProfileTypeAttribute
 }
 
 // FacilityType
@@ -892,7 +892,7 @@ export interface FacilityTypeAttribute {
     belong_facility_group?: base.IDType;
 }
 export interface FacilityType {
-    $attributes: FacilityTypeAttribute
+    attributes: FacilityTypeAttribute
 }
 
 // FacilityProfileType
@@ -901,6 +901,6 @@ export interface FacilityProfileTypeAttribute {
     approval_required: boolean;
 }
 export interface FacilityProfileType {
-    $attributes: FacilityProfileTypeAttribute
+    attributes: FacilityProfileTypeAttribute
 }
 

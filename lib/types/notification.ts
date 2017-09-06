@@ -13,7 +13,7 @@ export interface NotificationIdTypeAttribute {
     item: base.NonBlankStringType;
 }
 export interface NotificationIdType {
-    $attributes: NotificationIdTypeAttribute
+    attributes: NotificationIdTypeAttribute
 }
 
 // NotificationItemVersionType
@@ -21,7 +21,7 @@ export interface NotificationItemVersionTypeAttribute {
     version: base.VersionType;
 }
 export interface NotificationItemVersionType {
-    $attributes: NotificationItemVersionTypeAttribute
+    attributes: NotificationItemVersionTypeAttribute
     notification_id: NotificationIdType;
 }
 
@@ -31,7 +31,7 @@ export interface NotificationItemVersionResultTypeAttribute {
     operation: base.ItemOperationType;
 }
 export interface NotificationItemVersionResultType {
-    $attributes: NotificationItemVersionResultTypeAttribute
+    attributes: NotificationItemVersionResultTypeAttribute
     notification_id: NotificationIdType;
 }
 
@@ -42,7 +42,7 @@ export interface NotificationGetNotificationVersionsRequestTypeAttribute {
     module_id?: base.IDType;
 }
 export interface NotificationGetNotificationVersionsRequestType {
-    $attributes: NotificationGetNotificationVersionsRequestTypeAttribute
+    attributes: NotificationGetNotificationVersionsRequestTypeAttribute
     notification_item?: NotificationItemVersionType | NotificationItemVersionType[];
 }
 
@@ -71,7 +71,7 @@ export interface NotificationGetNotificationHistoryVersionsRequestTypeAttribute 
     module_id?: base.IDType;
 }
 export interface NotificationGetNotificationHistoryVersionsRequestType {
-    $attributes: NotificationGetNotificationHistoryVersionsRequestTypeAttribute
+    attributes: NotificationGetNotificationHistoryVersionsRequestTypeAttribute
     notification_history_item?: NotificationItemVersionType | NotificationItemVersionType[];
 }
 
@@ -112,7 +112,7 @@ export interface NotificationPersonalProfileTypeAttribute {
     save_notification_history_duration?: number;
 }
 export interface NotificationPersonalProfileType {
-    $attributes: NotificationPersonalProfileTypeAttribute
+    attributes: NotificationPersonalProfileTypeAttribute
 }
 
 // NotificationGetProfilesRequestType
@@ -161,6 +161,6 @@ export interface NotificationTypeAttribute {
     version: base.VersionType;
 }
 export interface NotificationType {
-    $attributes: NotificationTypeAttribute
+    attributes: NotificationTypeAttribute
 }
 

@@ -18,7 +18,7 @@ export interface WorkflowApplicationTypeAttribute extends ApplicationTypeAttribu
     status_type: WorkflowStatusType;
 }
 export interface WorkflowApplicationType extends ApplicationType {
-    $attributes: WorkflowApplicationTypeAttribute
+    attributes: WorkflowApplicationTypeAttribute
     folder_type?: WorkflowFolderType | WorkflowFolderType[];
 }
 
@@ -29,7 +29,7 @@ export interface WorkflowAvailabilityUserTypeAttribute {
     keitai: boolean;
 }
 export interface WorkflowAvailabilityUserType {
-    $attributes: WorkflowAvailabilityUserTypeAttribute
+    attributes: WorkflowAvailabilityUserTypeAttribute
 }
 
 // WorkflowGetRequestType
@@ -46,7 +46,7 @@ export interface WorkflowGetRequestTypeAttribute {
     maximum_request_amount_to_get?: string;
 }
 export interface WorkflowGetRequestType {
-    $attributes: WorkflowGetRequestTypeAttribute
+    attributes: WorkflowGetRequestTypeAttribute
 }
 
 // WorkflowGetAttachedFileBodyType
@@ -55,7 +55,7 @@ export interface WorkflowGetAttachedFileBodyTypeAttribute {
     file_id: base.IDType;
 }
 export interface WorkflowGetAttachedFileBodyType {
-    $attributes: WorkflowGetAttachedFileBodyTypeAttribute
+    attributes: WorkflowGetAttachedFileBodyTypeAttribute
 }
 
 // WorkflowGetUnprocessedApplicationVersionsRequestType
@@ -88,7 +88,7 @@ export interface WorkflowGetSentApplicationVersionsRequestTypeAttribute {
     end?: string;
 }
 export interface WorkflowGetSentApplicationVersionsRequestType {
-    $attributes: WorkflowGetSentApplicationVersionsRequestTypeAttribute
+    attributes: WorkflowGetSentApplicationVersionsRequestTypeAttribute
     application_item?: base.ItemVersionType | base.ItemVersionType[];
 }
 
@@ -116,7 +116,7 @@ export interface WorkflowGetReceivedApplicationVersionsRequestTypeAttribute {
     end?: string;
 }
 export interface WorkflowGetReceivedApplicationVersionsRequestType {
-    $attributes: WorkflowGetReceivedApplicationVersionsRequestTypeAttribute
+    attributes: WorkflowGetReceivedApplicationVersionsRequestTypeAttribute
     application_item?: base.ItemVersionType | base.ItemVersionType[];
 }
 
@@ -156,7 +156,7 @@ export interface WorkflowGetProxyApprovalsByDelegatorIdRequestTypeAttribute {
     end?: string;
 }
 export interface WorkflowGetProxyApprovalsByDelegatorIdRequestType {
-    $attributes: WorkflowGetProxyApprovalsByDelegatorIdRequestTypeAttribute
+    attributes: WorkflowGetProxyApprovalsByDelegatorIdRequestTypeAttribute
 }
 
 // WorkflowGetProxyApprovalsByDelegatorIdResponseType
@@ -171,7 +171,7 @@ export interface WorkflowGetPendingApprovalsRequestTypeAttribute {
     end?: string;
 }
 export interface WorkflowGetPendingApprovalsRequestType {
-    $attributes: WorkflowGetPendingApprovalsRequestTypeAttribute
+    attributes: WorkflowGetPendingApprovalsRequestTypeAttribute
 }
 
 // WorkflowGetPendingApprovalsResponseType
@@ -187,7 +187,7 @@ export interface WorkflowHandleApplicationOperationTypeAttribute {
     comment?: string;
 }
 export interface WorkflowHandleApplicationOperationType {
-    $attributes: WorkflowHandleApplicationOperationTypeAttribute
+    attributes: WorkflowHandleApplicationOperationTypeAttribute
     operation: OperationType;
 }
 
@@ -218,7 +218,7 @@ export interface WorkflowGetProxiesResponseTypeProxiesUserProxyAttribute {
     user_id: base.IDType;
 }
 export interface WorkflowGetProxiesResponseTypeProxiesUserProxy {
-    $attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyAttribute
+    attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyAttribute
     proxy_approver?: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApprover | WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApprover[];
     proxy_applicant?: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicant | WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicant[];
 }
@@ -226,13 +226,13 @@ export interface WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApproverAttr
     approver_id: base.IDType;
 }
 export interface WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApprover {
-    $attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApproverAttribute
+    attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApproverAttribute
 }
 export interface WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute {
     applicant_id: base.IDType;
 }
 export interface WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicant {
-    $attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute
+    attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute
 }
 export interface WorkflowGetProxiesResponseType {
     
@@ -248,7 +248,7 @@ export interface WorkflowSetProxiesRequestTypeProxiesUserProxyAttribute {
     user_id: base.IDType;
 }
 export interface WorkflowSetProxiesRequestTypeProxiesUserProxy {
-    $attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyAttribute
+    attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyAttribute
     proxy_approver?: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApprover | WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApprover[];
     proxy_applicant?: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicant | WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicant[];
 }
@@ -256,13 +256,13 @@ export interface WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApproverAttri
     approver_id: base.IDType;
 }
 export interface WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApprover {
-    $attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApproverAttribute
+    attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApproverAttribute
 }
 export interface WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicantAttribute {
     applicant_id: base.IDType;
 }
 export interface WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicant {
-    $attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicantAttribute
+    attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicantAttribute
 }
 export interface WorkflowSetProxiesRequestType {
     
@@ -279,7 +279,7 @@ export interface WorkflowSetProxiesResponseTypeProxiesUserProxyAttribute {
     user_id: base.IDType;
 }
 export interface WorkflowSetProxiesResponseTypeProxiesUserProxy {
-    $attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyAttribute
+    attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyAttribute
     proxy_approver?: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApprover | WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApprover[];
     proxy_applicant?: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicant | WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicant[];
 }
@@ -287,13 +287,13 @@ export interface WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApproverAttr
     approver_id: base.IDType;
 }
 export interface WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApprover {
-    $attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApproverAttribute
+    attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApproverAttribute
 }
 export interface WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute {
     applicant_id: base.IDType;
 }
 export interface WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicant {
-    $attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute
+    attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute
 }
 export interface WorkflowSetProxiesResponseType {
     
@@ -312,7 +312,7 @@ export interface WorkflowGetProfilesResponseTypeAttribute {
     modify_proxies: boolean;
 }
 export interface WorkflowGetProfilesResponseType {
-    $attributes: WorkflowGetProfilesResponseTypeAttribute
+    attributes: WorkflowGetProfilesResponseTypeAttribute
 }
 
 // WorkflowFileDownloadRequestType
@@ -320,7 +320,7 @@ export interface WorkflowFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface WorkflowFileDownloadRequestType {
-    $attributes: WorkflowFileDownloadRequestTypeAttribute
+    attributes: WorkflowFileDownloadRequestTypeAttribute
 }
 
 // WorkflowFileDownloadResponseType
@@ -416,7 +416,7 @@ export interface ApplicationTypeApplicantAttribute {
     name: base.NonBlankStringType;
 }
 export interface ApplicationTypeApplicant {
-    $attributes: ApplicationTypeApplicantAttribute
+    attributes: ApplicationTypeApplicantAttribute
     proxy?: ApplicationTypeApplicantProxy;
 }
 export interface ApplicationTypeApplicantProxyAttribute {
@@ -424,7 +424,7 @@ export interface ApplicationTypeApplicantProxyAttribute {
     name: base.NonBlankStringType;
 }
 export interface ApplicationTypeApplicantProxy {
-    $attributes: ApplicationTypeApplicantProxyAttribute
+    attributes: ApplicationTypeApplicantProxyAttribute
 }
 export interface ApplicationTypeItems {
     
@@ -443,7 +443,7 @@ export interface ApplicationTypeStepsStepAttribute {
     is_approval_step?: base.NonBlankStringType;
 }
 export interface ApplicationTypeStepsStep {
-    $attributes: ApplicationTypeStepsStepAttribute
+    attributes: ApplicationTypeStepsStepAttribute
     processor: ApplicationTypeStepsStepProcessor | ApplicationTypeStepsStepProcessor[];
 }
 export interface ApplicationTypeStepsStepProcessorAttribute {
@@ -454,7 +454,7 @@ export interface ApplicationTypeStepsStepProcessorAttribute {
     result?: base.NonBlankStringType;
 }
 export interface ApplicationTypeStepsStepProcessor {
-    $attributes: ApplicationTypeStepsStepProcessorAttribute
+    attributes: ApplicationTypeStepsStepProcessorAttribute
     proxy?: ApplicationTypeStepsStepProcessorProxy;
 }
 export interface ApplicationTypeStepsStepProcessorProxyAttribute {
@@ -462,16 +462,16 @@ export interface ApplicationTypeStepsStepProcessorProxyAttribute {
     processor_name: string;
 }
 export interface ApplicationTypeStepsStepProcessorProxy {
-    $attributes: ApplicationTypeStepsStepProcessorProxyAttribute
+    attributes: ApplicationTypeStepsStepProcessorProxyAttribute
 }
 export interface ApplicationTypeFolderAttribute {
     id: base.IDType;
 }
 export interface ApplicationTypeFolder {
-    $attributes: ApplicationTypeFolderAttribute
+    attributes: ApplicationTypeFolderAttribute
 }
 export interface ApplicationType {
-    $attributes: ApplicationTypeAttribute
+    attributes: ApplicationTypeAttribute
     applicant: ApplicationTypeApplicant;
     items: ApplicationTypeItems;
     steps: ApplicationTypeSteps;
@@ -488,10 +488,10 @@ export interface FolderTypeApplicationAttribute {
     id: base.IDType;
 }
 export interface FolderTypeApplication {
-    $attributes: FolderTypeApplicationAttribute
+    attributes: FolderTypeApplicationAttribute
 }
 export interface FolderType {
-    $attributes: FolderTypeAttribute
+    attributes: FolderTypeAttribute
     application?: FolderTypeApplication | FolderTypeApplication[];
 }
 
@@ -505,7 +505,7 @@ export interface OperationTypeSentBackStepAttribute {
     step_id: base.IDType;
 }
 export interface OperationTypeSentBackStep {
-    $attributes: OperationTypeSentBackStepAttribute
+    attributes: OperationTypeSentBackStepAttribute
 }
 export interface OperationType {
     
@@ -525,7 +525,7 @@ export interface ItemTypeAttribute {
     right_align?: boolean;
 }
 export interface ItemType {
-    $attributes: ItemTypeAttribute
+    attributes: ItemTypeAttribute
 }
 
 // FilesItemType
@@ -540,10 +540,10 @@ export interface FilesItemTypeFileAttribute {
     mime_type?: string;
 }
 export interface FilesItemTypeFile {
-    $attributes: FilesItemTypeFileAttribute
+    attributes: FilesItemTypeFileAttribute
 }
 export interface FilesItemType {
-    $attributes: FilesItemTypeAttribute
+    attributes: FilesItemTypeAttribute
     file?: FilesItemTypeFile | FilesItemTypeFile[];
 }
 
@@ -557,7 +557,7 @@ export interface RequestManageFormTypeManageRequestFormAttribute {
     name_request_form?: string;
 }
 export interface RequestManageFormTypeManageRequestForm {
-    $attributes: RequestManageFormTypeManageRequestFormAttribute
+    attributes: RequestManageFormTypeManageRequestFormAttribute
     manage_item_detail?: RequestManageFormTypeManageRequestFormManageItemDetail;
 }
 export interface RequestManageFormTypeManageRequestFormManageItemDetailAttribute {
@@ -571,10 +571,10 @@ export interface RequestManageFormTypeManageRequestFormManageItemDetailAttribute
     request_date: string;
 }
 export interface RequestManageFormTypeManageRequestFormManageItemDetail {
-    $attributes: RequestManageFormTypeManageRequestFormManageItemDetailAttribute
+    attributes: RequestManageFormTypeManageRequestFormManageItemDetailAttribute
 }
 export interface RequestManageFormType {
-    $attributes: RequestManageFormTypeAttribute
+    attributes: RequestManageFormTypeAttribute
     manage_request_form?: RequestManageFormTypeManageRequestForm;
 }
 
@@ -589,7 +589,7 @@ export interface CategoriesTypeAttribute {
     modify_time?: base.IDType;
 }
 export interface CategoriesType {
-    $attributes: CategoriesTypeAttribute
+    attributes: CategoriesTypeAttribute
     child_category: CategoryType;
 }
 
@@ -604,7 +604,7 @@ export interface CategoryTypeAttribute {
     modify_time?: base.IDType;
 }
 export interface CategoryType {
-    $attributes: CategoryTypeAttribute
+    attributes: CategoryTypeAttribute
     child_category?: ChildCategoriesType;
 }
 
@@ -619,7 +619,7 @@ export interface ChildCategoriesTypeAttribute {
     modify_time?: base.IDType;
 }
 export interface ChildCategoriesType {
-    $attributes: ChildCategoriesTypeAttribute
+    attributes: ChildCategoriesTypeAttribute
     child_category?: CategoryType | CategoryType[];
 }
 
@@ -637,10 +637,10 @@ export interface RequestFormTypeRequestFormAttribute {
     icon_url?: base.IDType;
 }
 export interface RequestFormTypeRequestForm {
-    $attributes: RequestFormTypeRequestFormAttribute
+    attributes: RequestFormTypeRequestFormAttribute
 }
 export interface RequestFormType {
-    $attributes: RequestFormTypeAttribute
+    attributes: RequestFormTypeAttribute
     requestForm: RequestFormTypeRequestForm | RequestFormTypeRequestForm[];
 }
 
@@ -652,7 +652,7 @@ export interface FileAttachedDetailFileHeaderAttribute {
     size: base.NonBlankStringType;
 }
 export interface FileAttachedDetailFileHeader {
-    $attributes: FileAttachedDetailFileHeaderAttribute
+    attributes: FileAttachedDetailFileHeaderAttribute
 }
 export interface FileAttachedDetailFileInformationAttribute {
     subject: base.NonBlankStringType;
@@ -662,7 +662,7 @@ export interface FileAttachedDetailFileInformationAttribute {
     description?: base.NonBlankStringType;
 }
 export interface FileAttachedDetailFileInformation {
-    $attributes: FileAttachedDetailFileInformationAttribute
+    attributes: FileAttachedDetailFileInformationAttribute
 }
 export interface FileAttachedDetail {
     

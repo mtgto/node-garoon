@@ -22,7 +22,7 @@ export interface FaultMessageTypeAttribute {
     counter_measure: string;
 }
 export interface FaultMessageType {
-    $attributes: FaultMessageTypeAttribute
+    attributes: FaultMessageTypeAttribute
 }
 
 // ItemVersionType
@@ -31,7 +31,7 @@ export interface ItemVersionTypeAttribute {
     version: VersionType;
 }
 export interface ItemVersionType {
-    $attributes: ItemVersionTypeAttribute
+    attributes: ItemVersionTypeAttribute
 }
 
 // ItemVersionResultType
@@ -41,7 +41,7 @@ export interface ItemVersionResultTypeAttribute {
     operation: ItemOperationType;
 }
 export interface ItemVersionResultType {
-    $attributes: ItemVersionResultTypeAttribute
+    attributes: ItemVersionResultTypeAttribute
 }
 
 // FileBodyType
@@ -169,7 +169,7 @@ export interface BaseCalendarEventTypeAttribute {
     type: BaseCalendarEventTypeType;
 }
 export interface BaseCalendarEventType {
-    $attributes: BaseCalendarEventTypeAttribute
+    attributes: BaseCalendarEventTypeAttribute
 }
 
 // BaseGetCalendarEventsRequestType
@@ -189,7 +189,7 @@ export interface BaseApplicationTypeAttribute {
     status: BaseApplicationStatusType;
 }
 export interface BaseApplicationType {
-    $attributes: BaseApplicationTypeAttribute
+    attributes: BaseApplicationTypeAttribute
 }
 
 // BaseGetApplicationStatusRequestType
@@ -215,16 +215,16 @@ export interface BaseApplicationInformationTypeAppIconAttribute {
     url: string;
 }
 export interface BaseApplicationInformationTypeAppIcon {
-    $attributes: BaseApplicationInformationTypeAppIconAttribute
+    attributes: BaseApplicationInformationTypeAppIconAttribute
 }
 export interface BaseApplicationInformationTypeAvailableClientAttribute {
     name: NonBlankStringType;
 }
 export interface BaseApplicationInformationTypeAvailableClient {
-    $attributes: BaseApplicationInformationTypeAvailableClientAttribute
+    attributes: BaseApplicationInformationTypeAvailableClientAttribute
 }
 export interface BaseApplicationInformationType {
-    $attributes: BaseApplicationInformationTypeAttribute
+    attributes: BaseApplicationInformationTypeAttribute
     app_icon?: BaseApplicationInformationTypeAppIcon | BaseApplicationInformationTypeAppIcon[];
     available_client?: BaseApplicationInformationTypeAvailableClient | BaseApplicationInformationTypeAvailableClient[];
 }
@@ -245,7 +245,7 @@ export interface BaseFileDownloadRequestTypeAttribute {
     file_id: IDType;
 }
 export interface BaseFileDownloadRequestType {
-    $attributes: BaseFileDownloadRequestTypeAttribute
+    attributes: BaseFileDownloadRequestTypeAttribute
 }
 
 // BaseFileDownloadResponseType
@@ -282,7 +282,7 @@ export interface BaseManagerApplicationTypeAttribute {
     active: boolean;
 }
 export interface BaseManagerApplicationType {
-    $attributes: BaseManagerApplicationTypeAttribute
+    attributes: BaseManagerApplicationTypeAttribute
 }
 
 // BaseManagerApplicationRequestType
@@ -327,20 +327,20 @@ export interface UserTypePhotoAttribute {
     mime_type?: string;
 }
 export interface UserTypePhoto {
-    $attributes: UserTypePhotoAttribute
+    attributes: UserTypePhotoAttribute
 }
 export interface UserTypeOrganizationAttribute {
     id: IDType;
 }
 export interface UserTypeOrganization {
-    $attributes: UserTypeOrganizationAttribute
+    attributes: UserTypeOrganizationAttribute
 }
 export interface UserTypeAcl {
     
     ace?: AceType | AceType[];
 }
 export interface UserType {
-    $attributes: UserTypeAttribute
+    attributes: UserTypeAttribute
     photo?: UserTypePhoto;
     organization?: UserTypeOrganization | UserTypeOrganization[];
     acl?: UserTypeAcl;
@@ -354,7 +354,7 @@ export interface ListTypeAttribute {
     description: string;
 }
 export interface ListType {
-    $attributes: ListTypeAttribute
+    attributes: ListTypeAttribute
 }
 
 // OrganizationType
@@ -366,7 +366,7 @@ export interface OrganizationTypeAcl {
     ace?: AceType | AceType[];
 }
 export interface OrganizationType extends GroupType {
-    $attributes: OrganizationTypeAttribute
+    attributes: OrganizationTypeAttribute
     organization?: OrganizationType | OrganizationType[];
     members?: MembersType;
     acl?: OrganizationTypeAcl;
@@ -381,7 +381,7 @@ export interface GroupTypeAttribute {
     order?: number;
 }
 export interface GroupType {
-    $attributes: GroupTypeAttribute
+    attributes: GroupTypeAttribute
 }
 
 // MembersType
@@ -389,7 +389,7 @@ export interface MembersTypeUserAttribute {
     id: IDType;
 }
 export interface MembersTypeUser {
-    $attributes: MembersTypeUserAttribute
+    attributes: MembersTypeUserAttribute
 }
 export interface MembersType {
     
@@ -405,7 +405,7 @@ export interface FileTypeAttribute {
     mime_type?: string;
 }
 export interface FileType {
-    $attributes: FileTypeAttribute
+    attributes: FileTypeAttribute
     content: Buffer;
 }
 
@@ -429,7 +429,7 @@ export interface AceTypeDynamicGroupAttribute extends GroupTypeAttribute {
     condition: string;
 }
 export interface AceTypeDynamicGroup extends GroupType {
-    $attributes: AceTypeDynamicGroupAttribute
+    attributes: AceTypeDynamicGroupAttribute
     acl?: AceTypeDynamicGroupAcl;
 }
 export interface AceTypeDynamicGroupAcl {
@@ -437,7 +437,7 @@ export interface AceTypeDynamicGroupAcl {
     ace?: AceType | AceType[];
 }
 export interface AceType {
-    $attributes: AceTypeAttribute
+    attributes: AceTypeAttribute
     user?: UserType;
     static_group?: AceTypeStaticGroup;
     dynamic_group?: AceTypeDynamicGroup;
@@ -461,7 +461,7 @@ export interface ChangeLogTypeAttribute {
     date: string;
 }
 export interface ChangeLogType {
-    $attributes: ChangeLogTypeAttribute
+    attributes: ChangeLogTypeAttribute
 }
 
 // RegionType
@@ -473,10 +473,10 @@ export interface RegionTypeCityAttribute {
     timezone: string;
 }
 export interface RegionTypeCity {
-    $attributes: RegionTypeCityAttribute
+    attributes: RegionTypeCityAttribute
 }
 export interface RegionType {
-    $attributes: RegionTypeAttribute
+    attributes: RegionTypeAttribute
     city?: RegionTypeCity | RegionTypeCity[];
 }
 
