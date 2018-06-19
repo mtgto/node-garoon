@@ -3,6 +3,11 @@ lib/**/*.ts
 !lib/**/*.d.ts
 test/
 testAuth.json
+templates/
+.npmignore
+.prettierrc.json
+tslint.json
+yarn.lock
 
 # project
 .vscode/

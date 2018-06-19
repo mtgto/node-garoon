@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length no-trailing-whitespace */
 
 // [Import]
 import * as base from "./base";
@@ -18,10 +19,9 @@ export interface WorkflowApplicationTypeAttribute extends ApplicationTypeAttribu
     status_type: WorkflowStatusType;
 }
 export interface WorkflowApplicationType extends ApplicationType {
-    attributes: WorkflowApplicationTypeAttribute
+    attributes: WorkflowApplicationTypeAttribute;
     folder_type?: WorkflowFolderType | WorkflowFolderType[];
 }
-
 // WorkflowAvailabilityUserType
 export interface WorkflowAvailabilityUserTypeAttribute {
     id: base.IDType;
@@ -29,9 +29,8 @@ export interface WorkflowAvailabilityUserTypeAttribute {
     keitai: boolean;
 }
 export interface WorkflowAvailabilityUserType {
-    attributes: WorkflowAvailabilityUserTypeAttribute
+    attributes: WorkflowAvailabilityUserTypeAttribute;
 }
-
 // WorkflowGetRequestType
 export interface WorkflowGetRequestTypeAttribute {
     request_form_id: base.IDType;
@@ -46,109 +45,93 @@ export interface WorkflowGetRequestTypeAttribute {
     maximum_request_amount_to_get?: string;
 }
 export interface WorkflowGetRequestType {
-    attributes: WorkflowGetRequestTypeAttribute
+    attributes: WorkflowGetRequestTypeAttribute;
 }
-
 // WorkflowGetAttachedFileBodyType
 export interface WorkflowGetAttachedFileBodyTypeAttribute {
     request_form_id: base.IDType;
     file_id: base.IDType;
 }
 export interface WorkflowGetAttachedFileBodyType {
-    attributes: WorkflowGetAttachedFileBodyTypeAttribute
+    attributes: WorkflowGetAttachedFileBodyTypeAttribute;
 }
-
 // WorkflowGetUnprocessedApplicationVersionsRequestType
 export interface WorkflowGetUnprocessedApplicationVersionsRequestType {
     
     application_item?: base.ItemVersionType | base.ItemVersionType[];
 }
-
 // WorkflowGetUnprocessedApplicationVersionsResponseType
 export interface WorkflowGetUnprocessedApplicationVersionsResponseType {
     
     application_item?: base.ItemVersionResultType | base.ItemVersionResultType[];
 }
-
 // WorkflowGetUnprocessedApplicationsByIdRequestType
 export interface WorkflowGetUnprocessedApplicationsByIdRequestType {
     
     application_id: base.IDType | base.IDType[];
 }
-
 // WorkflowGetUnprocessedApplicationsByIdResponseType
 export interface WorkflowGetUnprocessedApplicationsByIdResponseType {
     
     application?: WorkflowApplicationType | WorkflowApplicationType[];
 }
-
 // WorkflowGetSentApplicationVersionsRequestType
 export interface WorkflowGetSentApplicationVersionsRequestTypeAttribute {
     start: string;
     end?: string;
 }
 export interface WorkflowGetSentApplicationVersionsRequestType {
-    attributes: WorkflowGetSentApplicationVersionsRequestTypeAttribute
+    attributes: WorkflowGetSentApplicationVersionsRequestTypeAttribute;
     application_item?: base.ItemVersionType | base.ItemVersionType[];
 }
-
 // WorkflowGetSentApplicationVersionsResponseType
 export interface WorkflowGetSentApplicationVersionsResponseType {
     
     application_item?: base.ItemVersionResultType | base.ItemVersionResultType[];
 }
-
 // WorkflowGetSentApplicationsByIdRequestType
 export interface WorkflowGetSentApplicationsByIdRequestType {
     
     application_id: base.IDType | base.IDType[];
 }
-
 // WorkflowGetSentApplicationsByIdResponseType
 export interface WorkflowGetSentApplicationsByIdResponseType {
     
     application?: WorkflowApplicationType | WorkflowApplicationType[];
 }
-
 // WorkflowGetReceivedApplicationVersionsRequestType
 export interface WorkflowGetReceivedApplicationVersionsRequestTypeAttribute {
     start: string;
     end?: string;
 }
 export interface WorkflowGetReceivedApplicationVersionsRequestType {
-    attributes: WorkflowGetReceivedApplicationVersionsRequestTypeAttribute
+    attributes: WorkflowGetReceivedApplicationVersionsRequestTypeAttribute;
     application_item?: base.ItemVersionType | base.ItemVersionType[];
 }
-
 // WorkflowGetReceivedApplicationVersionsResponseType
 export interface WorkflowGetReceivedApplicationVersionsResponseType {
     
     application_item?: base.ItemVersionResultType | base.ItemVersionResultType[];
 }
-
 // WorkflowGetReceivedApplicationsByIdRequestType
 export interface WorkflowGetReceivedApplicationsByIdRequestType {
     
     application_id: base.IDType | base.IDType[];
 }
-
 // WorkflowGetReceivedApplicationsByIdResponseType
 export interface WorkflowGetReceivedApplicationsByIdResponseType {
     
     application?: WorkflowApplicationType | WorkflowApplicationType[];
 }
-
 // WorkflowGetApprovalDelegatorsRequestType
 export interface WorkflowGetApprovalDelegatorsRequestType {
     
 }
-
 // WorkflowGetApprovalDelegatorsResponseType
 export interface WorkflowGetApprovalDelegatorsResponseType {
     
     delegator_id?: base.IDType | base.IDType[];
 }
-
 // WorkflowGetProxyApprovalsByDelegatorIdRequestType
 export interface WorkflowGetProxyApprovalsByDelegatorIdRequestTypeAttribute {
     delegator_id: base.IDType;
@@ -156,30 +139,26 @@ export interface WorkflowGetProxyApprovalsByDelegatorIdRequestTypeAttribute {
     end?: string;
 }
 export interface WorkflowGetProxyApprovalsByDelegatorIdRequestType {
-    attributes: WorkflowGetProxyApprovalsByDelegatorIdRequestTypeAttribute
+    attributes: WorkflowGetProxyApprovalsByDelegatorIdRequestTypeAttribute;
 }
-
 // WorkflowGetProxyApprovalsByDelegatorIdResponseType
 export interface WorkflowGetProxyApprovalsByDelegatorIdResponseType {
     
     application?: WorkflowApplicationType | WorkflowApplicationType[];
 }
-
 // WorkflowGetPendingApprovalsRequestType
 export interface WorkflowGetPendingApprovalsRequestTypeAttribute {
     start: string;
     end?: string;
 }
 export interface WorkflowGetPendingApprovalsRequestType {
-    attributes: WorkflowGetPendingApprovalsRequestTypeAttribute
+    attributes: WorkflowGetPendingApprovalsRequestTypeAttribute;
 }
-
 // WorkflowGetPendingApprovalsResponseType
 export interface WorkflowGetPendingApprovalsResponseType {
     
     application?: WorkflowApplicationType | WorkflowApplicationType[];
 }
-
 // WorkflowHandleApplicationOperationType
 export interface WorkflowHandleApplicationOperationTypeAttribute {
     application_id: base.IDType;
@@ -187,28 +166,24 @@ export interface WorkflowHandleApplicationOperationTypeAttribute {
     comment?: string;
 }
 export interface WorkflowHandleApplicationOperationType {
-    attributes: WorkflowHandleApplicationOperationTypeAttribute
+    attributes: WorkflowHandleApplicationOperationTypeAttribute;
     operation: OperationType;
 }
-
 // WorkflowHandleApplicationsRequestType
 export interface WorkflowHandleApplicationsRequestType {
     
     request_token?: string;
     handle: WorkflowHandleApplicationOperationType | WorkflowHandleApplicationOperationType[];
 }
-
 // WorkflowHandleApplicationsResponseType
 export interface WorkflowHandleApplicationsResponseType {
     
     application?: WorkflowApplicationType | WorkflowApplicationType[];
 }
-
 // WorkflowGetProxiesRequestType
 export interface WorkflowGetProxiesRequestType {
     
 }
-
 // WorkflowGetProxiesResponseType
 export interface WorkflowGetProxiesResponseTypeProxies {
     
@@ -218,7 +193,7 @@ export interface WorkflowGetProxiesResponseTypeProxiesUserProxyAttribute {
     user_id: base.IDType;
 }
 export interface WorkflowGetProxiesResponseTypeProxiesUserProxy {
-    attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyAttribute
+    attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyAttribute;
     proxy_approver?: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApprover | WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApprover[];
     proxy_applicant?: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicant | WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicant[];
 }
@@ -226,19 +201,18 @@ export interface WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApproverAttr
     approver_id: base.IDType;
 }
 export interface WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApprover {
-    attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApproverAttribute
+    attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApproverAttribute;
 }
 export interface WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute {
     applicant_id: base.IDType;
 }
 export interface WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicant {
-    attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute
+    attributes: WorkflowGetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute;
 }
 export interface WorkflowGetProxiesResponseType {
     
     proxies?: WorkflowGetProxiesResponseTypeProxies;
 }
-
 // WorkflowSetProxiesRequestType
 export interface WorkflowSetProxiesRequestTypeProxies {
     
@@ -248,7 +222,7 @@ export interface WorkflowSetProxiesRequestTypeProxiesUserProxyAttribute {
     user_id: base.IDType;
 }
 export interface WorkflowSetProxiesRequestTypeProxiesUserProxy {
-    attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyAttribute
+    attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyAttribute;
     proxy_approver?: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApprover | WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApprover[];
     proxy_applicant?: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicant | WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicant[];
 }
@@ -256,20 +230,19 @@ export interface WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApproverAttri
     approver_id: base.IDType;
 }
 export interface WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApprover {
-    attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApproverAttribute
+    attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApproverAttribute;
 }
 export interface WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicantAttribute {
     applicant_id: base.IDType;
 }
 export interface WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicant {
-    attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicantAttribute
+    attributes: WorkflowSetProxiesRequestTypeProxiesUserProxyProxyApplicantAttribute;
 }
 export interface WorkflowSetProxiesRequestType {
     
     request_token?: string;
     proxies?: WorkflowSetProxiesRequestTypeProxies;
 }
-
 // WorkflowSetProxiesResponseType
 export interface WorkflowSetProxiesResponseTypeProxies {
     
@@ -279,7 +252,7 @@ export interface WorkflowSetProxiesResponseTypeProxiesUserProxyAttribute {
     user_id: base.IDType;
 }
 export interface WorkflowSetProxiesResponseTypeProxiesUserProxy {
-    attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyAttribute
+    attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyAttribute;
     proxy_approver?: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApprover | WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApprover[];
     proxy_applicant?: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicant | WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicant[];
 }
@@ -287,24 +260,22 @@ export interface WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApproverAttr
     approver_id: base.IDType;
 }
 export interface WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApprover {
-    attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApproverAttribute
+    attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApproverAttribute;
 }
 export interface WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute {
     applicant_id: base.IDType;
 }
 export interface WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicant {
-    attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute
+    attributes: WorkflowSetProxiesResponseTypeProxiesUserProxyProxyApplicantAttribute;
 }
 export interface WorkflowSetProxiesResponseType {
     
     proxies?: WorkflowSetProxiesResponseTypeProxies;
 }
-
 // WorkflowGetProfilesRequestType
 export interface WorkflowGetProfilesRequestType {
     
 }
-
 // WorkflowGetProfilesResponseType
 export interface WorkflowGetProfilesResponseTypeAttribute {
     use_pending_approvals: boolean;
@@ -312,94 +283,79 @@ export interface WorkflowGetProfilesResponseTypeAttribute {
     modify_proxies: boolean;
 }
 export interface WorkflowGetProfilesResponseType {
-    attributes: WorkflowGetProfilesResponseTypeAttribute
+    attributes: WorkflowGetProfilesResponseTypeAttribute;
 }
-
 // WorkflowFileDownloadRequestType
 export interface WorkflowFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface WorkflowFileDownloadRequestType {
-    attributes: WorkflowFileDownloadRequestTypeAttribute
+    attributes: WorkflowFileDownloadRequestTypeAttribute;
 }
-
 // WorkflowFileDownloadResponseType
 export interface WorkflowFileDownloadResponseType {
     
     file?: base.FileBodyType;
 }
-
 // WorkflowGetRequestsRequestType
 export interface WorkflowGetRequestsRequestType {
     
     manage_request_parameter?: WorkflowGetRequestType;
 }
-
 // WorkflowGetRequestsResponseType
 export interface WorkflowGetRequestsResponseType {
     
     category?: RequestManageFormType | RequestManageFormType[];
 }
-
 // WorkflowGetRequestByIdRequestType
 export interface WorkflowGetRequestByIdRequestType {
     
     request_id: base.IDType | base.IDType[];
 }
-
 // WorkflowGetRequestByIdResponseType
 export interface WorkflowGetRequestByIdResponseType {
     
     subject?: WorkflowApplicationType | WorkflowApplicationType[];
 }
-
 // WorkflowGetAvailabilityUsersRequestType
 export interface WorkflowGetAvailabilityUsersRequestType {
     
     user_id: base.IDType | base.IDType[];
 }
-
 // WorkflowGetAvailabilityUsersResponseType
 export interface WorkflowGetAvailabilityUsersResponseType {
     
     user: WorkflowAvailabilityUserType | WorkflowAvailabilityUserType[];
 }
-
 // WorkflowGetAttachedFileBodyRequestType
 export interface WorkflowGetAttachedFileBodyRequestType {
     
     parameter: WorkflowGetAttachedFileBodyType | WorkflowGetAttachedFileBodyType[];
 }
-
 // WorkflowGetAttachedFileBodyResponseType
 export interface WorkflowGetAttachedFileBodyResponseType {
     
     attachment_details: FileAttachedDetail | FileAttachedDetail[];
 }
-
 // WorkflowGetListCategoryRequestType
 export interface WorkflowGetListCategoryRequestType {
     
 }
-
 // WorkflowGetListCategoryResponseType
 export interface WorkflowGetListCategoryResponseType {
     
     root: CategoriesType | CategoriesType[];
 }
-
 // WorkflowGetRequestFormByCategoryIdsRequestType
 export interface WorkflowGetRequestFormByCategoryIdsRequestType {
     
     category_id: base.IDType | base.IDType[];
 }
-
 // WorkflowGetRequestFormByCategoryIdsResponseType
 export interface WorkflowGetRequestFormByCategoryIdsResponseType {
     
     category: RequestFormType | RequestFormType[];
 }
-
 // ApplicationType
 export interface ApplicationTypeAttribute {
     id: base.IDType;
@@ -416,7 +372,7 @@ export interface ApplicationTypeApplicantAttribute {
     name: base.NonBlankStringType;
 }
 export interface ApplicationTypeApplicant {
-    attributes: ApplicationTypeApplicantAttribute
+    attributes: ApplicationTypeApplicantAttribute;
     proxy?: ApplicationTypeApplicantProxy;
 }
 export interface ApplicationTypeApplicantProxyAttribute {
@@ -424,7 +380,7 @@ export interface ApplicationTypeApplicantProxyAttribute {
     name: base.NonBlankStringType;
 }
 export interface ApplicationTypeApplicantProxy {
-    attributes: ApplicationTypeApplicantProxyAttribute
+    attributes: ApplicationTypeApplicantProxyAttribute;
 }
 export interface ApplicationTypeItems {
     
@@ -443,7 +399,7 @@ export interface ApplicationTypeStepsStepAttribute {
     is_approval_step?: base.NonBlankStringType;
 }
 export interface ApplicationTypeStepsStep {
-    attributes: ApplicationTypeStepsStepAttribute
+    attributes: ApplicationTypeStepsStepAttribute;
     processor: ApplicationTypeStepsStepProcessor | ApplicationTypeStepsStepProcessor[];
 }
 export interface ApplicationTypeStepsStepProcessorAttribute {
@@ -454,7 +410,7 @@ export interface ApplicationTypeStepsStepProcessorAttribute {
     result?: base.NonBlankStringType;
 }
 export interface ApplicationTypeStepsStepProcessor {
-    attributes: ApplicationTypeStepsStepProcessorAttribute
+    attributes: ApplicationTypeStepsStepProcessorAttribute;
     proxy?: ApplicationTypeStepsStepProcessorProxy;
 }
 export interface ApplicationTypeStepsStepProcessorProxyAttribute {
@@ -462,23 +418,22 @@ export interface ApplicationTypeStepsStepProcessorProxyAttribute {
     processor_name: string;
 }
 export interface ApplicationTypeStepsStepProcessorProxy {
-    attributes: ApplicationTypeStepsStepProcessorProxyAttribute
+    attributes: ApplicationTypeStepsStepProcessorProxyAttribute;
 }
 export interface ApplicationTypeFolderAttribute {
     id: base.IDType;
 }
 export interface ApplicationTypeFolder {
-    attributes: ApplicationTypeFolderAttribute
+    attributes: ApplicationTypeFolderAttribute;
 }
 export interface ApplicationType {
-    attributes: ApplicationTypeAttribute
+    attributes: ApplicationTypeAttribute;
     applicant: ApplicationTypeApplicant;
     items: ApplicationTypeItems;
     steps: ApplicationTypeSteps;
     operation?: OperationType | OperationType[];
     folder?: ApplicationTypeFolder | ApplicationTypeFolder[];
 }
-
 // FolderType
 export interface FolderTypeAttribute {
     id: base.IDType;
@@ -488,13 +443,12 @@ export interface FolderTypeApplicationAttribute {
     id: base.IDType;
 }
 export interface FolderTypeApplication {
-    attributes: FolderTypeApplicationAttribute
+    attributes: FolderTypeApplicationAttribute;
 }
 export interface FolderType {
-    attributes: FolderTypeAttribute
+    attributes: FolderTypeAttribute;
     application?: FolderTypeApplication | FolderTypeApplication[];
 }
-
 // OperationType
 export interface OperationTypeSentBack {
     
@@ -505,7 +459,7 @@ export interface OperationTypeSentBackStepAttribute {
     step_id: base.IDType;
 }
 export interface OperationTypeSentBackStep {
-    attributes: OperationTypeSentBackStepAttribute
+    attributes: OperationTypeSentBackStepAttribute;
 }
 export interface OperationType {
     
@@ -517,7 +471,6 @@ export interface OperationType {
     confirm?: void;
     acknowledge?: void;
 }
-
 // ItemType
 export interface ItemTypeAttribute {
     name: base.NonBlankStringType;
@@ -525,9 +478,8 @@ export interface ItemTypeAttribute {
     right_align?: boolean;
 }
 export interface ItemType {
-    attributes: ItemTypeAttribute
+    attributes: ItemTypeAttribute;
 }
-
 // FilesItemType
 export interface FilesItemTypeAttribute {
     name: base.NonBlankStringType;
@@ -540,13 +492,12 @@ export interface FilesItemTypeFileAttribute {
     mime_type?: string;
 }
 export interface FilesItemTypeFile {
-    attributes: FilesItemTypeFileAttribute
+    attributes: FilesItemTypeFileAttribute;
 }
 export interface FilesItemType {
-    attributes: FilesItemTypeAttribute
+    attributes: FilesItemTypeAttribute;
     file?: FilesItemTypeFile | FilesItemTypeFile[];
 }
-
 // RequestManageFormType
 export interface RequestManageFormTypeAttribute {
     id_category?: base.IDType;
@@ -557,7 +508,7 @@ export interface RequestManageFormTypeManageRequestFormAttribute {
     name_request_form?: string;
 }
 export interface RequestManageFormTypeManageRequestForm {
-    attributes: RequestManageFormTypeManageRequestFormAttribute
+    attributes: RequestManageFormTypeManageRequestFormAttribute;
     manage_item_detail?: RequestManageFormTypeManageRequestFormManageItemDetail;
 }
 export interface RequestManageFormTypeManageRequestFormManageItemDetailAttribute {
@@ -571,13 +522,12 @@ export interface RequestManageFormTypeManageRequestFormManageItemDetailAttribute
     request_date: string;
 }
 export interface RequestManageFormTypeManageRequestFormManageItemDetail {
-    attributes: RequestManageFormTypeManageRequestFormManageItemDetailAttribute
+    attributes: RequestManageFormTypeManageRequestFormManageItemDetailAttribute;
 }
 export interface RequestManageFormType {
-    attributes: RequestManageFormTypeAttribute
+    attributes: RequestManageFormTypeAttribute;
     manage_request_form?: RequestManageFormTypeManageRequestForm;
 }
-
 // CategoriesType
 export interface CategoriesTypeAttribute {
     id: base.IDType;
@@ -589,10 +539,9 @@ export interface CategoriesTypeAttribute {
     modify_time?: base.IDType;
 }
 export interface CategoriesType {
-    attributes: CategoriesTypeAttribute
+    attributes: CategoriesTypeAttribute;
     child_category: CategoryType;
 }
-
 // CategoryType
 export interface CategoryTypeAttribute {
     id: base.IDType;
@@ -604,10 +553,9 @@ export interface CategoryTypeAttribute {
     modify_time?: base.IDType;
 }
 export interface CategoryType {
-    attributes: CategoryTypeAttribute
+    attributes: CategoryTypeAttribute;
     child_category?: ChildCategoriesType;
 }
-
 // ChildCategoriesType
 export interface ChildCategoriesTypeAttribute {
     id: base.IDType;
@@ -619,10 +567,9 @@ export interface ChildCategoriesTypeAttribute {
     modify_time?: base.IDType;
 }
 export interface ChildCategoriesType {
-    attributes: ChildCategoriesTypeAttribute
+    attributes: ChildCategoriesTypeAttribute;
     child_category?: CategoryType | CategoryType[];
 }
-
 // RequestFormType
 export interface RequestFormTypeAttribute {
     category_id: base.IDType;
@@ -637,13 +584,12 @@ export interface RequestFormTypeRequestFormAttribute {
     icon_url?: base.IDType;
 }
 export interface RequestFormTypeRequestForm {
-    attributes: RequestFormTypeRequestFormAttribute
+    attributes: RequestFormTypeRequestFormAttribute;
 }
 export interface RequestFormType {
-    attributes: RequestFormTypeAttribute
+    attributes: RequestFormTypeAttribute;
     requestForm: RequestFormTypeRequestForm | RequestFormTypeRequestForm[];
 }
-
 // FileAttachedDetail
 export interface FileAttachedDetailFileHeaderAttribute {
     file_id: base.IDType;
@@ -652,7 +598,7 @@ export interface FileAttachedDetailFileHeaderAttribute {
     size: base.NonBlankStringType;
 }
 export interface FileAttachedDetailFileHeader {
-    attributes: FileAttachedDetailFileHeaderAttribute
+    attributes: FileAttachedDetailFileHeaderAttribute;
 }
 export interface FileAttachedDetailFileInformationAttribute {
     subject: base.NonBlankStringType;
@@ -662,11 +608,10 @@ export interface FileAttachedDetailFileInformationAttribute {
     description?: base.NonBlankStringType;
 }
 export interface FileAttachedDetailFileInformation {
-    attributes: FileAttachedDetailFileInformationAttribute
+    attributes: FileAttachedDetailFileInformationAttribute;
 }
 export interface FileAttachedDetail {
     
     file_header: FileAttachedDetailFileHeader;
     file_information: FileAttachedDetailFileInformation;
 }
-

@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length no-trailing-whitespace */
 
 // [Import]
 import * as base from "./base";
@@ -13,20 +14,17 @@ export interface CBWebSrvWeatherLocationTypeAttribute {
     name: base.NonBlankStringType;
 }
 export interface CBWebSrvWeatherLocationType {
-    attributes: CBWebSrvWeatherLocationTypeAttribute
+    attributes: CBWebSrvWeatherLocationTypeAttribute;
 }
-
 // CBWebSrvGetWeatherLocationsRequestType
 export interface CBWebSrvGetWeatherLocationsRequestType {
     
 }
-
 // CBWebSrvGetWeatherLocationsResponseType
 export interface CBWebSrvGetWeatherLocationsResponseType {
     
     location?: CBWebSrvWeatherLocationType | CBWebSrvWeatherLocationType[];
 }
-
 // CBWebSrvWeatherDataType
 export interface CBWebSrvWeatherDataTypeAttribute {
     date: string;
@@ -37,9 +35,8 @@ export interface CBWebSrvWeatherDataTypeAttribute {
     rainfall_probability: number;
 }
 export interface CBWebSrvWeatherDataType {
-    attributes: CBWebSrvWeatherDataTypeAttribute
+    attributes: CBWebSrvWeatherDataTypeAttribute;
 }
-
 // CBWebSrvGetWeathersByLocationRequestType
 export interface CBWebSrvGetWeathersByLocationRequestTypeAttribute {
     start: string;
@@ -47,27 +44,23 @@ export interface CBWebSrvGetWeathersByLocationRequestTypeAttribute {
     location_code: base.IDType;
 }
 export interface CBWebSrvGetWeathersByLocationRequestType {
-    attributes: CBWebSrvGetWeathersByLocationRequestTypeAttribute
+    attributes: CBWebSrvGetWeathersByLocationRequestTypeAttribute;
 }
-
 // CBWebSrvGetWeathersByLocationResponseType
 export interface CBWebSrvGetWeathersByLocationResponseType {
     
     weather?: CBWebSrvWeatherDataType | CBWebSrvWeatherDataType[];
 }
-
 // CBWebSrvGetWeathersRequestType
 export interface CBWebSrvGetWeathersRequestTypeAttribute {
     start: string;
     end: string;
 }
 export interface CBWebSrvGetWeathersRequestType {
-    attributes: CBWebSrvGetWeathersRequestTypeAttribute
+    attributes: CBWebSrvGetWeathersRequestTypeAttribute;
 }
-
 // CBWebSrvGetWeathersResponseType
 export interface CBWebSrvGetWeathersResponseType {
     
     weather?: CBWebSrvWeatherDataType | CBWebSrvWeatherDataType[];
 }
-

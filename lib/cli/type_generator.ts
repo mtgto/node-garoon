@@ -1,24 +1,25 @@
 #!/usr/bin/env node
+/* tslint:disable:max-classes-per-file no-console comment-format */
 
 // NOTE: This script generate RPC definitions from Cybozu Garoon WSDL.
 // It doesn't support for other service's WSDLs.
 
-import {soap} from "strong-soap";
-import * as mustache from "mustache";
 import * as fs from "fs";
+import * as mustache from "mustache";
+import { soap } from "strong-soap";
 
 /**
  * SimpleType in XSD.
  */
 class SimpleType {
-    name: string;
+    public name: string;
     /**
      * There are 3 types:
      * 1. Standard type name in node.js. ex: "string", "Date"
      * 2. Other simpleType defined in its or other namespace. ex: base.IDType
      * 3. Actual value. ex: "add" | "modify" | "delete"
      */
-    type: string;
+    public type: string;
 
     constructor(name: string, type: string) {
         this.name = name;
@@ -30,13 +31,19 @@ class SimpleType {
  * ComplexType in XSD.
  */
 class ComplexType {
-    name: string;
-    baseType?: string;
-    attributes: Parameter[];
-    parameters: Parameter[];
-    subtypes: ComplexType[];
+    public name: string;
+    public baseType?: string;
+    public attributes: Parameter[];
+    public parameters: Parameter[];
+    public subtypes: ComplexType[];
 
-    constructor(name: string, attributes: Parameter[], parameters: Parameter[], subtypes: ComplexType[], baseType?: string) {
+    constructor(
+        name: string,
+        attributes: Parameter[],
+        parameters: Parameter[],
+        subtypes: ComplexType[],
+        baseType?: string,
+    ) {
         this.name = name;
         this.attributes = attributes;
         this.parameters = parameters;
@@ -44,16 +51,16 @@ class ComplexType {
         this.baseType = baseType;
     }
 
-    hasAttribute = (): boolean => {
+    public hasAttribute = (): boolean => {
         return this.attributes.length > 0;
-    }
+    };
 }
 
 class Parameter {
-    name: string;
-    type: string;
-    required: boolean;
-    isMultiple: boolean;
+    public name: string;
+    public type: string;
+    public required: boolean;
+    public isMultiple: boolean;
 
     constructor(name: string, type: string, required: boolean, isMultiple: boolean) {
         this.name = name;
@@ -89,28 +96,31 @@ const normalizeType = (type: string): string => {
                 return type;
             }
     }
-}
+};
 
 /**
  * Parse simple name from namespace.
- * 
+ *
  * "http://schemas.cybozu.co.jp/base/2008" => "base"
- * @param namespace 
+ * @param namespace
  */
 const parseNamespace = (namespaceURL: string): string => {
     return namespaceURL.split("/")[3];
-}
+};
 
 /**
  * Check namespace is standard.
- * 
+ *
  * "http://www.w3.org/2001/XMLSchema" => true
  * "http://schemas.cybozu.co.jp/base/2008" => false
- * @param namespace 
+ * @param namespace
  */
 const isStandardNamespace = (namespaceURL: string): boolean => {
-    return namespaceURL.indexOf("http://schemas.cybozu.co.jp/") === -1 && namespaceURL.indexOf("http://wsdl.cybozu.co.jp/") === -1;
-}
+    return (
+        namespaceURL.indexOf("http://schemas.cybozu.co.jp/") === -1 &&
+        namespaceURL.indexOf("http://wsdl.cybozu.co.jp/") === -1
+    );
+};
 
 const processTypeName = (currentNamespaceURL: string, targetNamespaceURL: string, typeName: string): string => {
     const currentNamespace = parseNamespace(currentNamespaceURL);
@@ -120,19 +130,24 @@ const processTypeName = (currentNamespaceURL: string, targetNamespaceURL: string
     } else {
         return parseNamespace(targetNamespaceURL) + "." + typeName;
     }
-}
+};
 
 /**
  * foo_bar_baz => FooBarBaz
- * @param name 
+ * @param name
  */
 const classNameFromParameterName = (name: string): string => {
-    return name.split("_").map(word => { return word.substring(0, 1).toUpperCase() + word.substring(1); }).join("");
-}
+    return name
+        .split("_")
+        .map(word => {
+            return word.substring(0, 1).toUpperCase() + word.substring(1);
+        })
+        .join("");
+};
 
 const processSimpleType = (namespaceURL: string, type: any, alternateName?: string): SimpleType => {
     const name = type.$name || alternateName;
-    let typeName: string | undefined = undefined;
+    let typeName: string | undefined;
     console.assert(name, "[SimpleType] Unknown name: " + type);
     if (!type.children) {
         console.log("[SimpleType] Unexpected structure: " + type);
@@ -150,18 +165,32 @@ const processSimpleType = (namespaceURL: string, type: any, alternateName?: stri
                         console.assert(grandchild.$value, "[Restriction] No value: " + grandchildClassName);
                     }
                     typeName = child.children
-                        .filter((grandchild: any) => { return grandchild.name === "enumeration"; })
-                        .map((grandchild: any) => { return "\"" + grandchild.$value + "\""; }).join(" | ");
+                        .filter((grandchild: any) => {
+                            return grandchild.name === "enumeration";
+                        })
+                        .map((grandchild: any) => {
+                            return '"' + grandchild.$value + '"';
+                        })
+                        .join(" | ");
                 }
                 if (!typeName) {
                     typeName = processTypeName(namespaceURL, child.targetNamespace, normalizeType(child.base.$name));
                 }
                 break;
             case "Union":
-                console.log("[Union] child.baseType: " + child.memberTypes.map((memberType: any) => { return memberType.$name; }).join(" | "));
-                typeName = child.memberTypes.map((memberType: any) => {
-                    return processTypeName(namespaceURL, memberType.targetNamespace, memberType.$name);
-                }).join(" | ");
+                console.log(
+                    "[Union] child.baseType: " +
+                        child.memberTypes
+                            .map((memberType: any) => {
+                                return memberType.$name;
+                            })
+                            .join(" | "),
+                );
+                typeName = child.memberTypes
+                    .map((memberType: any) => {
+                        return processTypeName(namespaceURL, memberType.targetNamespace, memberType.$name);
+                    })
+                    .join(" | ");
                 break;
             case "Annotation":
                 // 値の説明が入ってくるのでコメントとして生成できるといいな
@@ -176,7 +205,7 @@ const processSimpleType = (namespaceURL: string, type: any, alternateName?: stri
     } else {
         throw Error("[SimpleType] Failed to define type: " + type);
     }
-}
+};
 
 const processAttribute = (namespaceURL: string, attribute: any): Parameter => {
     let name: string;
@@ -185,8 +214,10 @@ const processAttribute = (namespaceURL: string, attribute: any): Parameter => {
     // ScheduleModifyRepeatEventsOperationType's attribute "typens:ScheduleRepeatModifyType" type null
     // MyAddressGroupType -> card -> type has no type, $type
     console.assert(
-        attribute.type || (attribute.$type && attribute.targetNamespace) || (attribute.children.length > 0 && attribute.children[0].constructor.name === "SimpleType"),
-        "[Attribute] attribute.type または attribute.$typeがありません"
+        attribute.type ||
+            (attribute.$type && attribute.targetNamespace) ||
+            (attribute.children.length > 0 && attribute.children[0].constructor.name === "SimpleType"),
+        "[Attribute] attribute.type または attribute.$typeがありません",
     );
     console.assert(attribute.$name, "[Attribute] attribute.$nameがありません");
     name = attribute.$name;
@@ -199,7 +230,7 @@ const processAttribute = (namespaceURL: string, attribute: any): Parameter => {
     } else {
         typeName = processTypeName(namespaceURL, attribute.targetNamespace, normalizeType(attribute.$type));
     }
-    
+
     console.log("[Attribute]: " + name + ": " + typeName);
     switch (attribute.$use) {
         case "required":
@@ -224,9 +255,13 @@ const processAttribute = (namespaceURL: string, attribute: any): Parameter => {
     //         throw Error("[Attribute] child.typeが不明: " + child.type.constructor.name);
     // }
     return new Parameter(name, typeName, required, false);
-}
+};
 
-const processSequence = (namespaceURL: string, sequence: any, name: string): {parameters: Parameter[], subtypes: ComplexType[]} => {
+const processSequence = (
+    namespaceURL: string,
+    sequence: any,
+    name: string,
+): { parameters: Parameter[]; subtypes: ComplexType[] } => {
     let parameters: Parameter[] = [];
     let subtypes: ComplexType[] = [];
     for (const child of sequence.children) {
@@ -242,13 +277,18 @@ const processSequence = (namespaceURL: string, sequence: any, name: string): {pa
                 childRequired = child.$minOccurs ? child.$minOccurs > 0 : false;
                 // $maxOccurs: undefind | "<int>" | "unbound"
                 childIsMultiple = child.$maxOccurs ? child.$maxOccurs > 1 || child.$maxOccurs === "unbounded" : false;
-                //const childTypeName: string = processTypeName(namespaceURL, child.type.targetNamespace, normalizeType(grandchild.type.$name));
+                //const childTypeName: string =
+                //processTypeName(namespaceURL, child.type.targetNamespace, normalizeType(grandchild.type.$name));
                 let childName: string;
                 let childTypeName: string;
                 if (child.type) {
                     console.assert(child.$name, "[Sequence] child.$nameがありません");
                     childName = child.$name;
-                    childTypeName = processTypeName(namespaceURL, child.type.targetNamespace, normalizeType(child.type.$name));
+                    childTypeName = processTypeName(
+                        namespaceURL,
+                        child.type.targetNamespace,
+                        normalizeType(child.type.$name),
+                    );
                     console.assert(childTypeName, "[Sequence] child.type.$nameがありません");
                 } else if (child.type === null && child.$type) {
                     // maybe bug in soap library...?
@@ -258,7 +298,11 @@ const processSequence = (namespaceURL: string, sequence: any, name: string): {pa
                 } else if (child.complexType) {
                     console.assert(child.$name, "[Sequence] child.$nameがありません");
                     childName = child.$name;
-                    const subtype = processComplexType(namespaceURL, child.complexType, name + classNameFromParameterName(childName));
+                    const subtype = processComplexType(
+                        namespaceURL,
+                        child.complexType,
+                        name + classNameFromParameterName(childName),
+                    );
                     subtypes.push(subtype);
                     subtypes = subtypes.concat(subtype.subtypes);
                     childTypeName = subtype.name;
@@ -270,7 +314,11 @@ const processSequence = (namespaceURL: string, sequence: any, name: string): {pa
                         childTypeName = child.ref.type.$name;
                         console.assert(childTypeName, "[Sequence] child.ref.type.$name");
                     } else if (child.ref.complexType) {
-                        const subtype = processComplexType(namespaceURL, child.ref.complexType, name + classNameFromParameterName(childName));
+                        const subtype = processComplexType(
+                            namespaceURL,
+                            child.ref.complexType,
+                            name + classNameFromParameterName(childName),
+                        );
                         subtypes.push(subtype);
                         subtypes = subtypes.concat(subtype.subtypes);
                         childTypeName = subtype.name;
@@ -309,8 +357,8 @@ const processSequence = (namespaceURL: string, sequence: any, name: string): {pa
                 throw Error("[Sequence] childが不明");
         }
     }
-    return {parameters: parameters, subtypes: subtypes};
-}
+    return { parameters, subtypes };
+};
 
 const processComplexType = (namespaceURL: string, type: any, alternateName?: string): ComplexType => {
     const name = type.$name || alternateName;
@@ -318,18 +366,14 @@ const processComplexType = (namespaceURL: string, type: any, alternateName?: str
      * parameters excepts attribute parameters.
      */
     let parameters: Parameter[] = [];
-    let attributes: Parameter[] = [];
+    const attributes: Parameter[] = [];
     let subtypes: ComplexType[] = [];
-    let baseType: string | undefined = undefined;
+    let baseType: string | undefined;
     if (!type.children) {
         console.log("未知の要素です: " + type);
     }
     for (const child of type.children) {
         const childClassName = child.constructor.name;
-        let childName: string;
-        let childTypeName: string;
-        let childRequired: boolean;
-        let childIsMultiple: boolean;
         switch (childClassName) {
             case "Attribute":
                 attributes.push(processAttribute(namespaceURL, child));
@@ -343,14 +387,22 @@ const processComplexType = (namespaceURL: string, type: any, alternateName?: str
                 break;
             case "ComplexContent":
                 console.assert(child.children.length === 1, "[ComplexContent] 子が1つではありません");
-                console.assert(child.children[0].constructor.name === "Extension", "[ComplexContent] 子がExtensionではありません");
-                //const baseComplexType: ComplexType = processComplexType(namespaceURL, child.children[0].base); // 別にパースする必要はない
+                console.assert(
+                    child.children[0].constructor.name === "Extension",
+                    "[ComplexContent] 子がExtensionではありません",
+                );
+                // const baseComplexType: ComplexType =
+                // processComplexType(namespaceURL, child.children[0].base); // 別にパースする必要はない
                 if (child.children[0].base) {
                     console.assert(child.children[0].base, "[ComplexContent] baseとなるものがありません");
-                    console.assert(child.children[0].base.constructor.name === "ComplexType", "[ComplexContent] baseがComplexTypeではありません");
+                    console.assert(
+                        child.children[0].base.constructor.name === "ComplexType",
+                        "[ComplexContent] baseがComplexTypeではありません",
+                    );
                     console.assert(child.children[0].base.$name, "[ComplexContent] base.$nameがありません");
                     //console.assert(child.children[0].children.length, "[ComplexContent] 拡張する要素がありません");
-                    //console.assert(child.children[0].children.length === 1, "[ComplexContent] 拡張する要素が1つではありません"); Sequence, Attributeからなるときがある
+                    // console.assert(child.children[0].children.length ===
+                    //1, "[ComplexContent] 拡張する要素が1つではありません"); Sequence, Attributeからなるときがある
                     baseType = child.children[0].base.$name;
                 } else if (child.children[0].$base) {
                     baseType = normalizeType(child.children[0].$base);
@@ -376,13 +428,17 @@ const processComplexType = (namespaceURL: string, type: any, alternateName?: str
                     // console.assert(grandchild.type, "[ComplexContent Sequence] grandchild.typeがありません");
                     // console.assert(grandchild.$name, "[ComplexContent Sequence] grandchild.$nameがありません");
                     // const grandchildName: string = grandchild.$name;
-                    // const grandchildTypeName: string = processTypeName(namespaceURL, grandchild.type.targetNamespace, normalizeType(grandchild.type.$name));
+                    // const grandchildTypeName: string = processTypeName(namespaceURL,
+                    // grandchild.type.targetNamespace, normalizeType(grandchild.type.$name));
                     // console.log("[ComplexContent Sequence]: " + grandchildName + ": " + grandchildTypeName);
                 }
                 break;
             case "SimpleContent":
                 console.assert(child.children.length === 1, "[SimpleContent] 子が1つではありません");
-                console.assert(child.children[0].constructor.name === "Extension", "[SimpleContent] 子がExtensionではありません");
+                console.assert(
+                    child.children[0].constructor.name === "Extension",
+                    "[SimpleContent] 子がExtensionではありません",
+                );
                 console.assert(child.children[0].base, "[SimpleContent] baseとなるものがありません");
                 console.assert(child.children[0].base.$name, "[SimpleContent] base.$nameがありません");
                 console.assert(child.children[0].children.length, "[SimpleContent] 拡張する要素がありません");
@@ -400,12 +456,14 @@ const processComplexType = (namespaceURL: string, type: any, alternateName?: str
                     // console.assert(grandchild.type, "[ComplexContent Sequence] grandchild.typeがありません");
                     // console.assert(grandchild.$name, "[ComplexContent Sequence] grandchild.$nameがありません");
                     // const grandchildName: string = grandchild.$name;
-                    // const grandchildTypeName: string = processTypeName(namespaceURL, grandchild.type.targetNamespace, normalizeType(grandchild.type.$name));
+                    // const grandchildTypeName: string =
+                    // processTypeName(namespaceURL, grandchild.type.targetNamespace,
+                    // normalizeType(grandchild.type.$name));
                     // console.log("[ComplexContent Sequence]: " + grandchildName + ": " + grandchildTypeName);
                 }
                 break;
             case "Choice":
-                //ex: report.ReportType https://cybozudev.zendesk.com/hc/ja/articles/202270214
+                // ex: report.ReportType https://cybozudev.zendesk.com/hc/ja/articles/202270214
                 // TODO refactor
                 {
                     const response = processSequence(namespaceURL, child, name);
@@ -424,57 +482,58 @@ const processComplexType = (namespaceURL: string, type: any, alternateName?: str
         }
     }
     return new ComplexType(name, attributes, parameters, subtypes, baseType);
-}
+};
 
 // Main
 
-const wsdlUrl = process.env["URL"];
+const wsdlUrl = process.env.URL;
 if (!wsdlUrl) {
-    console.warn("Usage: URL=<WSDL URL or Path> node generator.js");
+    // tslint:disable-next-line:no-console
+    console.error("Usage: URL=<WSDL URL or Path> node generator.js");
     process.exit(1);
-}
+} else {
+    soap.WSDL.open(wsdlUrl, (err: any, wsdl: soap.WSDL) => {
+        const definitions = wsdl.definitions;
+        const typesTemplate: string = fs.readFileSync(__dirname + "/../../templates/types.ts.mustache", "utf8");
+        const typeMap: { [namespace: string]: { simpleTypes: SimpleType[]; complexTypes: ComplexType[] } } = {};
+        for (const namespaceURL of Object.keys(definitions.schemas)) {
+            const schema = definitions.schemas[namespaceURL];
+            const namespace = parseNamespace(namespaceURL);
+            const simpleTypes: SimpleType[] = [];
+            const complexTypes: ComplexType[] = [];
+            console.log("[namespace]: " + namespace);
 
-soap.WSDL.open(wsdlUrl, (err: any, wsdl: soap.WSDL) => {
-    const definitions = wsdl.definitions;
-    const typesTemplate: string = fs.readFileSync(__dirname + "/../../templates/types.ts.mustache", "utf8");
-    let typeMap: {[namespace: string]: {simpleTypes: SimpleType[], complexTypes: ComplexType[]}} = {};
-    for (const namespaceURL of Object.keys(definitions.schemas)) {
-        const schema = definitions.schemas[namespaceURL];
-        const namespace = parseNamespace(namespaceURL);
-        let simpleTypes: SimpleType[] = [];
-        let complexTypes: ComplexType[] = [];
-        console.log("[namespace]: " + namespace);
-
-        for (const child of schema.children) {
-            const childClassName = child.constructor.name;
-            switch (childClassName) {
-                case "SimpleType":
-                    simpleTypes.push(processSimpleType(namespaceURL, child));
-                    break;
-                case "ComplexType":
-                    complexTypes.push(processComplexType(namespaceURL, child));
-                    break;
-                case "Import":
-                case "Element":
-                    console.log("これらの要素は無視されます: " + childClassName);
-                    break;
-                default:
-                    throw Error("未知の要素です: " + childClassName);
+            for (const child of schema.children) {
+                const childClassName = child.constructor.name;
+                switch (childClassName) {
+                    case "SimpleType":
+                        simpleTypes.push(processSimpleType(namespaceURL, child));
+                        break;
+                    case "ComplexType":
+                        complexTypes.push(processComplexType(namespaceURL, child));
+                        break;
+                    case "Import":
+                    case "Element":
+                        console.log("これらの要素は無視されます: " + childClassName);
+                        break;
+                    default:
+                        throw Error("未知の要素です: " + childClassName);
+                }
+            }
+            if (typeMap[namespace]) {
+                typeMap[namespace] = {
+                    simpleTypes: typeMap[namespace].simpleTypes.concat(simpleTypes),
+                    complexTypes: typeMap[namespace].complexTypes.concat(complexTypes),
+                };
+            } else {
+                typeMap[namespace] = { simpleTypes, complexTypes };
             }
         }
-        if (typeMap[namespace]) {
-            typeMap[namespace] = {
-                simpleTypes: typeMap[namespace].simpleTypes.concat(simpleTypes),
-                complexTypes: typeMap[namespace].complexTypes.concat(complexTypes)
-            };
-        } else {
-            typeMap[namespace] = {simpleTypes: simpleTypes, complexTypes: complexTypes};
-        }
-    }
 
-    for (const namespace of Object.keys(typeMap)) {
-        const filename = namespace + ".ts";
-        const types = typeMap[namespace];
-        fs.writeFileSync(__dirname + "/../types/" + filename, mustache.render(typesTemplate, types));
-    }
-});
+        for (const namespace of Object.keys(typeMap)) {
+            const filename = namespace + ".ts";
+            const types = typeMap[namespace];
+            fs.writeFileSync(__dirname + "/../types/" + filename, mustache.render(typesTemplate, types));
+        }
+    });
+}

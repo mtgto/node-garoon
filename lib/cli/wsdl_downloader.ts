@@ -1,8 +1,16 @@
-import * as url from "url";
-import * as request from "request";
+/* tslint:disable:comment-format no-console */
+
 import * as fs from "fs";
-import * as xmldom from "xmldom";
 import * as path from "path";
+// tslint:disable-next-line:no-implicit-dependencies
+import * as request from "request";
+import * as url from "url";
+import * as xmldom from "xmldom";
+
+interface Wsdl {
+    readonly url: string;
+    readonly body: string;
+}
 
 /**
  * Download WSDL/XSD.
@@ -17,15 +25,14 @@ class WsdlDownloader {
         this.wsdlUrl = url.parse(wsdlUrl);
     }
 
-    execute(outputDirectory: string, baseFileName: string) {
-        const self = this;
+    public execute = (outputDirectory: string, baseFileName: string) => {
         const baseFilePath = path.join(outputDirectory, baseFileName);
         return new Promise((resolve, reject) => {
             fs.exists(outputDirectory, (exists: boolean) => {
                 if (exists) {
                     resolve();
                 } else {
-                    fs.mkdir(outputDirectory, (err) => {
+                    fs.mkdir(outputDirectory, err => {
                         if (err) {
                             console.warn("Failed to create a directory: " + outputDirectory);
                             reject(err);
@@ -35,57 +42,61 @@ class WsdlDownloader {
                     });
                 }
             });
-        }).then(() => {
-            return this.download(url.format(this.wsdlUrl), baseFilePath);
-        }).then((wsdl: {url: string, body: string}) => {
-            const doc: Document = new xmldom.DOMParser().parseFromString(wsdl.body);
-            const imports: NodeListOf<Element> = doc.getElementsByTagName("wsdl:import");
-            let locations: Promise<{url: string, body: string}>[] = [];
-            for (let i = 0; i < imports.length; i++) {
-                const wsdlImport = imports[i];
-                const location = wsdlImport.getAttribute("location");
-                if (location) {
-                    const basename = path.basename(location);
-                    wsdlImport.setAttribute("location", basename);
-                    const filename = path.join(outputDirectory, basename);
-                    console.log("url:" + url.resolve(wsdl.url, location));
-                    locations.push(
-                        self.download(url.resolve(wsdl.url, location), filename)
-                            .then((wsdl: {url: string, body: string}) => {
-                                let body = wsdl.body;
-                                return self.save(filename, body).then(() => { return Promise.resolve(wsdl); })
-                            })
-                        );
-                }
-            }
-            return self.save(baseFilePath, new xmldom.XMLSerializer().serializeToString(doc))
-                .then(() => { return Promise.all(locations); });
-        }).then((wsdls: {url: string, body: string}[]) => {
-            let locations: Promise<{url: string, body: string}>[] = [];
-            wsdls.forEach(wsdl => {
+        })
+            .then(() => {
+                return this.download(url.format(this.wsdlUrl), baseFilePath);
+            })
+            .then((wsdl: { url: string; body: string }) => {
                 const doc: Document = new xmldom.DOMParser().parseFromString(wsdl.body);
-                const imports = doc.getElementsByTagName("xsd:import");
-                for (let i = 0; i < imports.length; i++) {
-                    const wsdlImport = imports[i];
-                    const location = wsdlImport.getAttribute("schemaLocation");
+                const imports: Element[] = Array.from(doc.getElementsByTagName("wsdl:import"));
+                const locations: Array<Promise<{ url: string; body: string }>> = [];
+                imports.forEach((wsdlImport: Element) => {
+                    const location = wsdlImport.getAttribute("location");
                     if (location) {
+                        wsdlImport.setAttribute("location", path.basename(location));
                         const filename = path.join(outputDirectory, path.basename(location));
                         console.log("url:" + url.resolve(wsdl.url, location));
                         locations.push(
-                            self.download(url.resolve(wsdl.url, location), filename)
-                                .then((xsd: {url: string, body: string}) => {
-                                    return self.save(filename, xsd.body);
-                                }));
+                            this.download(url.resolve(wsdl.url, location), filename).then((downloaded: Wsdl) => {
+                                const body = downloaded.body;
+                                return this.save(filename, body).then(() => Promise.resolve(downloaded));
+                            }),
+                        );
                     }
-                }
+                });
+                return this.save(baseFilePath, new xmldom.XMLSerializer().serializeToString(doc)).then(() =>
+                    Promise.all(locations),
+                );
+            })
+            .then((wsdls: Wsdl[]) => {
+                const locations: Array<Promise<{ url: string; body: string }>> = [];
+                wsdls.forEach(wsdl => {
+                    const doc: Document = new xmldom.DOMParser().parseFromString(wsdl.body);
+                    const imports = Array.from(doc.getElementsByTagName("xsd:import"));
+                    imports.forEach((wsdlImport: Element) => {
+                        const location = wsdlImport.getAttribute("schemaLocation");
+                        if (location) {
+                            wsdlImport.setAttribute("schemaLocation", path.basename(location));
+                            const filename = path.join(outputDirectory, path.basename(location));
+                            console.log("url:" + url.resolve(wsdl.url, location));
+                            locations.push(
+                                this.download(url.resolve(wsdl.url, location), filename).then(
+                                    (xsd: { url: string; body: string }) => {
+                                        return this.save(filename, xsd.body);
+                                    },
+                                ),
+                            );
+                        }
+                    });
+                });
+                return Promise.all(locations);
+            })
+            .catch(err => {
+                console.warn(err);
             });
-            return Promise.all(locations);
-        }).catch(err => {
-            console.warn(err);
-        });
-    }
+    };
 
-    download(url: string, filename: string): Promise<{url: string, body: string}> {
+    public download = (downloadUrl: string, filename: string): Promise<Wsdl> => {
         return new Promise((resolve, reject) => {
             fs.exists(filename, (exists: boolean) => {
                 if (exists) {
@@ -93,26 +104,26 @@ class WsdlDownloader {
                         if (err) {
                             reject(err);
                         } else {
-                            resolve({url: url, body: data});
+                            resolve({ url: downloadUrl, body: data });
                         }
                     });
                 } else {
-                    request(url, function(err, response, body) {
+                    request(downloadUrl, (err, response, body) => {
                         if (err || response.statusCode !== 200) {
-                            console.warn("Error occurred while downloading: " + err);
+                            console.warn(`Error occurred while downloading from "${downloadUrl}": ${err}`);
                             reject(err);
                         } else {
-                            resolve({url: url, body: body});
+                            resolve({ url: downloadUrl, body });
                         }
                     });
                 }
             });
         });
-    }
+    };
 
-    save(filename: string, body: string): Promise<any> {
+    public save(filename: string, body: string): Promise<any> {
         return new Promise((resolve, reject) => {
-            fs.writeFile(filename, body, (err) => {
+            fs.writeFile(filename, body, err => {
                 if (err) {
                     console.warn("Failed to create a file: " + filename);
                     reject(err);
@@ -125,7 +136,6 @@ class WsdlDownloader {
 }
 
 const downloader = new WsdlDownloader(process.argv[3]);
-downloader.execute(process.argv[2], process.argv[4])
-.then(() => {
+downloader.execute(process.argv[2], process.argv[4]).then(() => {
     console.log("Done.");
 });

@@ -21,8 +21,9 @@ export interface RPC {
                 BaseGetRegionsList: soap.SoapMethod;
                 BaseGetTimezoneVersion: soap.SoapMethod;
                 BaseManagerApplication: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     ScheduleService: {
         SchedulePort: {
                 ScheduleGetEventVersions: soap.SoapMethod;
@@ -66,8 +67,9 @@ export interface RPC {
                 ScheduleGetRemoveAllowGroups: soap.SoapMethod;
                 ScheduleGetRemoveAllowFacilities: soap.SoapMethod;
                 ScheduleFileDownload: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     AddressService: {
         AddressPort: {
                 AddressGetPersonalCardVersions: soap.SoapMethod;
@@ -95,8 +97,9 @@ export interface RPC {
                 AddressGetReadAllowBooks: soap.SoapMethod;
                 AddressGetModifyAllowBooks: soap.SoapMethod;
                 AddressFileDownload: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     WorkflowService: {
         WorkflowPort: {
                 WorkflowGetUnprocessedApplicationVersions: soap.SoapMethod;
@@ -119,8 +122,9 @@ export interface RPC {
                 WorkflowGetAttachedFileBody: soap.SoapMethod;
                 WorkflowGetCategories: soap.SoapMethod;
                 WorkflowGetRequestFormByCategoryIds: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     MailService: {
         MailPort: {
                 MailGetAccountVersions: soap.SoapMethod;
@@ -151,8 +155,9 @@ export interface RPC {
                 MailAddMailServers: soap.SoapMethod;
                 MailModifyMailServers: soap.SoapMethod;
                 MailRemoveMailServers: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     MessageService: {
         MessagePort: {
                 MessageGetFolderVersions: soap.SoapMethod;
@@ -171,8 +176,9 @@ export interface RPC {
                 MessageGetProfiles: soap.SoapMethod;
                 MessageSetProfiles: soap.SoapMethod;
                 MessageFileDownload: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     NotificationService: {
         NotificationPort: {
                 NotificationGetNotificationVersions: soap.SoapMethod;
@@ -182,15 +188,17 @@ export interface RPC {
                 NotificationConfirmNotification: soap.SoapMethod;
                 NotificationGetProfiles: soap.SoapMethod;
                 NotificationSetProfiles: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     CybozuWebSrvService: {
         CBWebSrvPort: {
                 CBWebSrvGetWeatherLocations: soap.SoapMethod;
                 CBWebSrvGetWeathersByLocation: soap.SoapMethod;
                 CBWebSrvGetWeathers: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     ReportService: {
         ReportPort: {
                 ReportGetReportVersions: soap.SoapMethod;
@@ -201,8 +209,9 @@ export interface RPC {
                 ReportRemoveReports: soap.SoapMethod;
                 ReportSearchReports: soap.SoapMethod;
                 ReportFileDownload: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     CabinetService: {
         CabinetPort: {
                 CabinetGetFolderInfo: soap.SoapMethod;
@@ -212,8 +221,9 @@ export interface RPC {
                 CabinetUpdateFile: soap.SoapMethod;
                 CabinetUpdateFileInformation: soap.SoapMethod;
                 CabinetDeleteFiles: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     AdminService: {
         AdminPort: {
                 AdminCountUsers: soap.SoapMethod;
@@ -243,16 +253,18 @@ export interface RPC {
                 AdminSetOrgsOfUser: soap.SoapMethod;
                 AdminAddChildrenOfOrg: soap.SoapMethod;
                 AdminRemoveUsersFromOrg: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     UtilService: {
         UtilPort: {
                 UtilLogin: soap.SoapMethod;
                 UtilLogout: soap.SoapMethod;
                 UtilGetRequestToken: soap.SoapMethod;
                 UtilGetLoginUserId: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     StarService: {
         StarPort: {
                 StarGetStarsById: soap.SoapMethod;
@@ -260,8 +272,9 @@ export interface RPC {
                 StarAddStars: soap.SoapMethod;
                 StarRemoveStars: soap.SoapMethod;
                 StarGetProfiles: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
     BulletinService: {
         BulletinPort: {
                 BulletinGetCategoryVersions: soap.SoapMethod;
@@ -279,6 +292,7 @@ export interface RPC {
                 BulletinGetFollows: soap.SoapMethod;
                 BulletinAddFollows: soap.SoapMethod;
                 BulletinRemoveFollows: soap.SoapMethod;
-        }
-    }
+        },
+    };
+
 }

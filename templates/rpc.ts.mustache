@@ -9,7 +9,8 @@ export interface RPC {
             {{#operations}}
                 {{.}}: soap.SoapMethod;
             {{/operations}}
-        }
-    }
+        },
+    };
+
 {{/services}}
 }

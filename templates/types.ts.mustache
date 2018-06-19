@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length no-trailing-whitespace */
 
 // [Import]
 import * as base from "./base";
@@ -27,17 +28,16 @@ export interface {{name}}Attribute{{#baseType}} extends {{.}}Attribute{{/baseTyp
 }
 {{/hasAttribute}}
 export interface {{name}}{{#baseType}} extends {{.}}{{/baseType}} {
-    {{#hasAttribute}}attributes: {{name}}Attribute{{/hasAttribute}}
+    {{#hasAttribute}}attributes: {{name}}Attribute;{{/hasAttribute}}
     {{#parameters}}
     {{name}}{{^required}}?{{/required}}: {{type}}{{#isMultiple}} | {{& type}}[]{{/isMultiple}};
     {{/parameters}}
 }
 {{/subtypes}}
 export interface {{name}}{{#baseType}} extends {{.}}{{/baseType}} {
-    {{#hasAttribute}}attributes: {{name}}Attribute{{/hasAttribute}}
+    {{#hasAttribute}}attributes: {{name}}Attribute;{{/hasAttribute}}
     {{#parameters}}
     {{name}}{{^required}}?{{/required}}: {{& type}}{{#isMultiple}} | {{& type}}[]{{/isMultiple}};
     {{/parameters}}
 }
-
 {{/complexTypes}}

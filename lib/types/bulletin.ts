@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length no-trailing-whitespace */
 
 // [Import]
 import * as base from "./base";
@@ -11,102 +12,88 @@ export interface BulletinGetCategoryVersionsRequestType {
     
     category_item?: base.ItemVersionType | base.ItemVersionType[];
 }
-
 // BulletinGetCategoryVersionsResponseType
 export interface BulletinGetCategoryVersionsResponseType {
     
     category_item?: base.ItemVersionResultType | base.ItemVersionResultType[];
 }
-
 // BulletinGetCategoriesRequestType
 export interface BulletinGetCategoriesRequestType {
     
 }
-
 // BulletinGetCategoriesResponseType
 export interface BulletinGetCategoriesResponseType {
     
     categories?: CategoryInformationType;
 }
-
 // BulletinGetTopicVersionsRequestType
 export interface BulletinGetTopicVersionsRequestTypeAttribute {
     start: string;
     end?: string;
 }
 export interface BulletinGetTopicVersionsRequestType {
-    attributes: BulletinGetTopicVersionsRequestTypeAttribute
+    attributes: BulletinGetTopicVersionsRequestTypeAttribute;
     topic_item?: base.ItemVersionType | base.ItemVersionType[];
     category_id?: base.IDType | base.IDType[];
 }
-
 // BulletinGetTopicVersionsResponseType
 export interface BulletinGetTopicVersionsResponseType {
     
     topic_item?: base.ItemVersionResultType | base.ItemVersionResultType[];
 }
-
 // BulletinGetDraftTopicVersionsRequestType
 export interface BulletinGetDraftTopicVersionsRequestTypeAttribute {
     start: string;
     end?: string;
 }
 export interface BulletinGetDraftTopicVersionsRequestType {
-    attributes: BulletinGetDraftTopicVersionsRequestTypeAttribute
+    attributes: BulletinGetDraftTopicVersionsRequestTypeAttribute;
     topic_item?: base.ItemVersionType | base.ItemVersionType[];
 }
-
 // BulletinGetDraftTopicVersionsResponseType
 export interface BulletinGetDraftTopicVersionsResponseType {
     
     topic_item?: base.ItemVersionResultType | base.ItemVersionResultType[];
 }
-
 // BulletinGetTopicsRequestType
 export interface BulletinGetTopicsRequestType {
     
     category_id: base.IDType | base.IDType[];
 }
-
 // BulletinGetTopicsResponseType
 export interface BulletinGetTopicsResponseType {
     
     category?: TopicsList | TopicsList[];
 }
-
 // BulletinGetTopicByIdsRequestType
 export interface BulletinGetTopicByIdsRequestTypeTopicsAttribute {
     topic_id: base.IDType;
     is_draft: boolean;
 }
 export interface BulletinGetTopicByIdsRequestTypeTopics {
-    attributes: BulletinGetTopicByIdsRequestTypeTopicsAttribute
+    attributes: BulletinGetTopicByIdsRequestTypeTopicsAttribute;
 }
 export interface BulletinGetTopicByIdsRequestType {
     
     topics?: BulletinGetTopicByIdsRequestTypeTopics | BulletinGetTopicByIdsRequestTypeTopics[];
 }
-
 // BulletinGetTopicByIdsResponseType
 export interface BulletinGetTopicByIdsResponseType {
     
     topic?: TopicType | TopicType[];
 }
-
 // BulletinFileDownloadRequestType
 export interface BulletinFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface BulletinFileDownloadRequestType {
-    attributes: BulletinFileDownloadRequestTypeAttribute
+    attributes: BulletinFileDownloadRequestTypeAttribute;
 }
-
 // BulletinFileDownloadResponseType
 export interface BulletinFileDownloadResponseType {
     
     file?: base.FileBodyType;
 }
-
 // BulletinCreateTopicType
 export interface BulletinCreateTopicTypeAttribute {
     draft_id?: base.IDType;
@@ -115,22 +102,21 @@ export interface BulletinCreateTopicTypeFileAttribute {
     id: base.IDType;
 }
 export interface BulletinCreateTopicTypeFile {
-    attributes: BulletinCreateTopicTypeFileAttribute
+    attributes: BulletinCreateTopicTypeFileAttribute;
     content: Buffer;
 }
 export interface BulletinCreateTopicType {
-    attributes: BulletinCreateTopicTypeAttribute
+    attributes: BulletinCreateTopicTypeAttribute;
     topic: TopicType;
     file?: BulletinCreateTopicTypeFile | BulletinCreateTopicTypeFile[];
     remove_file_id?: base.IDType | base.IDType[];
 }
-
 // BulletinModifyTopicType
 export interface BulletinModifyTopicTypeFileAttribute {
     id: base.IDType;
 }
 export interface BulletinModifyTopicTypeFile {
-    attributes: BulletinModifyTopicTypeFileAttribute
+    attributes: BulletinModifyTopicTypeFileAttribute;
     content: Buffer;
 }
 export interface BulletinModifyTopicType {
@@ -139,60 +125,52 @@ export interface BulletinModifyTopicType {
     file?: BulletinModifyTopicTypeFile | BulletinModifyTopicTypeFile[];
     remove_file_id?: base.IDType | base.IDType[];
 }
-
 // BulletinCreateTopicsRequestType
 export interface BulletinCreateTopicsRequestType {
     
     request_token?: string;
     create_topic: BulletinCreateTopicType | BulletinCreateTopicType[];
 }
-
 // BulletinCreateTopicsResponseType
 export interface BulletinCreateTopicsResponseType {
     
     topic?: TopicType | TopicType[];
 }
-
 // BulletinModifyTopicsRequestType
 export interface BulletinModifyTopicsRequestType {
     
     request_token?: string;
     modify_topic: BulletinModifyTopicType | BulletinModifyTopicType[];
 }
-
 // BulletinModifyTopicsResponseType
 export interface BulletinModifyTopicsResponseType {
     
     topic?: TopicType | TopicType[];
 }
-
 // BulletinSaveDraftTopicsRequestType
 export interface BulletinSaveDraftTopicsRequestType {
     
     request_token?: string;
     save_draft_topic: BulletinCreateTopicType | BulletinCreateTopicType[];
 }
-
 // BulletinSaveDraftTopicsResponseType
 export interface BulletinSaveDraftTopicsResponseType {
     
     topic?: TopicType | TopicType[];
 }
-
 // BulletinRemoveTopicsRequestType
 export interface BulletinRemoveTopicsRequestTypeTopicsAttribute {
     topic_id: base.IDType;
     is_draft: boolean;
 }
 export interface BulletinRemoveTopicsRequestTypeTopics {
-    attributes: BulletinRemoveTopicsRequestTypeTopicsAttribute
+    attributes: BulletinRemoveTopicsRequestTypeTopicsAttribute;
 }
 export interface BulletinRemoveTopicsRequestType {
     
     request_token?: string;
     topics?: BulletinRemoveTopicsRequestTypeTopics | BulletinRemoveTopicsRequestTypeTopics[];
 }
-
 // BulletinSearchTopicsRequestType
 export interface BulletinSearchTopicsRequestTypeAttribute {
     text: string;
@@ -207,15 +185,13 @@ export interface BulletinSearchTopicsRequestTypeAttribute {
     follow_search: boolean;
 }
 export interface BulletinSearchTopicsRequestType {
-    attributes: BulletinSearchTopicsRequestTypeAttribute
+    attributes: BulletinSearchTopicsRequestTypeAttribute;
 }
-
 // BulletinSearchTopicsResponseType
 export interface BulletinSearchTopicsResponseType {
     
     topic?: TopicType | TopicType[];
 }
-
 // BulletinGetFollowsRequestType
 export interface BulletinGetFollowsRequestTypeAttribute {
     topic_id: base.IDType;
@@ -223,15 +199,13 @@ export interface BulletinGetFollowsRequestTypeAttribute {
     limit: number;
 }
 export interface BulletinGetFollowsRequestType {
-    attributes: BulletinGetFollowsRequestTypeAttribute
+    attributes: BulletinGetFollowsRequestTypeAttribute;
 }
-
 // BulletinGetFollowsResponseType
 export interface BulletinGetFollowsResponseType {
     
     follow?: FollowType | FollowType[];
 }
-
 // BulletinAddFollowType
 export interface BulletinAddFollowTypeAttribute {
     topic_id: base.IDType;
@@ -240,41 +214,36 @@ export interface BulletinAddFollowTypeFileAttribute {
     id: base.IDType;
 }
 export interface BulletinAddFollowTypeFile {
-    attributes: BulletinAddFollowTypeFileAttribute
+    attributes: BulletinAddFollowTypeFileAttribute;
     content: Buffer;
 }
 export interface BulletinAddFollowType {
-    attributes: BulletinAddFollowTypeAttribute
+    attributes: BulletinAddFollowTypeAttribute;
     follow: FollowType;
     file?: BulletinAddFollowTypeFile | BulletinAddFollowTypeFile[];
 }
-
 // BulletinAddFollowsRequestType
 export interface BulletinAddFollowsRequestType {
     
     request_token?: string;
     add_follow: BulletinAddFollowType | BulletinAddFollowType[];
 }
-
 // BulletinAddFollowsResponseType
 export interface BulletinAddFollowsResponseType {
     
     topic?: TopicType | TopicType[];
 }
-
 // BulletinRemoveFollowsRequestType
 export interface BulletinRemoveFollowsRequestType {
     
     request_token?: string;
     follow_id: base.IDType | base.IDType[];
 }
-
 // CategoryInformationType
 export interface CategoryInformationType {
     
     root: CategoryType;
 }
-
 // CategoryType
 export interface CategoryTypeAttribute {
     id: base.IDType;
@@ -282,7 +251,7 @@ export interface CategoryTypeAttribute {
     list_index: number;
 }
 export interface CategoryType {
-    attributes: CategoryTypeAttribute
+    attributes: CategoryTypeAttribute;
     name: string;
     description: string;
     creator_id: string;
@@ -295,17 +264,15 @@ export interface CategoryType {
     modify_time: string;
     categories?: CategoriesType;
 }
-
 // CategoriesType
 export interface CategoriesTypeAttribute {
     parent_id: base.IDType;
     parent_code: string;
 }
 export interface CategoriesType {
-    attributes: CategoriesTypeAttribute
+    attributes: CategoriesTypeAttribute;
     category?: CategoryType | CategoryType[];
 }
-
 // TopicsList
 export interface TopicsListAttribute {
     category_id: base.IDType;
@@ -314,13 +281,12 @@ export interface TopicsListTopicAttribute {
     id: base.IDType;
 }
 export interface TopicsListTopic {
-    attributes: TopicsListTopicAttribute
+    attributes: TopicsListTopicAttribute;
 }
 export interface TopicsList {
-    attributes: TopicsListAttribute
+    attributes: TopicsListAttribute;
     topic?: TopicsListTopic | TopicsListTopic[];
 }
-
 // TopicType
 export interface TopicTypeAttribute {
     id: base.IDType;
@@ -343,7 +309,7 @@ export interface TopicTypeContentAttribute {
     html_body?: string;
 }
 export interface TopicTypeContent {
-    attributes: TopicTypeContentAttribute
+    attributes: TopicTypeContentAttribute;
     file?: TopicTypeContentFile | TopicTypeContentFile[];
 }
 export interface TopicTypeContentFileAttribute {
@@ -353,23 +319,22 @@ export interface TopicTypeContentFileAttribute {
     mime_type?: string;
 }
 export interface TopicTypeContentFile {
-    attributes: TopicTypeContentFileAttribute
+    attributes: TopicTypeContentFileAttribute;
 }
 export interface TopicTypeFollowAttribute {
     id: base.IDType;
     number: base.NonBlankStringType;
 }
 export interface TopicTypeFollow {
-    attributes: TopicTypeFollowAttribute
+    attributes: TopicTypeFollowAttribute;
 }
 export interface TopicType {
-    attributes: TopicTypeAttribute
+    attributes: TopicTypeAttribute;
     content: TopicTypeContent;
     follow?: TopicTypeFollow | TopicTypeFollow[];
     creator?: base.ChangeLogType;
     modifier?: base.ChangeLogType;
 }
-
 // FollowsList
 export interface FollowsListAttribute {
     topic_id: base.IDType;
@@ -379,13 +344,12 @@ export interface FollowsListFollowAttribute {
     number: base.NonBlankStringType;
 }
 export interface FollowsListFollow {
-    attributes: FollowsListFollowAttribute
+    attributes: FollowsListFollowAttribute;
 }
 export interface FollowsList {
-    attributes: FollowsListAttribute
+    attributes: FollowsListAttribute;
     follow?: FollowsListFollow | FollowsListFollow[];
 }
-
 // FollowType
 export interface FollowTypeAttribute {
     id: base.IDType;
@@ -400,11 +364,10 @@ export interface FollowTypeFileAttribute {
     mime_type?: string;
 }
 export interface FollowTypeFile {
-    attributes: FollowTypeFileAttribute
+    attributes: FollowTypeFileAttribute;
 }
 export interface FollowType {
-    attributes: FollowTypeAttribute
+    attributes: FollowTypeAttribute;
     file?: FollowTypeFile | FollowTypeFile[];
     creator?: base.ChangeLogType;
 }
-

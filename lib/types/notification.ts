@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length no-trailing-whitespace */
 
 // [Import]
 import * as base from "./base";
@@ -13,28 +14,25 @@ export interface NotificationIdTypeAttribute {
     item: base.NonBlankStringType;
 }
 export interface NotificationIdType {
-    attributes: NotificationIdTypeAttribute
+    attributes: NotificationIdTypeAttribute;
 }
-
 // NotificationItemVersionType
 export interface NotificationItemVersionTypeAttribute {
     version: base.VersionType;
 }
 export interface NotificationItemVersionType {
-    attributes: NotificationItemVersionTypeAttribute
+    attributes: NotificationItemVersionTypeAttribute;
     notification_id: NotificationIdType;
 }
-
 // NotificationItemVersionResultType
 export interface NotificationItemVersionResultTypeAttribute {
     version: base.VersionType;
     operation: base.ItemOperationType;
 }
 export interface NotificationItemVersionResultType {
-    attributes: NotificationItemVersionResultTypeAttribute
+    attributes: NotificationItemVersionResultTypeAttribute;
     notification_id: NotificationIdType;
 }
-
 // NotificationGetNotificationVersionsRequestType
 export interface NotificationGetNotificationVersionsRequestTypeAttribute {
     start: string;
@@ -42,28 +40,24 @@ export interface NotificationGetNotificationVersionsRequestTypeAttribute {
     module_id?: base.IDType;
 }
 export interface NotificationGetNotificationVersionsRequestType {
-    attributes: NotificationGetNotificationVersionsRequestTypeAttribute
+    attributes: NotificationGetNotificationVersionsRequestTypeAttribute;
     notification_item?: NotificationItemVersionType | NotificationItemVersionType[];
 }
-
 // NotificationGetNotificationVersionsResponseType
 export interface NotificationGetNotificationVersionsResponseType {
     
     notification_item?: NotificationItemVersionResultType | NotificationItemVersionResultType[];
 }
-
 // NotificationGetNotificationsByIdRequestType
 export interface NotificationGetNotificationsByIdRequestType {
     
     notification_id: NotificationIdType | NotificationIdType[];
 }
-
 // NotificationGetNotificationsByIdResponseType
 export interface NotificationGetNotificationsByIdResponseType {
     
     notification?: NotificationType | NotificationType[];
 }
-
 // NotificationGetNotificationHistoryVersionsRequestType
 export interface NotificationGetNotificationHistoryVersionsRequestTypeAttribute {
     start: string;
@@ -71,74 +65,63 @@ export interface NotificationGetNotificationHistoryVersionsRequestTypeAttribute 
     module_id?: base.IDType;
 }
 export interface NotificationGetNotificationHistoryVersionsRequestType {
-    attributes: NotificationGetNotificationHistoryVersionsRequestTypeAttribute
+    attributes: NotificationGetNotificationHistoryVersionsRequestTypeAttribute;
     notification_history_item?: NotificationItemVersionType | NotificationItemVersionType[];
 }
-
 // NotificationGetNotificationHistoryVersionsResponseType
 export interface NotificationGetNotificationHistoryVersionsResponseType {
     
     notification_history_item?: NotificationItemVersionResultType | NotificationItemVersionResultType[];
 }
-
 // NotificationGetNotificationHistoriesByIdRequestType
 export interface NotificationGetNotificationHistoriesByIdRequestType {
     
     notification_history_id: NotificationIdType | NotificationIdType[];
 }
-
 // NotificationGetNotificationHistoriesByIdResponseType
 export interface NotificationGetNotificationHistoriesByIdResponseType {
     
     notification_history?: NotificationType | NotificationType[];
 }
-
 // NotificationConfirmNotificationRequestType
 export interface NotificationConfirmNotificationRequestType {
     
     request_token?: string;
     notification_id: NotificationIdType | NotificationIdType[];
 }
-
 // NotificationConfirmNotificationResponseType
 export interface NotificationConfirmNotificationResponseType {
     
     notification?: NotificationType | NotificationType[];
 }
-
 // NotificationPersonalProfileType
 export interface NotificationPersonalProfileTypeAttribute {
     save_notification_duration?: number;
     save_notification_history_duration?: number;
 }
 export interface NotificationPersonalProfileType {
-    attributes: NotificationPersonalProfileTypeAttribute
+    attributes: NotificationPersonalProfileTypeAttribute;
 }
-
 // NotificationGetProfilesRequestType
 export interface NotificationGetProfilesRequestType {
     
 }
-
 // NotificationGetProfilesResponseType
 export interface NotificationGetProfilesResponseType {
     
     personal_profile: NotificationPersonalProfileType;
 }
-
 // NotificationSetProfilesRequestType
 export interface NotificationSetProfilesRequestType {
     
     request_token?: string;
     personal_profile: NotificationPersonalProfileType;
 }
-
 // NotificationSetProfilesResponseType
 export interface NotificationSetProfilesResponseType {
     
     personal_profile: NotificationPersonalProfileType;
 }
-
 // NotificationType
 export interface NotificationTypeAttribute {
     module_id: base.IDType;
@@ -161,6 +144,5 @@ export interface NotificationTypeAttribute {
     version: base.VersionType;
 }
 export interface NotificationType {
-    attributes: NotificationTypeAttribute
+    attributes: NotificationTypeAttribute;
 }
-

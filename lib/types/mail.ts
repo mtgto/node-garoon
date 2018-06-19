@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length no-trailing-whitespace */
 
 // [Import]
 import * as base from "./base";
@@ -18,54 +19,46 @@ export interface MailGetAccountVersionsRequestType {
     
     account_item?: base.ItemVersionType | base.ItemVersionType[];
 }
-
 // MailGetAccountVersionsResponseType
 export interface MailGetAccountVersionsResponseType {
     
     account_item?: base.ItemVersionResultType | base.ItemVersionResultType[];
 }
-
 // MailGetAccountsByIdRequestType
 export interface MailGetAccountsByIdRequestType {
     
     account_id: base.IDType | base.IDType[];
 }
-
 // MailGetAccountsByIdResponseType
 export interface MailGetAccountsByIdResponseType {
     
     account?: AccountType | AccountType[];
 }
-
 // MailGetMailVersionsRequestType
 export interface MailGetMailVersionsRequestTypeAttribute {
     start: string;
     end?: string;
 }
 export interface MailGetMailVersionsRequestType {
-    attributes: MailGetMailVersionsRequestTypeAttribute
+    attributes: MailGetMailVersionsRequestTypeAttribute;
     mail_item?: base.ItemVersionType | base.ItemVersionType[];
     folder_id?: base.IDType | base.IDType[];
 }
-
 // MailGetMailVersionsResponseType
 export interface MailGetMailVersionsResponseType {
     
     mail_item?: base.ItemVersionResultType | base.ItemVersionResultType[];
 }
-
 // MailGetMailsByIdRequestType
 export interface MailGetMailsByIdRequestType {
     
     mail_id: base.IDType | base.IDType[];
 }
-
 // MailGetMailsByIdResponseType
 export interface MailGetMailsByIdResponseType {
     
     mail?: MailType | MailType[];
 }
-
 // MailSendMailType
 export interface MailSendMailTypeAttribute {
     account_id: base.IDType;
@@ -81,94 +74,82 @@ export interface MailSendMailTypeFileAttribute {
     id: base.IDType;
 }
 export interface MailSendMailTypeFile {
-    attributes: MailSendMailTypeFileAttribute
+    attributes: MailSendMailTypeFileAttribute;
     content: Buffer;
 }
 export interface MailSendMailType {
-    attributes: MailSendMailTypeAttribute
+    attributes: MailSendMailTypeAttribute;
     mail: MailType;
     file?: MailSendMailTypeFile | MailSendMailTypeFile[];
     remove_file_id?: base.IDType | base.IDType[];
 }
-
 // MailSendMailsRequestType
 export interface MailSendMailsRequestType {
     
     request_token?: string;
     send_mail: MailSendMailType | MailSendMailType[];
 }
-
 // MailSendMailsResponseType
 export interface MailSendMailsResponseType {
     
     mail?: MailType | MailType[];
 }
-
 // MailReplyMailsRequestType
 export interface MailReplyMailsRequestTypeAttribute {
     reply_all: boolean;
 }
 export interface MailReplyMailsRequestType {
-    attributes: MailReplyMailsRequestTypeAttribute
+    attributes: MailReplyMailsRequestTypeAttribute;
     request_token?: string;
     reply_mail: MailSendMailType | MailSendMailType[];
 }
-
 // MailReplyMailsResponseType
 export interface MailReplyMailsResponseType {
     
     mail?: MailType | MailType[];
 }
-
 // MailForwardMailType
 export interface MailForwardMailTypeAttribute extends MailSendMailTypeAttribute {
     mail_id: base.IDType;
 }
 export interface MailForwardMailType extends MailSendMailType {
-    attributes: MailForwardMailTypeAttribute
+    attributes: MailForwardMailTypeAttribute;
 }
-
 // MailForwardMailsRequestType
 export interface MailForwardMailsRequestType {
     
     request_token?: string;
     forward_mail: MailForwardMailType | MailForwardMailType[];
 }
-
 // MailForwardMailsResponseType
 export interface MailForwardMailsResponseType {
     
     mail?: MailType | MailType[];
 }
-
 // MailDraftMailType
 export interface MailDraftMailTypeAttribute extends MailSendMailTypeAttribute {
     operation?: MailDraftOperationType;
 }
 export interface MailDraftMailType extends MailSendMailType {
-    attributes: MailDraftMailTypeAttribute
+    attributes: MailDraftMailTypeAttribute;
 }
-
 // MailSaveDraftMailsRequestType
 export interface MailSaveDraftMailsRequestType {
     
     request_token?: string;
     save_mail: MailDraftMailType | MailDraftMailType[];
 }
-
 // MailSaveDraftMailsResponseType
 export interface MailSaveDraftMailsResponseType {
     
     mail?: MailType | MailType[];
 }
-
 // MailRemoveMailsRequestType
 export interface MailRemoveMailsRequestType {
     
     request_token?: string;
     mail_id: base.IDType | base.IDType[];
 }
-
 // MailSearchMailsRequestType
 export interface MailSearchMailsRequestTypeAttribute {
     text: string;
@@ -186,15 +167,13 @@ export interface MailSearchMailsRequestTypeAttribute {
     bcc_search: boolean;
 }
 export interface MailSearchMailsRequestType {
-    attributes: MailSearchMailsRequestTypeAttribute
+    attributes: MailSearchMailsRequestTypeAttribute;
 }
-
 // MailSearchMailsResponseType
 export interface MailSearchMailsResponseType {
     
     mail?: MailType | MailType[];
 }
-
 // MailOpenDispositionNotificationOperationType
 export interface MailOpenDispositionNotificationOperationTypeAttribute {
     account_id: base.IDType;
@@ -202,87 +181,75 @@ export interface MailOpenDispositionNotificationOperationTypeAttribute {
     type: MailDispositionNotificationType;
 }
 export interface MailOpenDispositionNotificationOperationType {
-    attributes: MailOpenDispositionNotificationOperationTypeAttribute
+    attributes: MailOpenDispositionNotificationOperationTypeAttribute;
 }
-
 // MailOpenDispositionNotificationsRequestType
 export interface MailOpenDispositionNotificationsRequestType {
     
     request_token?: string;
     operation: MailOpenDispositionNotificationOperationType | MailOpenDispositionNotificationOperationType[];
 }
-
 // MailOpenDispositionNotificationsResponseType
 export interface MailOpenDispositionNotificationsResponseType {
     
     mail?: MailType | MailType[];
 }
-
 // MailModifyFolderOperationType
 export interface MailModifyFolderOperationTypeAttribute {
     account_id: base.IDType;
     parent_folder_id?: base.IDType;
 }
 export interface MailModifyFolderOperationType {
-    attributes: MailModifyFolderOperationTypeAttribute
+    attributes: MailModifyFolderOperationTypeAttribute;
     folder: FolderType;
 }
-
 // MailAddFoldersRequestType
 export interface MailAddFoldersRequestType {
     
     request_token?: string;
     add_folder: MailModifyFolderOperationType | MailModifyFolderOperationType[];
 }
-
 // MailAddFoldersResponseType
 export interface MailAddFoldersResponseType {
     
     folder?: FolderType | FolderType[];
 }
-
 // MailModifyFoldersRequestType
 export interface MailModifyFoldersRequestType {
     
     request_token?: string;
     modify_folder: MailModifyFolderOperationType | MailModifyFolderOperationType[];
 }
-
 // MailModifyFoldersResponseType
 export interface MailModifyFoldersResponseType {
     
     folder?: FolderType | FolderType[];
 }
-
 // MailRemoveFoldersRequestType
 export interface MailRemoveFoldersRequestType {
     
     request_token?: string;
     folder_id: base.IDType | base.IDType[];
 }
-
 // MailMoveMailsOperationType
 export interface MailMoveMailsOperationTypeAttribute {
     folder_id: base.IDType;
     mail_id: base.IDType;
 }
 export interface MailMoveMailsOperationType {
-    attributes: MailMoveMailsOperationTypeAttribute
+    attributes: MailMoveMailsOperationTypeAttribute;
 }
-
 // MailMoveMailsToOtherFolderRequestType
 export interface MailMoveMailsToOtherFolderRequestType {
     
     request_token?: string;
     operation: MailMoveMailsOperationType | MailMoveMailsOperationType[];
 }
-
 // MailMoveMailsToOtherFolderResponseType
 export interface MailMoveMailsToOtherFolderResponseType {
     
     mail?: MailType | MailType[];
 }
-
 // MailSignatureType
 export interface MailSignatureTypeAttribute {
     account_id: base.IDType;
@@ -290,37 +257,32 @@ export interface MailSignatureTypeAttribute {
     content: string;
 }
 export interface MailSignatureType {
-    attributes: MailSignatureTypeAttribute
+    attributes: MailSignatureTypeAttribute;
 }
-
 // MailGetSignaturesRequestType
 export interface MailGetSignaturesRequestTypeAttribute {
     account_id: base.IDType;
 }
 export interface MailGetSignaturesRequestType {
-    attributes: MailGetSignaturesRequestTypeAttribute
+    attributes: MailGetSignaturesRequestTypeAttribute;
 }
-
 // MailGetSignaturesResponseType
 export interface MailGetSignaturesResponseType {
     
     signature?: MailSignatureType | MailSignatureType[];
 }
-
 // MailGetFiltersRequestType
 export interface MailGetFiltersRequestTypeAttribute {
     account_id: base.IDType;
 }
 export interface MailGetFiltersRequestType {
-    attributes: MailGetFiltersRequestTypeAttribute
+    attributes: MailGetFiltersRequestTypeAttribute;
 }
-
 // MailGetFiltersResponseType
 export interface MailGetFiltersResponseType {
     
     filter?: FilterType | FilterType[];
 }
-
 // MailPersonalProfileType
 export interface MailPersonalProfileTypeAttribute {
     show_preview: boolean;
@@ -339,13 +301,12 @@ export interface MailPersonalProfileTypeFromNameAttribute {
     name: base.NonBlankStringType;
 }
 export interface MailPersonalProfileTypeFromName {
-    attributes: MailPersonalProfileTypeFromNameAttribute
+    attributes: MailPersonalProfileTypeFromNameAttribute;
 }
 export interface MailPersonalProfileType {
-    attributes: MailPersonalProfileTypeAttribute
+    attributes: MailPersonalProfileTypeAttribute;
     from_name?: MailPersonalProfileTypeFromName | MailPersonalProfileTypeFromName[];
 }
-
 // MailSizeLimitsType
 export interface MailSizeLimitsTypeAttribute {
     total_kb?: number;
@@ -353,9 +314,8 @@ export interface MailSizeLimitsTypeAttribute {
     send_kb?: number;
 }
 export interface MailSizeLimitsType {
-    attributes: MailSizeLimitsTypeAttribute
+    attributes: MailSizeLimitsTypeAttribute;
 }
-
 // UserAuthoritiesType
 export interface UserAuthoritiesTypeAttribute {
     allow_account_all_permission: boolean;
@@ -370,9 +330,8 @@ export interface UserAuthoritiesTypeAttribute {
     allow_history: boolean;
 }
 export interface UserAuthoritiesType {
-    attributes: UserAuthoritiesTypeAttribute
+    attributes: UserAuthoritiesTypeAttribute;
 }
-
 // MailSystemProfileType
 export interface MailSystemProfileTypeAttribute {
     disable_client: boolean;
@@ -382,119 +341,104 @@ export interface MailSystemProfileTypeAutoReceiveAttribute {
     interval?: number;
 }
 export interface MailSystemProfileTypeAutoReceive {
-    attributes: MailSystemProfileTypeAutoReceiveAttribute
+    attributes: MailSystemProfileTypeAutoReceiveAttribute;
     receive_time?: string | string[];
 }
 export interface MailSystemProfileType {
-    attributes: MailSystemProfileTypeAttribute
+    attributes: MailSystemProfileTypeAttribute;
     auto_receive?: MailSystemProfileTypeAutoReceive;
     limit: MailSizeLimitsType;
     authority: UserAuthoritiesType;
 }
-
 // MailGetProfilesRequestType
 export interface MailGetProfilesRequestTypeAttribute {
     include_system_profile?: boolean;
 }
 export interface MailGetProfilesRequestType {
-    attributes: MailGetProfilesRequestTypeAttribute
+    attributes: MailGetProfilesRequestTypeAttribute;
 }
-
 // MailGetProfilesResponseType
 export interface MailGetProfilesResponseType {
     
     personal_profile: MailPersonalProfileType;
     system_profile?: MailSystemProfileType;
 }
-
 // MailSetProfilesRequestType
 export interface MailSetProfilesRequestType {
     
     request_token?: string;
     personal_profile: MailPersonalProfileType;
 }
-
 // MailSetProfilesResponseType
 export interface MailSetProfilesResponseType {
     
     personal_profile: MailPersonalProfileType;
 }
-
 // MailSourceDownloadRequestType
 export interface MailSourceDownloadRequestTypeAttribute {
     mail_id: base.IDType;
 }
 export interface MailSourceDownloadRequestType {
-    attributes: MailSourceDownloadRequestTypeAttribute
+    attributes: MailSourceDownloadRequestTypeAttribute;
 }
-
 // MailSourceDownloadResponseType
 export interface MailSourceDownloadResponseType {
     
     source?: base.FileBodyType;
 }
-
 // MailFileDownloadRequestType
 export interface MailFileDownloadRequestTypeAttribute {
     mail_id: base.IDType;
     file_id: base.IDType;
 }
 export interface MailFileDownloadRequestType {
-    attributes: MailFileDownloadRequestTypeAttribute
+    attributes: MailFileDownloadRequestTypeAttribute;
 }
-
 // MailFileDownloadResponseType
 export interface MailFileDownloadResponseType {
     
     file?: base.FileBodyType;
 }
-
 // MailUserAccountType
 export interface MailUserAccountType {
     
     account_info?: Account_Info;
     mail_setting?: MailSetting;
 }
-
 // MailCreateUserAccountRequestType
 export interface MailCreateUserAccountRequestType {
     
     request_token?: string;
     mail_user_accounts?: MailUserAccountType | MailUserAccountType[];
 }
-
 // MailCreateUserAccountResponseType
 export interface MailCreateUserAccountResponseTypeAttribute {
     acc_id: base.IDType;
 }
 export interface MailCreateUserAccountResponseType {
-    attributes: MailCreateUserAccountResponseTypeAttribute
+    attributes: MailCreateUserAccountResponseTypeAttribute;
     user_accounts?: MailUserAccountType | MailUserAccountType[];
 }
-
 // MailEditUserAccountRequestType
 export interface MailEditUserAccountRequestType {
     
     request_token?: string;
     edit_user_accounts?: MailUserAccountType | MailUserAccountType[];
 }
-
 // MailEditUserAccountResponseType
 export interface MailEditUserAccountResponseTypeAttribute {
     acc_id: base.IDType;
 }
 export interface MailEditUserAccountResponseType {
-    attributes: MailEditUserAccountResponseTypeAttribute
+    attributes: MailEditUserAccountResponseTypeAttribute;
     edit_user_accounts?: MailUserAccountType | MailUserAccountType[];
 }
-
 // MailDeleteUserAccountRequestType
 export interface MailDeleteUserAccountRequestType {
     
     request_token?: string;
     delete_user_accounts?: DeleteUserAccount | DeleteUserAccount[];
 }
-
 // NewArrivingEmailType
 export interface NewArrivingEmailTypeAttribute {
     id: base.IDType;
@@ -505,65 +449,56 @@ export interface NewArrivingEmailTypeAttribute {
     deleted?: string;
 }
 export interface NewArrivingEmailType {
-    attributes: NewArrivingEmailTypeAttribute
+    attributes: NewArrivingEmailTypeAttribute;
 }
-
 // MailGetNewArrivingEmailRequestType
 export interface MailGetNewArrivingEmailRequestType {
     
 }
-
 // MailGetNewArrivingEmailResponseType
 export interface MailGetNewArrivingEmailResponseType {
     
     account?: NewArrivingEmailType | NewArrivingEmailType[];
 }
-
 // MailAddMailServersRequestType
 export interface MailAddMailServersRequestType {
     
     request_token?: string;
     server: MailServerInfoType | MailServerInfoType[];
 }
-
 // MailAddMailServersResponseType
 export interface MailAddMailServersResponseType {
     
     server: MailServerInfoType | MailServerInfoType[];
 }
-
 // MailModifyMailServersRequestType
 export interface MailModifyMailServersRequestType {
     
     request_token?: string;
     server: MailServerInfoType | MailServerInfoType[];
 }
-
 // MailModifyMailServersResponseType
 export interface MailModifyMailServersResponseType {
     
     server: MailServerInfoType | MailServerInfoType[];
 }
-
 // MailRemoveMailServersRequestType
 export interface MailRemoveMailServersRequestType {
     
     request_token?: string;
     server_id: base.IDType | base.IDType[];
 }
-
 // ServerType
 export interface ServerTypeAttribute {
     key: base.NonBlankStringType;
     name: base.NonBlankStringType;
 }
 export interface ServerType {
-    attributes: ServerTypeAttribute
+    attributes: ServerTypeAttribute;
     smtp: SmtpServerType;
     pop?: PopServerType;
     imap?: ImapServerType;
 }
-
 // SmtpServerType
 export interface SmtpServerTypeAttribute extends MailServerTypeAttribute {
     use_pop_account?: boolean;
@@ -573,26 +508,23 @@ export interface SmtpServerTypePopBeforeSmtpAttribute {
     wait_seconds?: number;
 }
 export interface SmtpServerTypePopBeforeSmtp {
-    attributes: SmtpServerTypePopBeforeSmtpAttribute
+    attributes: SmtpServerTypePopBeforeSmtpAttribute;
 }
 export interface SmtpServerType extends MailServerType {
-    attributes: SmtpServerTypeAttribute
+    attributes: SmtpServerTypeAttribute;
     pop_before_smtp?: SmtpServerTypePopBeforeSmtp;
 }
-
 // PopServerType
 export interface PopServerTypeAttribute extends MailServerTypeAttribute {
     apop?: boolean;
 }
 export interface PopServerType extends MailServerType {
-    attributes: PopServerTypeAttribute
+    attributes: PopServerTypeAttribute;
 }
-
 // ImapServerType
 export interface ImapServerType extends MailServerType {
     
 }
-
 // MailServerType
 export interface MailServerTypeAttribute {
     host: base.NonBlankStringType;
@@ -602,9 +534,8 @@ export interface MailServerTypeAttribute {
     sasl_mechanism?: SaslMechanismType;
 }
 export interface MailServerType {
-    attributes: MailServerTypeAttribute
+    attributes: MailServerTypeAttribute;
 }
-
 // AccountType
 export interface AccountTypeAttribute {
     key: base.IDType;
@@ -623,14 +554,13 @@ export interface AccountTypeSignaturesSignatureAttribute {
     name: base.NonBlankStringType;
 }
 export interface AccountTypeSignaturesSignature {
-    attributes: AccountTypeSignaturesSignatureAttribute
+    attributes: AccountTypeSignaturesSignatureAttribute;
 }
 export interface AccountType {
-    attributes: AccountTypeAttribute
+    attributes: AccountTypeAttribute;
     mailbox?: MailboxType | MailboxType[];
     signatures?: AccountTypeSignatures;
 }
-
 // MailboxType
 export interface MailboxTypeFilters {
     
@@ -645,7 +575,6 @@ export interface MailboxType {
     trash?: BuiltInFolderType;
     folder?: FolderType | FolderType[];
 }
-
 // BuiltInFolderType
 export interface BuiltInFolderTypeAttribute {
     key: base.NonBlankStringType;
@@ -656,23 +585,21 @@ export interface BuiltInFolderTypeMailAttribute {
     id: base.IDType;
 }
 export interface BuiltInFolderTypeMail {
-    attributes: BuiltInFolderTypeMailAttribute
+    attributes: BuiltInFolderTypeMailAttribute;
 }
 export interface BuiltInFolderType {
-    attributes: BuiltInFolderTypeAttribute
+    attributes: BuiltInFolderTypeAttribute;
     mail?: BuiltInFolderTypeMail | BuiltInFolderTypeMail[];
 }
-
 // FolderType
 export interface FolderTypeAttribute extends BuiltInFolderTypeAttribute {
     name: base.NonBlankStringType;
     order?: number;
 }
 export interface FolderType extends BuiltInFolderType {
-    attributes: FolderTypeAttribute
+    attributes: FolderTypeAttribute;
     folder?: FolderType | FolderType[];
 }
-
 // FilterType
 export interface FilterTypeAttribute {
     name: base.NonBlankStringType;
@@ -681,11 +608,10 @@ export interface FilterTypeAttribute {
     status: string;
 }
 export interface FilterType {
-    attributes: FilterTypeAttribute
+    attributes: FilterTypeAttribute;
     expr?: FilterExprType;
     size?: FilterSizeType;
 }
-
 // FilterExprType
 export interface FilterExprTypeAttribute {
     target: "Subject" | "From" | "To" | "CC" | "Header";
@@ -693,9 +619,8 @@ export interface FilterExprTypeAttribute {
     method: FilterExprOperatorType;
 }
 export interface FilterExprType {
-    attributes: FilterExprTypeAttribute
+    attributes: FilterExprTypeAttribute;
 }
-
 // FilterSizeType
 export interface FilterSizeTypeAttribute {
     target: "Mail";
@@ -703,9 +628,8 @@ export interface FilterSizeTypeAttribute {
     method: FilterSizeOperatorType;
 }
 export interface FilterSizeType {
-    attributes: FilterSizeTypeAttribute
+    attributes: FilterSizeTypeAttribute;
 }
-
 // MailType
 export interface MailTypeAttribute {
     key: base.IDType;
@@ -727,17 +651,17 @@ export interface MailTypeFileAttribute {
     mime_type?: string;
 }
 export interface MailTypeFile {
-    attributes: MailTypeFileAttribute
+    attributes: MailTypeFileAttribute;
 }
 export interface MailTypeSourceAttribute {
     id: base.IDType;
     size?: number;
 }
 export interface MailTypeSource {
-    attributes: MailTypeSourceAttribute
+    attributes: MailTypeSourceAttribute;
 }
 export interface MailType {
-    attributes: MailTypeAttribute
+    attributes: MailTypeAttribute;
     file?: MailTypeFile | MailTypeFile[];
     source?: MailTypeSource;
     from?: MailAddressType;
@@ -748,16 +672,14 @@ export interface MailType {
     reply_to?: MailAddressType;
     disposition_notification_to?: MailAddressType;
 }
-
 // MailAddressType
 export interface MailAddressTypeAttribute {
     name?: string;
     address: string;
 }
 export interface MailAddressType {
-    attributes: MailAddressTypeAttribute
+    attributes: MailAddressTypeAttribute;
 }
-
 // UserProfileType
 export interface UserProfileTypeAttribute {
     user_id: string;
@@ -779,13 +701,12 @@ export interface UserProfileTypeFromNameAttribute {
     name: base.NonBlankStringType;
 }
 export interface UserProfileTypeFromName {
-    attributes: UserProfileTypeFromNameAttribute
+    attributes: UserProfileTypeFromNameAttribute;
 }
 export interface UserProfileType {
-    attributes: UserProfileTypeAttribute
+    attributes: UserProfileTypeAttribute;
     from_name?: UserProfileTypeFromName | UserProfileTypeFromName[];
 }
-
 // SystemProfileType
 export interface SystemProfileTypeAttribute {
     disable_client?: boolean;
@@ -795,16 +716,15 @@ export interface SystemProfileTypeAutoReceiveAttribute {
     interval?: number;
 }
 export interface SystemProfileTypeAutoReceive {
-    attributes: SystemProfileTypeAutoReceiveAttribute
+    attributes: SystemProfileTypeAutoReceiveAttribute;
     receive_time?: string | string[];
 }
 export interface SystemProfileType {
-    attributes: SystemProfileTypeAttribute
+    attributes: SystemProfileTypeAttribute;
     auto_receive?: SystemProfileTypeAutoReceive;
     size_limits?: SizeLimitsType;
     user_authorities?: UserAuthoritiesType;
 }
-
 // SizeLimitsType
 export interface SizeLimitsTypeAttribute {
     total_kb?: number;
@@ -812,9 +732,8 @@ export interface SizeLimitsTypeAttribute {
     send_kb?: number;
 }
 export interface SizeLimitsType {
-    attributes: SizeLimitsTypeAttribute
+    attributes: SizeLimitsTypeAttribute;
 }
-
 // UserAuthoritiesType
 export interface UserAuthoritiesTypeAttribute {
     account_all_permission?: boolean;
@@ -829,18 +748,16 @@ export interface UserAuthoritiesTypeAttribute {
     history?: boolean;
 }
 export interface UserAuthoritiesType {
-    attributes: UserAuthoritiesTypeAttribute
+    attributes: UserAuthoritiesTypeAttribute;
 }
-
 // DeleteUserAccount
 export interface DeleteUserAccountAttribute {
     account_id: base.IDType;
     delete_all_email?: boolean;
 }
 export interface DeleteUserAccount {
-    attributes: DeleteUserAccountAttribute
+    attributes: DeleteUserAccountAttribute;
 }
-
 // Account_Info
 export interface Account_InfoAttribute {
     account_id: base.IDType;
@@ -849,9 +766,8 @@ export interface Account_InfoAttribute {
     user_account_name?: string;
 }
 export interface Account_Info {
-    attributes: Account_InfoAttribute
+    attributes: Account_InfoAttribute;
 }
-
 // MailSetting
 export interface MailSettingAttribute {
     mail_server_id: string;
@@ -862,9 +778,8 @@ export interface MailSettingAttribute {
     deactivate_user_account?: boolean;
 }
 export interface MailSetting {
-    attributes: MailSettingAttribute
+    attributes: MailSettingAttribute;
 }
-
 // MailServerInfoType
 export interface MailServerInfoTypeAttribute {
     id: base.IDType;
@@ -882,7 +797,7 @@ export interface MailServerInfoTypeOutgoingAttribute {
     timeout?: number;
 }
 export interface MailServerInfoTypeOutgoing {
-    attributes: MailServerInfoTypeOutgoingAttribute
+    attributes: MailServerInfoTypeOutgoingAttribute;
 }
 export interface MailServerInfoTypeIncomingAttribute {
     receive_protocol: "POP3" | "IMAP4";
@@ -893,11 +808,10 @@ export interface MailServerInfoTypeIncomingAttribute {
     timeout?: number;
 }
 export interface MailServerInfoTypeIncoming {
-    attributes: MailServerInfoTypeIncomingAttribute
+    attributes: MailServerInfoTypeIncomingAttribute;
 }
 export interface MailServerInfoType {
-    attributes: MailServerInfoTypeAttribute
+    attributes: MailServerInfoTypeAttribute;
     outgoing: MailServerInfoTypeOutgoing;
     incoming: MailServerInfoTypeIncoming;
 }
-

@@ -1,35 +1,37 @@
 {
-  "name": "garoon",
-  "version": "0.0.9",
-  "description": "node library to access Garoon SOAP API.",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "build": "tsc --project .",
-    "purepublish": "build",
-    "test": "ava"
-  },
-  "bin": {
-    "type_generator": "./lib/cli/type_generator.js",
-    "rpc_generator": "./lib/cli/rpc_generator.js",
-    "method_generator": "./lib/cli/method_generator.js"
-  },
-  "repository": "https://github.com/mtgto/node-garoon.git",
-  "author": "mtgto <hogerappa@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "cookie": "^0.3.1",
-    "strong-soap": "^1.2.6"
-  },
-  "devDependencies": {
-    "@types/cookie": "^0.3.1",
-    "@types/mustache": "^0.8.30",
-    "@types/node": "^7.0.12",
-    "@types/request": "^2.0.3",
-    "@types/xmldom": "^0.1.29",
-    "ava": "^0.19.1",
-    "mustache": "^2.3.0",
-    "typescript": "^2.4.2",
-    "xmldom": "^0.1.27"
-  }
+    "name": "garoon",
+    "version": "0.1.0",
+    "description": "node library to access Garoon SOAP API.",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "build": "tsc --project .",
+        "prepublish": "yarn run build",
+        "test": "ava"
+    },
+    "bin": {
+        "type_generator": "./lib/cli/type_generator.js",
+        "rpc_generator": "./lib/cli/rpc_generator.js",
+        "method_generator": "./lib/cli/method_generator.js"
+    },
+    "repository": "https://github.com/mtgto/node-garoon.git",
+    "author": "mtgto <hogerappa@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "cookie": "^0.3.1",
+        "strong-soap": "^1.9.0"
+    },
+    "devDependencies": {
+        "@types/cookie": "^0.3.1",
+        "@types/mustache": "^0.8.30",
+        "@types/node": "^10.3.4",
+        "@types/request": "^2.47.1",
+        "@types/xmldom": "^0.1.29",
+        "ava": "^0.25.0",
+        "mustache": "^2.3.0",
+        "prettier": "^1.13.5",
+        "tslint": "^5.10.0",
+        "typescript": "^2.9.2",
+        "xmldom": "^0.1.27"
+    }
 }

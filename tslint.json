@@ -1,0 +1,15 @@
+{
+    "extends": "tslint:latest",
+    "rules": {
+        "arrow-parens": false,
+        "class-name": false,
+        "interface-name": false,
+        "no-empty-interface": false,
+        "no-implicit-dependencies": [true, "dev"],
+        "no-submodule-imports": [true, "@material-ui/core", "@material-ui/icons"],
+        "object-literal-key-quotes": false,
+        "object-literal-sort-keys": false,
+        "ordered-imports": true,
+        "semicolon": [true, "always", "ignore-bound-class-methods"]
+    }
+}

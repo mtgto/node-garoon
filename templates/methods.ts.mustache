@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length */
 import {soap} from "strong-soap";
 import {RPC} from "./rpc";
 
@@ -20,15 +21,14 @@ import * as workflow from "./types/workflow";
 export class GaroonClient {
     protected client: Promise<soap.Client & RPC>;
 
+{{#methods}}
+    public {{method}} = (input: {{}}{{inputType}}): Promise<{{outputType}}> =>
+        this.client.then(client =>
+            this.callMethod<{{inputType}}, {{outputType}}>(
+                "{{method}}", input, client.{{service}}.{{port}}.{{method}}));
+
+{{/methods}}
     protected callMethod = <I, O>(methodName: string, input: I, method: soap.SoapMethod): Promise<O> => {
         throw Error("Not implemented.");
     }
-{{#methods}}
-
-    {{method}} = (input: {{}}{{inputType}}): Promise<{{outputType}}> => {
-        return this.client.then(client => {
-            return this.callMethod<{{inputType}}, {{outputType}}>("{{method}}", input, client.{{service}}.{{port}}.{{method}});
-        });
-    }
-{{/methods}}
 }

@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length no-trailing-whitespace */
 
 // [Import]
 import * as base from "./base";
@@ -14,80 +15,70 @@ export interface StarIDTypeAttribute {
     item: base.NonBlankStringType;
 }
 export interface StarIDType {
-    attributes: StarIDTypeAttribute
+    attributes: StarIDTypeAttribute;
 }
-
 // StarGetStarsByIdRequestType
 export interface StarGetStarsByIdRequestType {
     
     star_id: base.IDType | base.IDType[];
 }
-
 // StarGetStarsByIdResponseType
 export interface StarGetStarsByIdResponseType {
     
     star_data?: StarDataType | StarDataType[];
 }
-
 // StarGetStarVersionsRequestType
 export interface StarGetStarVersionsRequestType {
     
     star_item?: base.ItemVersionType | base.ItemVersionType[];
 }
-
 // StarGetStarVersionsResponseType
 export interface StarGetStarVersionsResponseType {
     
     star_item?: base.ItemVersionResultType | base.ItemVersionResultType[];
 }
-
 // StarRemoveStarsRequestType
 export interface StarRemoveStarsRequestTypeStarItemAttribute extends StarIDTypeAttribute {
     date?: string;
     is_draft?: boolean;
 }
 export interface StarRemoveStarsRequestTypeStarItem extends StarIDType {
-    attributes: StarRemoveStarsRequestTypeStarItemAttribute
+    attributes: StarRemoveStarsRequestTypeStarItemAttribute;
 }
 export interface StarRemoveStarsRequestType {
     
     request_token?: string;
     star_item: StarRemoveStarsRequestTypeStarItem | StarRemoveStarsRequestTypeStarItem[];
 }
-
 // StarAddStarsRequestType
 export interface StarAddStarsRequestTypeStarItemAttribute extends StarIDTypeAttribute {
     date?: string;
     is_draft?: boolean;
 }
 export interface StarAddStarsRequestTypeStarItem extends StarIDType {
-    attributes: StarAddStarsRequestTypeStarItemAttribute
+    attributes: StarAddStarsRequestTypeStarItemAttribute;
 }
 export interface StarAddStarsRequestType {
     
     request_token?: string;
     star_item: StarAddStarsRequestTypeStarItem | StarAddStarsRequestTypeStarItem[];
 }
-
 // StarAddStarsResponseType
 export interface StarAddStarsResponseType {
     
     star_data?: StarDataType | StarDataType[];
 }
-
 // StarGetProfilesRequestType
 export interface StarGetProfilesRequestType {
     
 }
-
 // StarGetProfilesResponseType
 export interface StarGetProfilesResponseTypeAttribute {
     star_num_allow: number;
 }
 export interface StarGetProfilesResponseType {
-    attributes: StarGetProfilesResponseTypeAttribute
+    attributes: StarGetProfilesResponseTypeAttribute;
 }
-
 // StarDataType
 export interface StarDataTypeAttribute {
     id: base.IDType;
@@ -97,6 +88,5 @@ export interface StarDataTypeAttribute {
     version: base.VersionType;
 }
 export interface StarDataType {
-    attributes: StarDataTypeAttribute
+    attributes: StarDataTypeAttribute;
 }
-

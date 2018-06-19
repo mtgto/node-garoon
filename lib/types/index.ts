@@ -13,4 +13,19 @@ import * as star from "./star";
 import * as util_api from "./util_api";
 import * as workflow from "./workflow";
 
-export {address, admin, base, bulletin, cabinet, cbwebsrv, mail, message, notification, report, schedule, star, util_api, workflow};
+export {
+    address,
+    admin,
+    base,
+    bulletin,
+    cabinet,
+    cbwebsrv,
+    mail,
+    message,
+    notification,
+    report,
+    schedule,
+    star,
+    util_api,
+    workflow,
+};

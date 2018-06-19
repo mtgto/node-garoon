@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length no-trailing-whitespace */
 
 // [Import]
 import * as base from "./base";
@@ -10,41 +11,35 @@ import * as base from "./base";
 export interface CabinetGetFolderInfoRequestType {
     
 }
-
 // CabinetGetFolderInfoResponseType
 export interface CabinetGetFolderInfoResponseType {
     
     folder_information?: FolderInformationType;
 }
-
 // CabinetGetFileInfoRequestType
 export interface CabinetGetFileInfoRequestTypeAttribute {
     hid: base.IDType;
 }
 export interface CabinetGetFileInfoRequestType {
-    attributes: CabinetGetFileInfoRequestTypeAttribute
+    attributes: CabinetGetFileInfoRequestTypeAttribute;
 }
-
 // CabinetGetFileInfoResponseType
 export interface CabinetGetFileInfoResponseType {
     
     file_information?: FileInformationType;
 }
-
 // CabinetFileDownloadRequestType
 export interface CabinetFileDownloadRequestTypeAttribute {
     file_id: base.IDType;
 }
 export interface CabinetFileDownloadRequestType {
-    attributes: CabinetFileDownloadRequestTypeAttribute
+    attributes: CabinetFileDownloadRequestTypeAttribute;
 }
-
 // CabinetFileDownloadResponseType
 export interface CabinetFileDownloadResponseType {
     
     file?: base.FileBodyType;
 }
-
 // CabinetAddFileRequestType
 export interface CabinetAddFileRequestTypeAttribute {
     hid: base.IDType;
@@ -54,17 +49,15 @@ export interface CabinetAddFileRequestTypeAttribute {
     description?: string;
 }
 export interface CabinetAddFileRequestType {
-    attributes: CabinetAddFileRequestTypeAttribute
+    attributes: CabinetAddFileRequestTypeAttribute;
     request_token?: string;
     content: Buffer;
 }
-
 // CabinetAddFileResponseType
 export interface CabinetAddFileResponseType {
     
     file: SimpleFileType;
 }
-
 // CabinetUpdateFileRequestType
 export interface CabinetUpdateFileRequestTypeAttribute {
     file_id: base.IDType;
@@ -72,17 +65,15 @@ export interface CabinetUpdateFileRequestTypeAttribute {
     comment?: string;
 }
 export interface CabinetUpdateFileRequestType {
-    attributes: CabinetUpdateFileRequestTypeAttribute
+    attributes: CabinetUpdateFileRequestTypeAttribute;
     request_token?: string;
     content: Buffer;
 }
-
 // CabinetUpdateFileResponseType
 export interface CabinetUpdateFileResponseType {
     
     file: SimpleFileInformationType;
 }
-
 // CabinetUpdateFileInformationRequestType
 export interface CabinetUpdateFileInformationRequestTypeAttribute {
     file_id: base.IDType;
@@ -91,29 +82,25 @@ export interface CabinetUpdateFileInformationRequestTypeAttribute {
     description?: string;
 }
 export interface CabinetUpdateFileInformationRequestType {
-    attributes: CabinetUpdateFileInformationRequestTypeAttribute
+    attributes: CabinetUpdateFileInformationRequestTypeAttribute;
     request_token?: string;
 }
-
 // CabinetUpdateFileInformationResponseType
 export interface CabinetUpdateFileInformationResponseType {
     
     file: SimpleFileInformationType;
 }
-
 // CabinetDeleteFilesRequestType
 export interface CabinetDeleteFilesRequestType {
     
     request_token?: string;
     file_id: base.IDType | base.IDType[];
 }
-
 // FolderInformationType
 export interface FolderInformationType {
     
     root: FolderType;
 }
-
 // FolderType
 export interface FolderTypeAttribute {
     id: base.IDType;
@@ -121,7 +108,7 @@ export interface FolderTypeAttribute {
     list_index: number;
 }
 export interface FolderType {
-    attributes: FolderTypeAttribute
+    attributes: FolderTypeAttribute;
     title: string;
     description: string;
     creator_id: string;
@@ -134,30 +121,27 @@ export interface FolderType {
     modify_time: string;
     folders?: FoldersType;
 }
-
 // FoldersType
 export interface FoldersTypeAttribute {
     parent_id: base.IDType;
     parent_code: string;
 }
 export interface FoldersType {
-    attributes: FoldersTypeAttribute
+    attributes: FoldersTypeAttribute;
     folder?: FolderType | FolderType[];
 }
-
 // FileInformationType
 export interface FileInformationType {
     
     files: FilesType;
 }
-
 // SimpleFileType
 export interface SimpleFileTypeAttribute {
     id: base.IDType;
     folder_id: base.IDType;
 }
 export interface SimpleFileType {
-    attributes: SimpleFileTypeAttribute
+    attributes: SimpleFileTypeAttribute;
     title: string;
     max_version: number;
     name: string;
@@ -173,14 +157,13 @@ export interface SimpleFileType {
     modifier_display_name?: string;
     modify_time?: string;
 }
-
 // SimpleFileInformationType
 export interface SimpleFileInformationTypeAttribute {
     id: base.IDType;
     folder_id: base.IDType;
 }
 export interface SimpleFileInformationType {
-    attributes: SimpleFileInformationTypeAttribute
+    attributes: SimpleFileInformationTypeAttribute;
     title: string;
     max_version: number;
     name: string;
@@ -196,7 +179,6 @@ export interface SimpleFileInformationType {
     modifier_display_name?: string;
     modify_time?: string;
 }
-
 // FileType
 export interface FileTypeHistories {
     
@@ -206,17 +188,15 @@ export interface FileType extends SimpleFileType {
     
     histories: FileTypeHistories;
 }
-
 // FilesType
 export interface FilesTypeAttribute {
     parent_id: base.IDType;
     parent_code: string;
 }
 export interface FilesType {
-    attributes: FilesTypeAttribute
+    attributes: FilesTypeAttribute;
     file?: FileType | FileType[];
 }
-
 // HistoryType
 export interface HistoryType {
     
@@ -230,4 +210,3 @@ export interface HistoryType {
     modifier_display_name: string;
     modify_time: string;
 }
-

@@ -1,4 +1,5 @@
 // This file is generated from WSDL.
+/* tslint:disable:max-line-length no-trailing-whitespace */
 
 // [Import]
 import * as base from "./base";
@@ -22,18 +23,16 @@ export interface FaultMessageTypeAttribute {
     counter_measure: string;
 }
 export interface FaultMessageType {
-    attributes: FaultMessageTypeAttribute
+    attributes: FaultMessageTypeAttribute;
 }
-
 // ItemVersionType
 export interface ItemVersionTypeAttribute {
     id: IDType;
     version: VersionType;
 }
 export interface ItemVersionType {
-    attributes: ItemVersionTypeAttribute
+    attributes: ItemVersionTypeAttribute;
 }
-
 // ItemVersionResultType
 export interface ItemVersionResultTypeAttribute {
     id: IDType;
@@ -41,127 +40,106 @@ export interface ItemVersionResultTypeAttribute {
     operation: ItemOperationType;
 }
 export interface ItemVersionResultType {
-    attributes: ItemVersionResultTypeAttribute
+    attributes: ItemVersionResultTypeAttribute;
 }
-
 // FileBodyType
 export interface FileBodyType {
     
     content: Buffer;
 }
-
 // BaseGetUserVersionsRequestType
 export interface BaseGetUserVersionsRequestType {
     
     user_item?: ItemVersionType | ItemVersionType[];
 }
-
 // BaseGetUserVersionsResponseType
 export interface BaseGetUserVersionsResponseType {
     
     user_item?: ItemVersionResultType | ItemVersionResultType[];
 }
-
 // BaseGetUsersByIdRequestType
 export interface BaseGetUsersByIdRequestType {
     
     user_id: IDType | IDType[];
 }
-
 // BaseGetUsersByIdResponseType
 export interface BaseGetUsersByIdResponseType {
     
     user?: UserType | UserType[];
 }
-
 // BaseGetUsersByLoginNameRequestType
 export interface BaseGetUsersByLoginNameRequestType {
     
     login_name: NonBlankStringType | NonBlankStringType[];
 }
-
 // BaseGetUsersByLoginNameResponseType
 export interface BaseGetUsersByLoginNameResponseType {
     
     user?: UserType | UserType[];
 }
-
 // BaseGetOrganizationVersionsRequestType
 export interface BaseGetOrganizationVersionsRequestType {
     
     organization_item?: ItemVersionType | ItemVersionType[];
 }
-
 // BaseGetOrganizationVersionsResponseType
 export interface BaseGetOrganizationVersionsResponseType {
     
     organization_item?: ItemVersionResultType | ItemVersionResultType[];
 }
-
 // BaseGetOrganizationsByIdRequestType
 export interface BaseGetOrganizationsByIdRequestType {
     
     organization_id: IDType | IDType[];
 }
-
 // BaseGetOrganizationsByIdResponseType
 export interface BaseGetOrganizationsByIdResponseType {
     
     organization?: OrganizationType | OrganizationType[];
 }
-
 // BaseGetMyGroupVersionsRequestType
 export interface BaseGetMyGroupVersionsRequestType {
     
     my_group_item?: ItemVersionType | ItemVersionType[];
 }
-
 // BaseGetMyGroupVersionsResponseType
 export interface BaseGetMyGroupVersionsResponseType {
     
     my_group_item?: ItemVersionResultType | ItemVersionResultType[];
 }
-
 // BaseMyGroupType
 export interface BaseMyGroupType extends GroupType {
     
     belong_member?: IDType | IDType[];
 }
-
 // BaseGetMyGroupsByIdRequestType
 export interface BaseGetMyGroupsByIdRequestType {
     
     my_group_id: IDType | IDType[];
 }
-
 // BaseGetMyGroupsByIdResponseType
 export interface BaseGetMyGroupsByIdResponseType {
     
     my_group?: BaseMyGroupType | BaseMyGroupType[];
 }
-
 // BaseGetFrequentUsersRequestType
 export interface BaseGetFrequentUsersRequestType {
     
 }
-
 // BaseGetFrequentUsersResponseType
 export interface BaseGetFrequentUsersResponseType {
     
     user_id?: IDType | IDType[];
 }
-
 // BaseGetFrequentOrganizationsRequestType
 export interface BaseGetFrequentOrganizationsRequestType {
     
 }
-
 // BaseGetFrequentOrganizationsResponseType
 export interface BaseGetFrequentOrganizationsResponseType {
     
     organization_id?: IDType | IDType[];
 }
-
 // BaseCalendarEventType
 export interface BaseCalendarEventTypeAttribute {
     date: string;
@@ -169,40 +147,34 @@ export interface BaseCalendarEventTypeAttribute {
     type: BaseCalendarEventTypeType;
 }
 export interface BaseCalendarEventType {
-    attributes: BaseCalendarEventTypeAttribute
+    attributes: BaseCalendarEventTypeAttribute;
 }
-
 // BaseGetCalendarEventsRequestType
 export interface BaseGetCalendarEventsRequestType {
     
 }
-
 // BaseGetCalendarEventsResponseType
 export interface BaseGetCalendarEventsResponseType {
     
     calendar_event?: BaseCalendarEventType | BaseCalendarEventType[];
 }
-
 // BaseApplicationType
 export interface BaseApplicationTypeAttribute {
     code: NonBlankStringType;
     status: BaseApplicationStatusType;
 }
 export interface BaseApplicationType {
-    attributes: BaseApplicationTypeAttribute
+    attributes: BaseApplicationTypeAttribute;
 }
-
 // BaseGetApplicationStatusRequestType
 export interface BaseGetApplicationStatusRequestType {
     
 }
-
 // BaseGetApplicationStatusResponseType
 export interface BaseGetApplicationStatusResponseType {
     
     application?: BaseApplicationType | BaseApplicationType[];
 }
-
 // BaseApplicationInformationType
 export interface BaseApplicationInformationTypeAttribute {
     module_id: IDType;
@@ -215,89 +187,77 @@ export interface BaseApplicationInformationTypeAppIconAttribute {
     url: string;
 }
 export interface BaseApplicationInformationTypeAppIcon {
-    attributes: BaseApplicationInformationTypeAppIconAttribute
+    attributes: BaseApplicationInformationTypeAppIconAttribute;
 }
 export interface BaseApplicationInformationTypeAvailableClientAttribute {
     name: NonBlankStringType;
 }
 export interface BaseApplicationInformationTypeAvailableClient {
-    attributes: BaseApplicationInformationTypeAvailableClientAttribute
+    attributes: BaseApplicationInformationTypeAvailableClientAttribute;
 }
 export interface BaseApplicationInformationType {
-    attributes: BaseApplicationInformationTypeAttribute
+    attributes: BaseApplicationInformationTypeAttribute;
     app_icon?: BaseApplicationInformationTypeAppIcon | BaseApplicationInformationTypeAppIcon[];
     available_client?: BaseApplicationInformationTypeAvailableClient | BaseApplicationInformationTypeAvailableClient[];
 }
-
 // BaseGetApplicationInformationRequestType
 export interface BaseGetApplicationInformationRequestType {
     
 }
-
 // BaseGetApplicationInformationResponseType
 export interface BaseGetApplicationInformationResponseType {
     
     application?: BaseApplicationInformationType | BaseApplicationInformationType[];
 }
-
 // BaseFileDownloadRequestType
 export interface BaseFileDownloadRequestTypeAttribute {
     file_id: IDType;
 }
 export interface BaseFileDownloadRequestType {
-    attributes: BaseFileDownloadRequestTypeAttribute
+    attributes: BaseFileDownloadRequestTypeAttribute;
 }
-
 // BaseFileDownloadResponseType
 export interface BaseFileDownloadResponseType {
     
     file?: FileBodyType;
 }
-
 // BaseGetRegionsListRequestType
 export interface BaseGetRegionsListRequestType {
     
 }
-
 // BaseGetRegionsListResponseType
 export interface BaseGetRegionsListResponseType {
     
     region?: RegionType | RegionType[];
 }
-
 // BaseGetTimezoneVersionRequestType
 export interface BaseGetTimezoneVersionRequestType {
     
 }
-
 // BaseGetTimezoneVersionResponseType
 export interface BaseGetTimezoneVersionResponseType {
     
     timezone_version?: string;
 }
-
 // BaseManagerApplicationType
 export interface BaseManagerApplicationTypeAttribute {
     code: string;
     active: boolean;
 }
 export interface BaseManagerApplicationType {
-    attributes: BaseManagerApplicationTypeAttribute
+    attributes: BaseManagerApplicationTypeAttribute;
 }
-
 // BaseManagerApplicationRequestType
 export interface BaseManagerApplicationRequestType {
     
     application?: BaseManagerApplicationType | BaseManagerApplicationType[];
 }
-
 // BaseManagerApplicationResponseType
 export interface BaseManagerApplicationResponseType {
     
     request_token?: string;
     application?: BaseApplicationType | BaseApplicationType[];
 }
-
 // UserType
 export interface UserTypeAttribute {
     key: IDType;
@@ -327,25 +287,24 @@ export interface UserTypePhotoAttribute {
     mime_type?: string;
 }
 export interface UserTypePhoto {
-    attributes: UserTypePhotoAttribute
+    attributes: UserTypePhotoAttribute;
 }
 export interface UserTypeOrganizationAttribute {
     id: IDType;
 }
 export interface UserTypeOrganization {
-    attributes: UserTypeOrganizationAttribute
+    attributes: UserTypeOrganizationAttribute;
 }
 export interface UserTypeAcl {
     
     ace?: AceType | AceType[];
 }
 export interface UserType {
-    attributes: UserTypeAttribute
+    attributes: UserTypeAttribute;
     photo?: UserTypePhoto;
     organization?: UserTypeOrganization | UserTypeOrganization[];
     acl?: UserTypeAcl;
 }
-
 // ListType
 export interface ListTypeAttribute {
     key: IDType;
@@ -354,9 +313,8 @@ export interface ListTypeAttribute {
     description: string;
 }
 export interface ListType {
-    attributes: ListTypeAttribute
+    attributes: ListTypeAttribute;
 }
-
 // OrganizationType
 export interface OrganizationTypeAttribute extends GroupTypeAttribute {
     parent_organization?: IDType;
@@ -366,12 +324,11 @@ export interface OrganizationTypeAcl {
     ace?: AceType | AceType[];
 }
 export interface OrganizationType extends GroupType {
-    attributes: OrganizationTypeAttribute
+    attributes: OrganizationTypeAttribute;
     organization?: OrganizationType | OrganizationType[];
     members?: MembersType;
     acl?: OrganizationTypeAcl;
 }
-
 // GroupType
 export interface GroupTypeAttribute {
     key: IDType;
@@ -381,21 +338,19 @@ export interface GroupTypeAttribute {
     order?: number;
 }
 export interface GroupType {
-    attributes: GroupTypeAttribute
+    attributes: GroupTypeAttribute;
 }
-
 // MembersType
 export interface MembersTypeUserAttribute {
     id: IDType;
 }
 export interface MembersTypeUser {
-    attributes: MembersTypeUserAttribute
+    attributes: MembersTypeUserAttribute;
 }
 export interface MembersType {
     
     user?: MembersTypeUser | MembersTypeUser[];
 }
-
 // FileType
 export interface FileTypeAttribute {
     id: IDType;
@@ -405,10 +360,9 @@ export interface FileTypeAttribute {
     mime_type?: string;
 }
 export interface FileType {
-    attributes: FileTypeAttribute
+    attributes: FileTypeAttribute;
     content: Buffer;
 }
-
 // AceType
 export interface AceTypeAttribute {
     action: string;
@@ -429,7 +383,7 @@ export interface AceTypeDynamicGroupAttribute extends GroupTypeAttribute {
     condition: string;
 }
 export interface AceTypeDynamicGroup extends GroupType {
-    attributes: AceTypeDynamicGroupAttribute
+    attributes: AceTypeDynamicGroupAttribute;
     acl?: AceTypeDynamicGroupAcl;
 }
 export interface AceTypeDynamicGroupAcl {
@@ -437,13 +391,12 @@ export interface AceTypeDynamicGroupAcl {
     ace?: AceType | AceType[];
 }
 export interface AceType {
-    attributes: AceTypeAttribute
+    attributes: AceTypeAttribute;
     user?: UserType;
     static_group?: AceTypeStaticGroup;
     dynamic_group?: AceTypeDynamicGroup;
     organization?: OrganizationType;
 }
-
 // TextType
 export interface TextTypeMarkup {
     
@@ -453,7 +406,6 @@ export interface TextType {
     plain: string;
     markup?: TextTypeMarkup;
 }
-
 // ChangeLogType
 export interface ChangeLogTypeAttribute {
     user_id?: IDType;
@@ -461,9 +413,8 @@ export interface ChangeLogTypeAttribute {
     date: string;
 }
 export interface ChangeLogType {
-    attributes: ChangeLogTypeAttribute
+    attributes: ChangeLogTypeAttribute;
 }
-
 // RegionType
 export interface RegionTypeAttribute {
     name: string;
@@ -473,10 +424,9 @@ export interface RegionTypeCityAttribute {
     timezone: string;
 }
 export interface RegionTypeCity {
-    attributes: RegionTypeCityAttribute
+    attributes: RegionTypeCityAttribute;
 }
 export interface RegionType {
-    attributes: RegionTypeAttribute
+    attributes: RegionTypeAttribute;
     city?: RegionTypeCity | RegionTypeCity[];
 }
-
