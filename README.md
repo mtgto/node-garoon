@@ -62,7 +62,11 @@ $ > testAuth.json
 {
     "url": "http://example.com/grn.cgi?WSDL",
     "username": "foo",
-    "password": "bar"
+    "password": "bar",
+    "proxy": {
+        "host": "localhost",
+        "port": 8888
+    }
 }
 ```
 

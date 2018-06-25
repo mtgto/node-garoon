@@ -3,7 +3,10 @@ import * as cookie from "cookie";
 import {Client, Option} from "../lib";
 const testAuth = require("../testAuth.json");
 
-const client = new Client({url: testAuth.url} as Option);
+const client = new Client({
+    url: testAuth.url,
+    proxy: testAuth.proxy
+} as Option);
 
 test("ログイン", t => {
     return client.UtilLogin({login_name: testAuth.username, password: testAuth.password}).then(response => {
