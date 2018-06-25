@@ -3,7 +3,10 @@ import {soap} from "strong-soap";
 import {Client, Option} from "../lib";
 const testAuth = require("../testAuth.json");
 
-const client = new Client({url: testAuth.url} as Option);
+const client = new Client({
+    url: testAuth.url,
+    proxy: testAuth.proxy
+} as Option);
 
 test("スケジュールを検索する", t => {
     client.authenticate(testAuth.username, testAuth.password);

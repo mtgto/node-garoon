@@ -3,7 +3,7 @@ import { soap } from "strong-soap";
 import { GaroonClient } from "./methods";
 import { Option } from "./option";
 import { RPC } from "./rpc";
-import { Agent } from "socks5-https-client";
+const Agent = require("socks5-https-client/lib/Agent");
 
 export class Client extends GaroonClient {
     private authentication?: { Username: string; Password: string };
@@ -14,19 +14,20 @@ export class Client extends GaroonClient {
     constructor(options: Option) {
         super();
         this.httpClient = new soap.HttpClient({});
-        this.proxy = options.proxy || {}
-        const exoptions = {
-            agentClass: Agent,
-            agentOptions: options.proxy || {
-              socksHost: 'localhost', // Defaults to 'localhost'.
-              socksPort: 8888 // Defaults to 1080.
-            }
-         };
         this.client = new Promise<soap.Client & RPC>((resolve, reject) => {
             const clientOption: soap.Option = {
                 attributesKey: "attributes",
                 httpClient: {
                     request: (rurl, data, callback, exheaders, exoptions) => {
+                        if (options.hasOwnProperty("proxy") && options.proxy) {
+                            exoptions = {
+                                agentClass: Agent,
+                                agentOptions: {
+                                    socksHost: options.proxy.host,
+                                    socksPort: options.proxy.port,
+                                },
+                            };
+                        }
                         return this.httpClient.request(
                             rurl,
                             data,

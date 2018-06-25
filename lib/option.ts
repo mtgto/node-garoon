@@ -1,4 +1,7 @@
 export interface Option {
     url: string;
-    proxy: any;
+    proxy: {
+        port: number,
+        host: string,
+    };
 }
