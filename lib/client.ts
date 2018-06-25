@@ -9,7 +9,6 @@ export class Client extends GaroonClient {
     private authentication?: { Username: string; Password: string };
     private session?: { headerName: string; sessionId: string };
     private httpClient: soap.HttpClient;
-    private proxy: any;
 
     constructor(options: Option) {
         super();
