@@ -1,7 +1,7 @@
 // This file is generated from WSDL.
 /* tslint:disable:max-line-length */
-import {soap} from "strong-soap";
-import {RPC} from "./rpc";
+import { soap } from "strong-soap";
+import { RPC } from "./rpc";
 
 import * as address from "./types/address";
 import * as admin from "./types/admin";
@@ -19,7 +19,7 @@ import * as util_api from "./types/util_api";
 import * as workflow from "./types/workflow";
 
 export class GaroonClient {
-    protected client: Promise<soap.Client & RPC>;
+    protected client!: Promise<soap.Client & RPC>;
 
     public BaseGetUserVersions = (input: base.BaseGetUserVersionsRequestType): Promise<base.BaseGetUserVersionsResponseType> =>
         this.client.then(client =>
