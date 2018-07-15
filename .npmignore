@@ -1,6 +1,7 @@
 node_modules/
 lib/**/*.ts
 !lib/**/*.d.ts
+lib/cli/
 test/
 testAuth.json
 templates/

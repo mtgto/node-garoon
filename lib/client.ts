@@ -88,10 +88,14 @@ export class Client extends GaroonClient {
             }
             return new Promise<O>((resolve, reject) => {
                 method({ parameters: input }, (err, result) => {
-                    if (err || !result.returns) {
+                    if (err) {
                         reject(err);
-                    } else {
+                    } else if (result.returns) {
                         resolve(result.returns as O);
+                    } else {
+                        // In some cases, no returns exists without error.
+                        // For example: Find schedules, but no schedule exists.
+                        resolve();
                     }
                 });
             });
